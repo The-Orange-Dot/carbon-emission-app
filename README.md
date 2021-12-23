@@ -18,16 +18,3 @@ Tabs in nav bar to bring up forms etc to GET data from API and POST response to 
 
 User info page to see what your logged carbon emission history is
 
-
-
-
-
-
-
-
-
-
-
-
-
-
