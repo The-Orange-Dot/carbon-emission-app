@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import Login from "./Components/Login";
+import Login from "./Components/login/Login";
 import Homepage from "./Components/Homepage";
 
 function App() {
