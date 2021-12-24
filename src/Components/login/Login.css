@@ -1,0 +1,51 @@
+.login-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding-bottom: 60px;
+}
+
+.form-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  /* Change color to whatever you guys like */
+  background-color: beige;
+  border-radius: 2rem;
+}
+
+.new-account-form-container {
+  width: 1000px;
+  height: 600px;
+  background-color: beige;
+  position: absolute;
+  z-index: 1;
+}
+
+.register-form-container,
+.register-form {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.gray {
+  position: absolute;
+  background-color: gray;
+  opacity: 50%;
+  width: 100%;
+  height: 100vh;
+}
