@@ -1,11 +1,19 @@
 import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import Login from "./Components/Login";
+import Homepage from "./Components/Homepage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello!</h1>
-      </header>
+      <Switch>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/">
+          <Homepage />
+        </Route>
+      </Switch>
     </div>
   );
 }
