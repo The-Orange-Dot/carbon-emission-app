@@ -1,9 +1,21 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  padding: 50px;
+  /* Change color to whatever you guys like */
+  background-color: #80e2ff;
+  border-radius: 2rem;
+}
+
 .login-container {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   width: 300px;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
 
 .form-container {
@@ -13,21 +25,10 @@
   padding: 30px;
 }
 
-.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 500px;
-  /* Change color to whatever you guys like */
-  background-color: beige;
-  border-radius: 2rem;
-}
-
 .new-account-form-container {
   width: 1000px;
   height: 600px;
-  background-color: beige;
+  background-color: #80e2ff;
   position: absolute;
   z-index: 1;
 }
@@ -48,4 +49,14 @@
   opacity: 50%;
   width: 100%;
   height: 100vh;
+}
+
+button {
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 2em;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

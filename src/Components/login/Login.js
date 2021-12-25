@@ -2,11 +2,10 @@ import { useState } from "react";
 import "./Login.css";
 import NewAccountForm from "./NewAccountForm";
 import GrayColor from "./GrayColor";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [hideNewForm, setHideNewForm] = useState(true);
-
-  console.log(hideNewForm);
 
   return (
     <div className="App-header">
@@ -22,6 +21,9 @@ function Login() {
           <button onClick={() => setHideNewForm(false)}>
             Register new accout
           </button>
+          <Link to="/">
+            <button>Go back</button>
+          </Link>
         </div>
       </div>
       <NewAccountForm hideNewForm={hideNewForm} />

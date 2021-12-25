@@ -1,0 +1,12 @@
+.about-container {
+  padding-top: 120px;
+}
+
+.user-page-container > div {
+  font-weight: bold;
+  margin-left: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
