@@ -1,7 +1,6 @@
 const GrayColor = ({ setHideNewForm, hideNewForm }) => {
   const grayClickHandler = (event) => {
     setHideNewForm(true);
-    console.log((event.target.className = "hidden"));
   };
 
   return (

@@ -10,8 +10,13 @@ const NewAccountForm = ({ hideNewForm }) => {
           <input type="password" placeholder="Password" />
           <input type="text" placeholder="First Name" />
           <input type="text" placeholder="Last Name" />
-          <input type="email" name="" id="" placeholder="Email Address" />
-          <input type="submit" name="" id="" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email Address"
+          />
+          <input type="submit" name="submit" id="submit" />
         </form>
       </div>
     </div>
