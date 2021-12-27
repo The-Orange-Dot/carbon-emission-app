@@ -4,7 +4,6 @@ import "./UserInfo.css";
 function UserInfo() {
   return (
     <div>
-      <NavBar />
       <div className="user-page-container">
         <h1>User Info Page</h1>
         <p>a tab in NavBar?</p>

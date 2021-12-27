@@ -1,9 +1,7 @@
-import NavBar from "../navBar/NavBar";
 import "./About.css";
 function About() {
   return (
     <div>
-      <NavBar />
       <div className="about-container">
         <h1>About Tab</h1>
         <p>a tab in the nav bar?</p>

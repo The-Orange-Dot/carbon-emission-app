@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Test",
+      "lastName": "McTestface",
+      "username": "Test_Account",
+      "password": "password1234",
+      "email": "testmctestface@gmail.com",
+      "image": "https://i.imgflip.com/2af9ub.jpg"
+    }
+  ]
+}
