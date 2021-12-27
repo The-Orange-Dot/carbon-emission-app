@@ -21,7 +21,7 @@ function Login() {
           <button onClick={() => setHideNewForm(false)}>
             Register new accout
           </button>
-          <Link to="/">
+          <Link to="/home">
             <button>Go back</button>
           </Link>
         </div>
