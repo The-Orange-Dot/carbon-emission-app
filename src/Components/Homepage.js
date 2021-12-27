@@ -1,12 +1,11 @@
+import React from "react";
 import NavBar from "./navBar/NavBar";
-import Welcome from "./Welcome";
 
 function Homepage() {
   return (
     <div>
-      <NavBar />
       <div className="homepage-container">
-        <Welcome />
+        <h1 className="welcome-text">This is the home screen!</h1>
       </div>
     </div>
   );
