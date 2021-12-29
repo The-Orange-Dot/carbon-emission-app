@@ -1,15 +1,17 @@
 .user-info{
+  display: flex;
+  flex-direction: column;
   padding-top: 120px;
+  justify-content: center;
 }
 
 .flight-card {
   margin: 20px;
-  height: 100px;
-  width: 200px;
-  background-color: rgb(53, 183, 243);
+  height: 115px;
+  width: 300px;
+  background-color: #80e2ff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
-  justify-content: center;
 }
 
 .flight-card:hover {
@@ -19,4 +21,26 @@
 .card-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-card {
+  margin: 20px;
+  height: 200px;
+  width: 400px;
+  background-color: #80e2ff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.user-image {
+  margin: 10px;
+  height: 75px;
+
+}
+
+.card-header {
+  margin: 5px;
 }

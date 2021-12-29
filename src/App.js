@@ -47,6 +47,20 @@ function App() {
   }
 
   function handleFlightDelete(flight) {
+    const filteredFlights = user.flightHistory.filter(trip => trip.id !== flight.id);
+
+    fetch(`http://localhost:3001/users/${user.id}`, {
+      method: "PATCH",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        flightHistory: filteredFlights
+      })
+    })
+
+    setUser({
+      ...user,
+      flightHistory: filteredFlights
+    })
 
   }
 
@@ -66,13 +80,16 @@ function App() {
           <About />
         </Route>
         <Route exact path="/user">
-          <UserInfo user={user} onFlightDelete={handleFlightDelete}/>
+          <UserInfo 
+            user={user} 
+            onFlightDelete={handleFlightDelete}/>
         </Route>
         <Route exact path="/home">
           <Homepage />
         </Route>
         <Route exact path="/flightestimate">
-          <FlightEstimate onSaveDataClick={handleFlightSaveClick}/>
+          <FlightEstimate 
+            onSaveDataClick={handleFlightSaveClick}/>
         </Route>
         <Route exact path="/">
           <Welcome />

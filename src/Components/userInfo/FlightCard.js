@@ -5,11 +5,11 @@ function FlightCard({ flight, onFlightDelete }) {
             <div className="flight-card">
                 <h4 className="card-header">{`${flight.departure} → ${flight.destination}`}</h4>
                 <ul>
-                    <p>date: {flight.date.slice(0,10)}</p>
-                    <p>passengers: {flight.passengers}</p>
-                    <p>carbon (lbs): {flight.carbon_lb}</p>
+                    <p>Date estimated: {flight.date.slice(0,10)}</p>
+                    <p>Number of passengers: {flight.passengers}</p>
+                    <p>Estimated carbon: {flight.carbon_lb} lbs</p>
                 </ul>
-                <button onClick={() => onFlightDelete(flight)}>Delete FLight</button>
+                <button onClick={() => onFlightDelete(flight)}>Delete Flight</button>
             </div>
     )
 }

@@ -26,12 +26,20 @@
           "id": "3360c3e6-e99e-45d6-a904-95fbf8599fce"
         },
         {
-          "date": "2021-12-29T19:13:27.443Z",
-          "passengers": 5,
+          "date": "2021-12-29T23:07:24.713Z",
+          "passengers": 1,
           "departure": "MCO",
           "destination": "CDG",
-          "carbon_lb": 12141.35,
-          "id": "edb4fb71-eff5-4c09-b349-de8078c64fe3"
+          "carbon_lb": 2428.27,
+          "id": "6dd02d3a-83a0-4d21-97ba-ee74b954f6e5"
+        },
+        {
+          "date": "2021-12-29T23:13:55.833Z",
+          "passengers": 2,
+          "departure": "BDL",
+          "destination": "BCN",
+          "carbon_lb": 3871.04,
+          "id": "4dd1a601-41e4-48b9-aca7-a4dbffbe1041"
         }
       ]
     }
