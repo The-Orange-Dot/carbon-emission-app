@@ -1,7 +1,7 @@
-import React from "react";
-import NavBar from "./navBar/NavBar";
+import React, { useEffect, useState } from "react";
 
 function Homepage() {
+
   return (
     <div>
       <div className="homepage-container">
