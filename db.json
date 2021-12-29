@@ -7,7 +7,33 @@
       "username": "Test_Account",
       "password": "password1234",
       "email": "testmctestface@gmail.com",
-      "image": "https://i.imgflip.com/2af9ub.jpg"
+      "image": "https://i.imgflip.com/2af9ub.jpg",
+      "flightHistory": [
+        {
+          "date": "2021-12-29T17:59:07.008Z",
+          "passengers": 2,
+          "departure": "DIA",
+          "destination": "BOS",
+          "carbon_lb": 6678.45,
+          "id": "33a9f35f-903e-43ce-ad22-6c9ddaa55805"
+        },
+        {
+          "date": "2021-12-29T17:59:39.908Z",
+          "passengers": 2,
+          "departure": "BOS",
+          "destination": "LAX",
+          "carbon_lb": 1122.94,
+          "id": "3360c3e6-e99e-45d6-a904-95fbf8599fce"
+        },
+        {
+          "date": "2021-12-29T19:13:27.443Z",
+          "passengers": 5,
+          "departure": "MCO",
+          "destination": "CDG",
+          "carbon_lb": 12141.35,
+          "id": "edb4fb71-eff5-4c09-b349-de8078c64fe3"
+        }
+      ]
     }
   ]
 }

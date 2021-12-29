@@ -1,3 +1,22 @@
-.user-page-container {
+.user-info{
   padding-top: 120px;
+}
+
+.flight-card {
+  margin: 20px;
+  height: 100px;
+  width: 200px;
+  background-color: rgb(53, 183, 243);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.flight-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
 }
