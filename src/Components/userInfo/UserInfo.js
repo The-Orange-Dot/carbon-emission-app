@@ -1,4 +1,3 @@
-import NavBar from "../navBar/NavBar";
 import "./UserInfo.css";
 
 function UserInfo() {
