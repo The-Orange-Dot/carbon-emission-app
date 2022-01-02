@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Login from "./Components/login/Login";
-import Homepage from "./Components/Homepage";
+import Homepage from "./Components/homepage/Homepage";
 import About from "./Components/about/About";
 import UserInfo from "./Components/userInfo/UserInfo";
 import Welcome from "./Components/welcome/Welcome";
@@ -20,7 +20,7 @@ function App() {
     email: "",
     image:
       "https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg",
-    flightHistory: []
+    flightHistory: [],
   });
 
   //Fetches User Data
@@ -34,35 +34,36 @@ function App() {
       });
   }, []);
 
-  function handleFlightSaveClick(results) {
+  const handleFlightSaveClick = (results) => {
     fetch(`http://localhost:3001/users/${user.id}`, {
       method: "PATCH",
-      headers: {"Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        flightHistory: [...user.flightHistory, results]
-      })
+        flightHistory: [...user.flightHistory, results],
+      }),
     })
-    .then(resp => resp.json())
-    .then(userUpdate => setUser(userUpdate))
-  }
+      .then((resp) => resp.json())
+      .then((userUpdate) => setUser(userUpdate));
+  };
 
-  function handleFlightDelete(flight) {
-    const filteredFlights = user.flightHistory.filter(trip => trip.id !== flight.id);
+  const handleFlightDelete = (flight) => {
+    const filteredFlights = user.flightHistory.filter(
+      (trip) => trip.id !== flight.id
+    );
 
     fetch(`http://localhost:3001/users/${user.id}`, {
       method: "PATCH",
-      headers: {"Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        flightHistory: filteredFlights
-      })
-    })
+        flightHistory: filteredFlights,
+      }),
+    });
 
     setUser({
       ...user,
-      flightHistory: filteredFlights
-    })
-
-  }
+      flightHistory: filteredFlights,
+    });
+  };
 
   return (
     <div className="App">
@@ -80,22 +81,18 @@ function App() {
           <About />
         </Route>
         <Route exact path="/user">
-          <UserInfo 
-            user={user} 
-            onFlightDelete={handleFlightDelete}/>
+          <UserInfo user={user} onFlightDelete={handleFlightDelete} />
         </Route>
         <Route exact path="/home">
           <Homepage />
         </Route>
         <Route exact path="/flightestimate">
-          <FlightEstimate 
-            onSaveDataClick={handleFlightSaveClick}/>
+          <FlightEstimate onSaveDataClick={handleFlightSaveClick} />
         </Route>
         <Route exact path="/">
           <Welcome />
         </Route>
       </Switch>
-      
     </div>
   );
 }

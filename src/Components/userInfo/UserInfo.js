@@ -36,7 +36,7 @@ function UserInfo({ user, onFlightDelete }) {
             {user.flightHistory.length !== 0
               ? `${(Math.round(totalFlightCarbon * 100) / 100)
                   .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ppmv`
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} lbs`
               : 0}
           </h1>
         </div>
