@@ -1,8 +1,8 @@
 const WorldDataList = ({ name, average }) => {
   return (
     <div>
-      <p>
-        {name} : {Math.round(average * 100 * 2.20462) / 100} lbs
+      <p className="emission-by-countries">
+        {name} : {Math.round(average)} lbs
       </p>
     </div>
   );

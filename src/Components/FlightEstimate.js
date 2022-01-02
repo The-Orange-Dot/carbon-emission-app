@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FlightForm from "./FlightForm";
 import FlightResults from "./FlightResults";
+import "./EmissionPage.css";
 
 function FlightEstimate({ onSaveDataClick }) {
   const [results, setResults] = useState({
@@ -47,11 +48,10 @@ function FlightEstimate({ onSaveDataClick }) {
   }
   return (
     <div>
-      <div className="homepage-container">
-        <h1 className="welcome-text">
-          Calculate carbon emissions for your flights
-        </h1>
+      <div className="emission-container">
+        <h1 className="welcome-text">Calculate carbon emissions</h1>
       </div>
+      <h3>Calculate emission for flight</h3>
       <FlightForm handleFormSubmit={handleFormSubmit} />
       {results.id.length !== 0 ? (
         <FlightResults flightData={results} onSaveDataClick={onSaveDataClick} />

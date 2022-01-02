@@ -1,0 +1,25 @@
+.add-new-emission {
+  width: 700px;
+  height: 500px;
+  background-color: #80e2ff;
+  position: absolute;
+  transform: translate(30vw, 20vh);
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+}
+
+.countries-data {
+  border: 1px solid white;
+}
+
+.emission-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.welcome-text {
+  margin: 50px;
+  margin-bottom: 50px;
+}

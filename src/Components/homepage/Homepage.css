@@ -9,3 +9,50 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+.homepage-user-info {
+  background-color: #80e2ff;
+  width: 650px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.homepage-user-info > div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.homepage-user-info img {
+  margin-bottom: 20px;
+}
+
+.homepage-user-info button:hover {
+  opacity: 70%;
+}
+
+.homepage-user-info img:hover {
+  opacity: 70%;
+}
+
+.homepage-user-info h2 {
+  margin-bottom: 10px;
+}
+
+.homepage-user-info h1 {
+  margin-bottom: 20px;
+}
+
+.data {
+  margin: 10px;
+  width: 680px;
+  background-color: #80e2ff;
+  height: 300px;
+  overflow: scroll;
+}
+
+.emission-by-countries {
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}

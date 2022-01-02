@@ -27,7 +27,8 @@ function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
   return (
     <div className="navbar-container">
       <div className="user-info-container">
-        <NavLink to="/user">
+        <h1>Logo Goes Here</h1>
+        {/* <NavLink to="/user">
           <img
             className="user-image"
             //Figure out how to match username when they log in
@@ -48,7 +49,7 @@ function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
               <button>Log In</button>
             </NavLink>
           )}
-        </div>
+        </div> */}
       </div>
       <div className="nav-buttons">
         <ul>
