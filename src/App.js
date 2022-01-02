@@ -84,7 +84,7 @@ function App() {
           <UserInfo user={user} onFlightDelete={handleFlightDelete} />
         </Route>
         <Route exact path="/home">
-          <Homepage />
+          <Homepage user={user} />
         </Route>
         <Route exact path="/flightestimate">
           <FlightEstimate onSaveDataClick={handleFlightSaveClick} />
