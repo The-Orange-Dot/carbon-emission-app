@@ -72,15 +72,6 @@ function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
           </li>
           <li>
             <NavLink
-              to="/user"
-              style={linkStyle}
-              activestyle={{ color: "blue" }}
-            >
-              User-info
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               style={linkStyle}
               activestyle={{ color: "blue" }}
               to="/flightestimate"
