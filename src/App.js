@@ -65,6 +65,14 @@ function App() {
     });
   };
 
+  const handleVehicleSaveClick = (vehicleResults) => {
+
+  }
+
+  const handleVehicleDelete = (vehicle) => {
+
+  }
+
   return (
     <div className="App">
       <NavBar
@@ -92,7 +100,7 @@ function App() {
           />
         </Route>
         <Route exact path="/estimate">
-          <Estimate onSaveDataClick={handleFlightSaveClick} />
+          <Estimate onSaveFlightClick={handleFlightSaveClick} onSaveVehicleClick={handleVehicleSaveClick}/>
         </Route>
         <Route exact path="/">
           <Welcome />
