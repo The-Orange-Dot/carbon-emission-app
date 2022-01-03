@@ -1,8 +1,9 @@
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import React from "react";
+import logo from "../../images/treeLogo.png";
 
-function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
+function NavBar() {
   //Style for navbar links
   const linkStyle = {
     color: "black",
@@ -11,44 +12,15 @@ function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
     textDecoration: "none",
   };
 
-  //Logout Button (temporary signout)
-  const logoutHandler = () => {
-    setUser({
-      firstName: "",
-      lastName: "",
-      username: "Username",
-      email: "",
-      image:
-        "https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg",
-    });
-    setLoggedIn(false);
-  };
-
   return (
     <div className="navbar-container">
       <div className="user-info-container">
-        <NavLink to="/user">
-          <img
-            className="user-image"
-            //Figure out how to match username when they log in
-            src={user.image}
-            alt="default profile"
-          />
+        <NavLink to="/home">
+          <img src={logo} alt="logo" className="logo" />
         </NavLink>
-        <div className="username-login">
-          <p>
-            <strong>{user.username}</strong>
-          </p>
-          {loggedIn ? (
-            <NavLink to="/home">
-              <button onClick={logoutHandler}>Log Out</button>
-            </NavLink>
-          ) : (
-            <NavLink to="/login">
-              <button>Log In</button>
-            </NavLink>
-          )}
-        </div>
+      </div>
+      <div>
+        <h1 style={{ color: "white" }}>App Name Here?</h1>
       </div>
       <div className="nav-buttons">
         <ul>
@@ -68,15 +40,6 @@ function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
               activestyle={{ color: "blue" }}
             >
               About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/user"
-              style={linkStyle}
-              activestyle={{ color: "blue" }}
-            >
-              User-info
             </NavLink>
           </li>
         </ul>

@@ -8,6 +8,7 @@
   /* Change color to whatever you guys like */
   background-color: #80e2ff;
   border-radius: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .login-container {
@@ -26,11 +27,17 @@
 }
 
 .new-account-form-container {
-  width: 1000px;
-  height: 600px;
+  width: 900px;
+  height: 550px;
   background-color: #80e2ff;
   position: absolute;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .register-form-container,
@@ -59,4 +66,12 @@ button {
   padding: 2px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.new-account-form-container > div {
+  margin-bottom: 15px;
+}
+
+.new-account-form-container > div > img {
+  width: 250px;
 }
