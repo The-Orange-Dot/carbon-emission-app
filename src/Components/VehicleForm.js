@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function VehicleForm({ handleVehicleFormSubmit }) {
 
     const [makes, setMakes] = useState([]);
+    const [models, setModels] = useState([]);
 
     const [vehicleFormData, setVehicleFormData] = useState({
         type: "vehicle",
@@ -15,7 +16,35 @@ function VehicleForm({ handleVehicleFormSubmit }) {
         setVehicleFormData({
             ...vehicleFormData,
             [e.target.name]: e.target.value
+        });
+    }
+
+    function handleMakes (e) {
+        
+            console.log(e.target.options.id)
+            fetch(`https://www.carboninterface.com/api/v1/vehicle_make/${e.target.id}/vehicle_models`, {
+            method: "GET",
+            headers: {
+                Authorization: "Bearer 5VRMUOEjTcf6Yl04DbDVg",
+                "Content-Type": "application/json",
+            }
         })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            let vehicleModels = [];
+            for(let i = 0; i < data.length; i++) {
+                vehicleModels.push({
+                    name: data[i].data.attributes.name,
+                    id: data[i].data.id
+                });
+            }
+            console.log(vehicleModels);
+            
+            setModels(vehicleModels);
+           
+            })
+        
     }
 
     function onVehicleFormSubmit(e) {
@@ -33,14 +62,22 @@ function VehicleForm({ handleVehicleFormSubmit }) {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
-            setMakes(data.attributes.name);
-        })
+            let vehicleMakes = [];
+            for(let i = 0; i < data.length; i++) {
+                vehicleMakes.push({
+                    name: data[i].data.attributes.name,
+                    id: data[i].data.id
+                });
+            }
+            
+            setMakes(vehicleMakes);
+           
+            }
+           
+    )
     }
-
-    function getModels() {
-
-    }
+    getMakes();
+    
 
     return (
         <div>
@@ -49,12 +86,25 @@ function VehicleForm({ handleVehicleFormSubmit }) {
                 <input type="text" placeholder="enter mileage" name="distance_value" onChange={handleVehicleFormChange}></input>
                 <br/>
                 <label>Vehicle Make:</label>
-                    <select name="vehicle_model_id" id="makes" onChange={handleVehicleFormChange}>
+                    <select name="vehicle_make" onChange={handleMakes}>
                         {
                         
                             makes.map(make => {
                                 return (
-                                    <option key={make} value={make}>{make}</option>
+                                    <option key={make.name} id={make.id} value={make.name}>{make.name}</option>
+                                )
+                            })
+                        
+                        }
+                    </select>
+                <br/>
+                <label>Vehicle Model:</label>
+                    <select name="vehicle_model_id" id="models" onChange={handleVehicleFormChange}>
+                        {
+                        
+                            models.map(model => {
+                                return (
+                                    <option key={model} value={model}>{model}</option>
                                 )
                             })
                         
