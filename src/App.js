@@ -7,7 +7,7 @@ import About from "./Components/about/About";
 import UserInfo from "./Components/userInfo/UserInfo";
 import Welcome from "./Components/welcome/Welcome";
 import NavBar from "./Components/navBar/NavBar";
-import FlightEstimate from "./Components/FlightEstimate";
+import Estimate from "./Components/Estimate";
 
 function App() {
   //Default if user isn't logged in
@@ -92,7 +92,7 @@ function App() {
           />
         </Route>
         <Route exact path="/estimate">
-          <FlightEstimate onSaveDataClick={handleFlightSaveClick} />
+          <Estimate onSaveDataClick={handleFlightSaveClick} />
         </Route>
         <Route exact path="/">
           <Welcome />

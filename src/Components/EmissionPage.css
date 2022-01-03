@@ -33,3 +33,14 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.form-container {
+  margin: 20px;
+  padding: 10px;
+  height: 380px;
+  width: 400px;
+  background-color: #80e2ff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  justify-content: center;
+}

@@ -47,7 +47,7 @@ function NavBar() {
               style={linkStyle}
               activestyle={{ color: "blue" }}
             >
-              Flight Estimate
+              Estimate
             </NavLink>
           </li>
         </ul>
