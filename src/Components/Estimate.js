@@ -106,6 +106,8 @@ function Estimate({
       );
   }
 
+  console.log(vehicleResults)
+
   function handleShippingFormSubmit(shippingData) {
     console.log("beforefetch");
     fetch("https://www.carboninterface.com/api/v1/estimates", {
@@ -159,7 +161,7 @@ function Estimate({
         <div className="form-container">
             <h3>Calculate emissions for Vehicles</h3>
             <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
-              {flightResults.id.length !== 0 ? (
+              {vehicleResults.id.length !== 0 ? (
               <VehicleResults vehicleData={vehicleResults} onSaveDataClick={onSaveVehicleClick} />
       ) : null}
         </div>
@@ -172,9 +174,6 @@ function Estimate({
               onSaveShippingClick={onSaveShippingClick}
             />
           ) : null}
-        </div>
-        <div className="form-container">
-          <h3>Calculate emission for shipping</h3>
         </div>
       </div>
     </div>

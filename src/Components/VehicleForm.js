@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function VehicleForm({ handleVehicleFormSubmit }) {
 
@@ -11,6 +11,8 @@ function VehicleForm({ handleVehicleFormSubmit }) {
         distance_value: 0,
         vehicle_model_id: ""
     })
+
+    console.log(vehicleFormData)
 
     function handleVehicleFormChange(e) {
         
@@ -85,7 +87,11 @@ function VehicleForm({ handleVehicleFormSubmit }) {
            
     )
     }
-    getMakes();
+
+    useEffect(() => {
+        getMakes();
+    }, [])
+    
     
 
     return (
