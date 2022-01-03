@@ -1,6 +1,5 @@
 import "./Welcome.css";
 import { NavLink } from "react-router-dom";
-import logo from "../../images/treeLogo.png";
 
 function Welcome() {
   const linkStyle = {

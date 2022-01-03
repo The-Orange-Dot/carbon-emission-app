@@ -3,6 +3,7 @@
   flex-direction: column;
   padding-top: 120px;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 .flight-card {

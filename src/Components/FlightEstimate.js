@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FlightForm from "./FlightForm";
 import FlightResults from "./FlightResults";
 import "./EmissionPage.css";

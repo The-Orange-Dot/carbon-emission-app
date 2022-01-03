@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import React from "react";
 import logo from "../../images/treeLogo.png";
 
-function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
+function NavBar() {
   //Style for navbar links
   const linkStyle = {
     color: "black",
@@ -18,6 +18,9 @@ function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
         <NavLink to="/home">
           <img src={logo} alt="logo" className="logo" />
         </NavLink>
+      </div>
+      <div>
+        <h1 style={{ color: "white" }}>App Name Here?</h1>
       </div>
       <div className="nav-buttons">
         <ul>

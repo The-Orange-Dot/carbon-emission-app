@@ -4,6 +4,10 @@ import "./Homepage.css";
 import GrayColor from "../login/GrayColor";
 import EmissionPage from "../EmissionPage";
 import { NavLink } from "react-router-dom";
+import Footer from "../Footer";
+
+//Prevents scrolling on homepage
+document.body.style.overflow = "hidden";
 
 function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
   const [worldData, setWorldData] = useState([]);
@@ -14,6 +18,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
     0
   );
 
+  //Logs out of account
   const logoutHandler = () => {
     fetch("http://localhost:3001/users")
       .then((r) => r.json())
@@ -36,6 +41,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
     height: "600px",
     border: "0px none",
   };
+
   return (
     <div>
       <div>
@@ -103,6 +109,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
           title="ourWorldInData"
         ></iframe>
       </div>
+      <Footer />
     </div>
   );
 }

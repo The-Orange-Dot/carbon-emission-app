@@ -11,7 +11,6 @@
 }
 
 .countries-data {
-  border: 1px solid white;
 }
 
 .emission-container {
@@ -30,7 +29,7 @@
   font-size: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  border: 1px solid white;
+  border-top: 1px solid white;
   padding-left: 20px;
   padding-right: 20px;
 }

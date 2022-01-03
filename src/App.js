@@ -8,7 +8,6 @@ import UserInfo from "./Components/userInfo/UserInfo";
 import Welcome from "./Components/welcome/Welcome";
 import NavBar from "./Components/navBar/NavBar";
 import FlightEstimate from "./Components/FlightEstimate";
-import Footer from "./Components/Footer";
 
 function App() {
   //Default if user isn't logged in
@@ -99,7 +98,6 @@ function App() {
           <Welcome />
         </Route>
       </Switch>
-      <Footer />
     </div>
   );
 }

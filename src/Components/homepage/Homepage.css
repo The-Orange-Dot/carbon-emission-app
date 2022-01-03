@@ -44,9 +44,14 @@
 }
 
 .data {
-  margin: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
   width: 680px;
   background-color: #80e2ff;
   height: 300px;
   overflow: scroll;
+}
+
+.data::-webkit-scrollbar {
+  display: none;
 }
