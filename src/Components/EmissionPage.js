@@ -1,10 +1,10 @@
-import FlightEstimate from "./FlightEstimate";
+import Estimate from "./Estimate";
 import "./EmissionPage.css";
 
 const EmissionPage = ({ hideNewForm }) => {
   return (
     <div className={hideNewForm ? "hidden" : "add-new-emission"}>
-      <FlightEstimate />
+      <Estimate />
     </div>
   );
 };
