@@ -30,6 +30,13 @@
   justify-content: space-between;
 }
 
+.user-info-container ul {
+  width: 500px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
 .user-info-container img {
   width: 70px;
   height: 70px;
@@ -54,4 +61,10 @@
 
 .nav-buttons > ul > li:hover {
   opacity: 50%;
+}
+
+.failed-login-notification {
+  font-size: 20px;
+  margin-top: 30px;
+  color: red;
 }

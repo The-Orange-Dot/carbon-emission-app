@@ -29,7 +29,7 @@ function App() {
     fetch(userAPI)
       .then((r) => r.json())
       .then((userData) => {
-        setUser(userData[0]);
+        setUser(userData[1]);
         setLoggedIn(true);
       });
   }, []);
@@ -75,7 +75,7 @@ function App() {
       />
       <Switch>
         <Route exact path="/login">
-          <Login />
+          <Login setUser={setUser} setLoggedIn={setLoggedIn} />
         </Route>
         <Route exact path="/about">
           <About />

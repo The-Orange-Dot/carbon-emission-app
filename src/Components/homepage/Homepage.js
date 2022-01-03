@@ -15,15 +15,12 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
   );
 
   const logoutHandler = () => {
-    setUser({
-      firstName: "",
-      lastName: "",
-      username: "Username",
-      email: "",
-      image:
-        "https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg",
-    });
-    setLoggedIn(false);
+    fetch("http://localhost:3001/users")
+      .then((r) => r.json())
+      .then((userData) => {
+        setUser(userData[0]);
+        setLoggedIn(false);
+      });
   };
 
   useEffect(() => {
@@ -79,9 +76,15 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} lbs`
                     : 0}
                 </h1>
-                <button onClick={() => setHideNewForm(false)}>
-                  Add another thingy
-                </button>
+                {loggedIn ? (
+                  <button onClick={() => setHideNewForm(false)}>
+                    Add another thingy
+                  </button>
+                ) : (
+                  <NavLink to="/login">
+                    <button>Add another thingy</button>
+                  </NavLink>
+                )}
               </div>
             </div>
           </div>

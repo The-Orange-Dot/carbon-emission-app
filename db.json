@@ -2,6 +2,16 @@
   "users": [
     {
       "id": 1,
+      "firstName": "Logged out",
+      "lastName": "",
+      "username": "",
+      "password": "",
+      "email": "",
+      "image": "https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg",
+      "flightHistory": []
+    },
+    {
+      "id": 2,
       "firstName": "Test",
       "lastName": "McTestface",
       "username": "Test_Account",
@@ -42,6 +52,16 @@
           "id": "4dd1a601-41e4-48b9-aca7-a4dbffbe1041"
         }
       ]
+    },
+    {
+      "id": 3,
+      "firstName": "Logged out",
+      "lastName": "",
+      "username": "",
+      "password": "",
+      "email": "",
+      "image": "",
+      "flightHistory": []
     }
   ],
   "countryAverageCapita": [
