@@ -96,8 +96,6 @@ function Estimate({ onSaveFlightClick, onSaveVehicleClick, onSaveShippingClick})
     })
   }
 
-  console.log(shippingResults)
-
 
   return (
     <div className="emission-container">

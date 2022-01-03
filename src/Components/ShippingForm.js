@@ -20,8 +20,6 @@ function ShippingForm({ handleFormSubmit }) {
     }
 
 
-    console.log(shippingData)
-
 
     return (
         <div>

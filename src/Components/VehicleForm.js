@@ -82,8 +82,8 @@ function VehicleForm({ handleVehicleFormSubmit }) {
     return (
         <div>
             <form onSubmit={onVehicleFormSubmit}> 
-                <label>Distance in miles:</label>
-                <input type="text" placeholder="enter mileage" name="distance_value" onChange={handleVehicleFormChange}></input>
+                <label>Distance (mi):</label>
+                <input type="text" placeholder="ex. 75.0" name="distance_value" onChange={handleVehicleFormChange}></input>
                 <br/>
                 <label>Vehicle Make:</label>
                     <select name="vehicle_make" onChange={handleMakes}>
