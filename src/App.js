@@ -73,6 +73,18 @@ function App() {
 
   }
 
+  function handleShippingSaveClick(shippingResults) {
+    fetch(`http://localhost:3001/users/${user.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        shippingHistory: [...user.shippingHistory, shippingResults],
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((userUpdate) => setUser(userUpdate));
+  }
+
   return (
     <div className="App">
       <NavBar
@@ -100,7 +112,7 @@ function App() {
           />
         </Route>
         <Route exact path="/estimate">
-          <Estimate onSaveFlightClick={handleFlightSaveClick} onSaveVehicleClick={handleVehicleSaveClick}/>
+          <Estimate onSaveFlightClick={handleFlightSaveClick} onSaveVehicleClick={handleVehicleSaveClick} onSaveShippingClick={handleShippingSaveClick}/>
         </Route>
         <Route exact path="/">
           <Welcome />
