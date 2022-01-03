@@ -91,7 +91,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
             </div>
           </div>
           <div className="data">
-            <h2>Average emission per country</h2>
+            <h2>Average aviation emission per country</h2>
             <small>Statistics taken from 2018</small>
             <WorldDataCard worldData={worldData} />
           </div>

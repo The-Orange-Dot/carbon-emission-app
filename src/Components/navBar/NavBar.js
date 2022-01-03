@@ -1,6 +1,7 @@
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import React from "react";
+import logo from "../../images/treeLogo.png";
 
 function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
   //Style for navbar links
@@ -15,7 +16,7 @@ function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
     <div className="navbar-container">
       <div className="user-info-container">
         <NavLink to="/home">
-          <h1>Logo Goes Here</h1>
+          <img src={logo} alt="logo" className="logo" />
         </NavLink>
       </div>
       <div className="nav-buttons">

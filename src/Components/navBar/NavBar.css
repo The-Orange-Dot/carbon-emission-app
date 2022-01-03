@@ -37,12 +37,6 @@
   justify-content: space-between;
 }
 
-.user-info-container img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-}
-
 .user-info-container img:hover {
   opacity: 60%;
 }
@@ -67,4 +61,15 @@
   font-size: 20px;
   margin-top: 30px;
   color: red;
+}
+
+.user-info-container img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  padding-right: 50px;
+}
+
+form > input {
+  margin: 5px;
 }

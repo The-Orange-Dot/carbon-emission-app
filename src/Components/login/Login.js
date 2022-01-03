@@ -55,7 +55,7 @@ function Login({ setUser, setLoggedIn }) {
             <input type="submit" name="submit" value="Login" />
           </form>
           <button onClick={() => setHideNewForm(false)}>
-            Register new accout
+            Register new account
           </button>
           <Link to="/home">
             <button>Go back</button>
