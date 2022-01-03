@@ -16,11 +16,17 @@
 .emission-container {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
 }
 
 .welcome-text {
-  margin: 50px;
+  margin: 110px;
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  
+
 }
 
 .emission-by-countries {
@@ -43,4 +49,10 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   justify-content: center;
+}
+
+.all-the-forms {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }

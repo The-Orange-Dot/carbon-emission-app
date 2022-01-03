@@ -55,25 +55,29 @@ function Estimate({ onSaveFlightClick, onSaveVehicleClick }) {
 
 
   return (
-    <div>
-      <div className="emission-container">
+    <div className="emission-container">
+      <div>
         <h1 className="welcome-text">Calculate carbon emissions</h1>
       </div>
+      <div className="all-the-forms">
       <div className="form-container">
-      <h3>Calculate emissions for flight</h3>
-      <FlightForm handleFormSubmit={handleFormSubmit} />
-      {results.id.length !== 0 ? (
-        <FlightResults flightData={results} onSaveDataClick={onSaveFlightClick} />
-      ) : null}
+        <h3>Calculate emissions for flight</h3>
+        <FlightForm handleFormSubmit={handleFormSubmit} />
+        {results.id.length !== 0 ? (
+          <FlightResults flightData={results} onSaveDataClick={onSaveFlightClick} />
+        ) : null}
       </div>
-
-      <div className="form-container">
-      <h3>Calculate emissions for vehicle</h3>
-      <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
-      {results.id.length !== 0 ? (
-        <VehicleResults vehicleData={results} onSaveDataClick={onSaveVehicleClick} />
+        <div className="form-container">
+            <h3>Calculate emission for Vehicles</h3>
+            <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
+              {results.id.length !== 0 ? (
+              <VehicleResults vehicleData={results} onSaveDataClick={onSaveVehicleClick} />
       ) : null}
-      </div>
+        </div>
+        <div className="form-container">
+            <h3>Calculate emission for shipping</h3>
+        </div>
+    </div>
     </div>
   );
 }
