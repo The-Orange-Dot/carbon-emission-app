@@ -13,16 +13,27 @@ function VehicleForm({ handleVehicleFormSubmit }) {
     })
 
     function handleVehicleFormChange(e) {
-        setVehicleFormData({
-            ...vehicleFormData,
-            [e.target.name]: e.target.value
-        });
+        
+        if (e.target.name === "vehicle_model_id") {
+            const selectedIndex = e.target.selectedIndex;
+            const modelId = e.target.childNodes[selectedIndex].getAttribute("id");
+        
+            setVehicleFormData({
+                ...vehicleFormData,
+                vehicle_model_id: modelId
+            })
+        } else {
+            setVehicleFormData({
+                ...vehicleFormData,
+                [e.target.name]: e.target.value
+            });
+        }
     }
 
     function handleMakes (e) {
-        
-            console.log(e.target.options.id)
-            fetch(`https://www.carboninterface.com/api/v1/vehicle_make/${e.target.id}/vehicle_models`, {
+            const selectedIndex = e.target.selectedIndex;
+            const make_id = e.target.childNodes[selectedIndex].getAttribute("id");
+            fetch(`https://www.carboninterface.com/api/v1/vehicle_makes/${make_id}/vehicle_models`, {
             method: "GET",
             headers: {
                 Authorization: "Bearer 5VRMUOEjTcf6Yl04DbDVg",
@@ -31,7 +42,6 @@ function VehicleForm({ handleVehicleFormSubmit }) {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             let vehicleModels = [];
             for(let i = 0; i < data.length; i++) {
                 vehicleModels.push({
@@ -39,7 +49,6 @@ function VehicleForm({ handleVehicleFormSubmit }) {
                     id: data[i].data.id
                 });
             }
-            console.log(vehicleModels);
             
             setModels(vehicleModels);
            
@@ -91,7 +100,7 @@ function VehicleForm({ handleVehicleFormSubmit }) {
                         
                             makes.map(make => {
                                 return (
-                                    <option key={make.name} id={make.id} value={make.name}>{make.name}</option>
+                                    <option key={make.id} id={make.id} value={make.name}>{make.name}</option>
                                 )
                             })
                         
@@ -99,12 +108,12 @@ function VehicleForm({ handleVehicleFormSubmit }) {
                     </select>
                 <br/>
                 <label>Vehicle Model:</label>
-                    <select name="vehicle_model_id" id="models" onChange={handleVehicleFormChange}>
+                    <select name="vehicle_model_id" onChange={handleVehicleFormChange}>
                         {
                         
                             models.map(model => {
                                 return (
-                                    <option key={model} value={model}>{model}</option>
+                                    <option key={model.id} id={model.id} value={model.name}>{model.name}</option>
                                 )
                             })
                         
