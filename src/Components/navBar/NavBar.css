@@ -15,21 +15,30 @@
   margin: 10px;
 }
 
+.user-info-container button:hover {
+  opacity: 50%;
+}
+
 .user-info-container {
   display: flex;
 }
 
 .nav-buttons > ul {
-  width: 450px;
+  width: 200px;
   list-style: none;
   display: flex;
   justify-content: space-between;
 }
 
-.user-info-container img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+.user-info-container ul {
+  width: 500px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-info-container img:hover {
+  opacity: 60%;
 }
 
 .username-login {
@@ -42,4 +51,25 @@
 
 .nav-buttons > ul > li {
   font-size: 1.7rem;
+}
+
+.nav-buttons > ul > li:hover {
+  opacity: 50%;
+}
+
+.failed-login-notification {
+  font-size: 20px;
+  margin-top: 30px;
+  color: red;
+}
+
+.user-info-container img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  padding-right: 50px;
+}
+
+form > input {
+  margin: 5px;
 }
