@@ -91,7 +91,7 @@ function App() {
             setLoggedIn={setLoggedIn}
           />
         </Route>
-        <Route exact path="/flightestimate">
+        <Route exact path="/estimate">
           <FlightEstimate onSaveDataClick={handleFlightSaveClick} />
         </Route>
         <Route exact path="/">

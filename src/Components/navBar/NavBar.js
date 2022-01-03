@@ -18,10 +18,9 @@ function NavBar() {
         <NavLink to="/home">
           <img src={logo} alt="logo" className="logo" />
         </NavLink>
-      </div>
-      <div>
         <h1 style={{ color: "white" }}>App Name Here?</h1>
       </div>
+
       <div className="nav-buttons">
         <ul>
           <li>
@@ -40,6 +39,15 @@ function NavBar() {
               activestyle={{ color: "blue" }}
             >
               About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/estimate"
+              style={linkStyle}
+              activestyle={{ color: "blue" }}
+            >
+              Flight Estimate
             </NavLink>
           </li>
         </ul>

@@ -86,11 +86,11 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
                 </h1>
                 {loggedIn ? (
                   <button onClick={() => setHideNewForm(false)}>
-                    Add another thingy
+                    Quick add
                   </button>
                 ) : (
                   <NavLink to="/login">
-                    <button>Add another thingy</button>
+                    <button>Quick add</button>
                   </NavLink>
                 )}
               </div>

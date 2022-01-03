@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div>
-        <small>Carbon ledger API received from:</small>
+        <small>Carbon ledger API received from: </small>
         <a href="https://www.carboninterface.com/">
           <small>https://www.carboninterface.com/</small>
         </a>
