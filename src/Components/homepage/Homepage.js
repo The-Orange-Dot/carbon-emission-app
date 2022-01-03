@@ -5,6 +5,8 @@ import GrayColor from "../login/GrayColor";
 import EmissionPage from "../EmissionPage";
 import { NavLink } from "react-router-dom";
 import Footer from "../Footer";
+import Charts from "./Charts";
+import ChartSelector from "./ChartSelector";
 
 //Prevents scrolling on homepage
 document.body.style.overflow = "hidden";
@@ -12,6 +14,7 @@ document.body.style.overflow = "hidden";
 function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
   const [worldData, setWorldData] = useState([]);
   const [hideNewForm, setHideNewForm] = useState(true);
+  const [chartSelector, setChartSelector] = useState("");
 
   const totalFlightCarbon = user.flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
@@ -33,13 +36,12 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
       .then((r) => r.json())
       .then((data) => {
         setWorldData(data.sort((a, b) => (a.average < b.average ? 1 : -1)));
+        setChartSelector("mode-of-transport");
       });
   }, []);
 
-  const iframeStyle = {
-    width: "50%",
-    height: "600px",
-    border: "0px none",
+  const selectHandler = (e) => {
+    setChartSelector(e.target.value);
   };
 
   return (
@@ -84,15 +86,6 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} lbs`
                     : 0}
                 </h1>
-                {loggedIn ? (
-                  <button onClick={() => setHideNewForm(false)}>
-                    Quick add
-                  </button>
-                ) : (
-                  <NavLink to="/login">
-                    <button>Quick add</button>
-                  </NavLink>
-                )}
               </div>
             </div>
           </div>
@@ -102,12 +95,10 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
             <WorldDataCard worldData={worldData} />
           </div>
         </div>
-        <iframe
-          src="https://ourworldindata.org/grapher/per-capita-co2-aviation-adjusted"
-          loading="lazy"
-          style={iframeStyle}
-          title="ourWorldInData"
-        ></iframe>
+        <div className="map-and-charts">
+          <ChartSelector selectHandler={selectHandler} />
+          <Charts chartSelector={chartSelector} />
+        </div>
       </div>
       <Footer />
     </div>
