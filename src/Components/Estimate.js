@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import FlightForm from "./FlightForm";
 import FlightResults from "./FlightResults";
+import VehicleForm from "./VehicleForm";
+import VehicleResults from "./VehicleResults";
 import "./EmissionPage.css";
 
-function Estimate({ onSaveDataClick }) {
-  
+function Estimate({ onSaveFlightClick, onSaveVehicleClick }) {
   const [results, setResults] = useState({
     date: "",
     passengers: "",
@@ -48,6 +49,9 @@ function Estimate({ onSaveDataClick }) {
       );
   }
 
+  function handleVehicleFormSubmit() {
+
+  }
 
 
   return (
@@ -56,20 +60,24 @@ function Estimate({ onSaveDataClick }) {
         <h1 className="welcome-text">Calculate carbon emissions</h1>
       </div>
       <div className="all-the-forms">
-        <div className="form-container">
-          <h3>Calculate emission for flight</h3>
-          <FlightForm handleFormSubmit={handleFormSubmit} />
-          {results.id.length !== 0 ? (
-            <FlightResults flightData={results} onSaveDataClick={onSaveDataClick} />
-          ) : null}
-        </div>
+      <div className="form-container">
+        <h3>Calculate emissions for flight</h3>
+        <FlightForm handleFormSubmit={handleFormSubmit} />
+        {results.id.length !== 0 ? (
+          <FlightResults flightData={results} onSaveDataClick={onSaveFlightClick} />
+        ) : null}
+      </div>
         <div className="form-container">
             <h3>Calculate emission for Vehicles</h3>
+            <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
+              {results.id.length !== 0 ? (
+              <VehicleResults vehicleData={results} onSaveDataClick={onSaveVehicleClick} />
+      ) : null}
         </div>
         <div className="form-container">
             <h3>Calculate emission for shipping</h3>
         </div>
-      </div>
+    </div>
     </div>
   );
 }
