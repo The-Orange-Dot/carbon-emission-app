@@ -4,6 +4,7 @@ import FlightResults from "./FlightResults";
 import "./EmissionPage.css";
 
 function Estimate({ onSaveDataClick }) {
+  
   const [results, setResults] = useState({
     date: "",
     passengers: "",
@@ -46,17 +47,28 @@ function Estimate({ onSaveDataClick }) {
         })
       );
   }
+
+
+
   return (
-    <div>
-      <div className="emission-container">
+    <div className="emission-container">
+      <div>
         <h1 className="welcome-text">Calculate carbon emissions</h1>
       </div>
-      <div className="form-container">
-      <h3>Calculate emission for flight</h3>
-      <FlightForm handleFormSubmit={handleFormSubmit} />
-      {results.id.length !== 0 ? (
-        <FlightResults flightData={results} onSaveDataClick={onSaveDataClick} />
-      ) : null}
+      <div className="all-the-forms">
+        <div className="form-container">
+          <h3>Calculate emission for flight</h3>
+          <FlightForm handleFormSubmit={handleFormSubmit} />
+          {results.id.length !== 0 ? (
+            <FlightResults flightData={results} onSaveDataClick={onSaveDataClick} />
+          ) : null}
+        </div>
+        <div className="form-container">
+            <h3>Calculate emission for Vehicles</h3>
+        </div>
+        <div className="form-container">
+            <h3>Calculate emission for shipping</h3>
+        </div>
       </div>
     </div>
   );
