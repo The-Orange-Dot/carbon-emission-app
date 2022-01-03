@@ -10,7 +10,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
   const [hideNewForm, setHideNewForm] = useState(true);
 
   const totalFlightCarbon = user.flightHistory.reduce(
-    (count, flight) => (count += flight.carbon_lb),
+    (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
   );
 
@@ -26,7 +26,9 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
   useEffect(() => {
     fetch("http://localhost:3001/countryAverageCapita")
       .then((r) => r.json())
-      .then((data) => setWorldData(data));
+      .then((data) => {
+        setWorldData(data.sort((a, b) => (a.average < b.average ? 1 : -1)));
+      });
   }, []);
 
   const iframeStyle = {
@@ -90,6 +92,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
           </div>
           <div className="data">
             <h2>Average emission per country</h2>
+            <small>Statistics taken from 2018</small>
             <WorldDataCard worldData={worldData} />
           </div>
         </div>

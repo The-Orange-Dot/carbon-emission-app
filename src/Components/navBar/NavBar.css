@@ -24,7 +24,7 @@
 }
 
 .nav-buttons > ul {
-  width: 500px;
+  width: 200px;
   list-style: none;
   display: flex;
   justify-content: space-between;

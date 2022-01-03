@@ -1,9 +1,13 @@
 const WorldDataList = ({ name, average }) => {
   return (
-    <div>
-      <p className="emission-by-countries">
-        {name} : {Math.round(average)} lbs
-      </p>
+    <div className="emission-by-countries">
+      <span>{name}</span>
+      <span>
+        {(Math.round(average * 100 * 2.20462) / 100)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+        lbs
+      </span>
     </div>
   );
 };

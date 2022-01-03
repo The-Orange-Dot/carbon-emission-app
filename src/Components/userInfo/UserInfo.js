@@ -3,7 +3,7 @@ import FlightCard from "./FlightCard";
 
 function UserInfo({ user, onFlightDelete }) {
   const totalFlightCarbon = user.flightHistory.reduce(
-    (count, flight) => (count += flight.carbon_lb),
+    (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
   );
 

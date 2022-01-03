@@ -38,15 +38,6 @@ function NavBar({ loggedIn, user, setUser, setLoggedIn }) {
               About
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              style={linkStyle}
-              activestyle={{ color: "blue" }}
-              to="/flightestimate"
-            >
-              Flight Estimate
-            </NavLink>
-          </li>
         </ul>
       </div>
     </div>

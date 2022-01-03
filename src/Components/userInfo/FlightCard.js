@@ -7,7 +7,12 @@ function FlightCard({ flight, onFlightDelete }) {
       <ul>
         <p>Date estimated: {flight.date.slice(0, 10)}</p>
         <p>Number of passengers: {flight.passengers}</p>
-        <p>Estimated carbon: {flight.carbon_lb} lbs</p>
+        <div>
+          <p>Estimated carbon per person:</p>
+          <p>
+            <strong>{flight.carbon_lb / flight.passengers} lbs</strong>
+          </p>
+        </div>
       </ul>
       <button
         onClick={() => onFlightDelete(flight)}
