@@ -11,8 +11,6 @@ function Login({ setUser, setLoggedIn }) {
 
   const loginHandler = (event) => {
     event.preventDefault();
-    console.log(event.target[0].value);
-    console.log(event.target[1].value);
     fetch("http://localhost:3001/users")
       .then((r) => r.json())
       .then((userData) => {
@@ -47,7 +45,7 @@ function Login({ setUser, setLoggedIn }) {
         <div className="login-container">
           <form
             action=""
-            className="form-container"
+            className="login-form-container"
             onSubmit={(e) => loginHandler(e)}
           >
             <input type="text" name="username" placeholder="Username" />

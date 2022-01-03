@@ -4,10 +4,14 @@ import FlightResults from "./FlightResults";
 import VehicleForm from "./VehicleForm";
 import VehicleResults from "./VehicleResults";
 import ShippingForm from "./ShippingForm";
-import ShippingResults from "./ShippingResults"
+import ShippingResults from "./ShippingResults";
 import "./EmissionPage.css";
 
-function Estimate({ onSaveFlightClick, onSaveVehicleClick, onSaveShippingClick}) {
+function Estimate({
+  onSaveFlightClick,
+  onSaveVehicleClick,
+  onSaveShippingClick,
+}) {
   const [flightResults, setFlightResults] = useState({
     date: "",
     passengers: "",
@@ -23,8 +27,8 @@ function Estimate({ onSaveFlightClick, onSaveVehicleClick, onSaveShippingClick})
     distance: 0,
     method: "",
     carbon_lb: "",
-    id: ""
-  })
+    id: "",
+  });
 
   function handleFlightFormSubmit(formData) {
     fetch("https://www.carboninterface.com/api/v1/estimates", {
@@ -60,12 +64,10 @@ function Estimate({ onSaveFlightClick, onSaveVehicleClick, onSaveShippingClick})
       );
   }
 
-  function handleVehicleFormSubmit() {
-
-  }
+  function handleVehicleFormSubmit() {}
 
   function handleShippingFormSubmit(shippingData) {
-    console.log("beforefetch")
+    console.log("beforefetch");
     fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
 
@@ -79,25 +81,24 @@ function Estimate({ onSaveFlightClick, onSaveVehicleClick, onSaveShippingClick})
         weight_unit: "lb",
         distance_value: shippingData.distance,
         distance_unit: "mi",
-        transport_method: shippingData.method
-      })
+        transport_method: shippingData.method,
+      }),
     })
-    .then(resp => resp.json())
-    .then(shippingData => {
-      console.log(shippingData)
-      setShippingResults({
-        date: shippingData.data.attributes.estimated_at,
-        weight: shippingData.data.attributes.weight_value,
-        distance: shippingData.data.attributes.distance_value,
-        method: shippingData.data.attributes.transport_method,
-        carbon_lb: shippingData.data.attributes.carbon_lb,
-        id: shippingData.data.id
-      })
-    })
+      .then((resp) => resp.json())
+      .then((shippingData) => {
+        console.log(shippingData);
+        setShippingResults({
+          date: shippingData.data.attributes.estimated_at,
+          weight: shippingData.data.attributes.weight_value,
+          distance: shippingData.data.attributes.distance_value,
+          method: shippingData.data.attributes.transport_method,
+          carbon_lb: shippingData.data.attributes.carbon_lb,
+          id: shippingData.data.id,
+        });
+      });
   }
 
-  console.log(shippingResults)
-
+  console.log(shippingResults);
 
   return (
     <div className="emission-container">
@@ -105,28 +106,40 @@ function Estimate({ onSaveFlightClick, onSaveVehicleClick, onSaveShippingClick})
         <h1 className="welcome-text">Calculate carbon emissions</h1>
       </div>
       <div className="all-the-forms">
-      <div className="form-container">
-        <h3>Calculate emissions for flight</h3>
-        <FlightForm handleFormSubmit={handleFlightFormSubmit} />
-        {flightResults.id.length !== 0 ? (
-          <FlightResults flightData={flightResults} onSaveDataClick={onSaveFlightClick} />
-        ) : null}
+        <div className="form-container">
+          <h3>Calculate emissions for flight</h3>
+          <FlightForm handleFormSubmit={handleFlightFormSubmit} />
+          {flightResults.id.length !== 0 ? (
+            <FlightResults
+              flightData={flightResults}
+              onSaveDataClick={onSaveFlightClick}
+            />
+          ) : null}
+        </div>
+        <div className="form-container">
+          <h3>Calculate emissions for Vehicles</h3>
+          <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
+          {flightResults.id.length !== 0 ? (
+            <VehicleResults
+              vehicleData={flightResults}
+              onSaveDataClick={onSaveVehicleClick}
+            />
+          ) : null}
+        </div>
+        <div className="form-container">
+          <h3>Calculate emissions for shipping</h3>
+          <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
+          {shippingResults.id.length !== 0 ? (
+            <ShippingResults
+              shippingData={shippingResults}
+              onSaveShippingClick={onSaveShippingClick}
+            />
+          ) : null}
+        </div>
+        <div className="form-container">
+          <h3>Calculate emission for shipping</h3>
+        </div>
       </div>
-        <div className="form-container">
-            <h3>Calculate emissions for Vehicles</h3>
-            <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
-              {flightResults.id.length !== 0 ? (
-              <VehicleResults vehicleData={flightResults} onSaveDataClick={onSaveVehicleClick} />
-      ) : null}
-        </div>
-        <div className="form-container">
-            <h3>Calculate emissions for shipping</h3>
-            <ShippingForm handleFormSubmit={handleShippingFormSubmit}/>
-            {shippingResults.id.length !== 0 ? (
-              <ShippingResults shippingData={shippingResults} onSaveShippingClick={onSaveShippingClick} />
-              ) : null}
-        </div>
-    </div>
     </div>
   );
 }

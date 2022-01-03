@@ -57,7 +57,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
             <h1>Where do you rank in the world?</h1>
             <div>
               <div className="profile-image">
-                <NavLink to="/user">
+                <NavLink to={loggedIn ? "/user" : "/login"}>
                   <img
                     src={user.image}
                     alt="profile"

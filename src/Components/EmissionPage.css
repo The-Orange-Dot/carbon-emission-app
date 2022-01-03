@@ -10,14 +10,10 @@
   border-radius: 1rem;
 }
 
-.countries-data {
-}
-
 .emission-container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
 }
 
 .welcome-text {
@@ -25,8 +21,6 @@
   margin-bottom: 50px;
   display: flex;
   justify-content: center;
-  
-
 }
 
 .emission-by-countries {

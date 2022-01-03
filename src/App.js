@@ -29,8 +29,7 @@ function App() {
     fetch(userAPI)
       .then((r) => r.json())
       .then((userData) => {
-        setUser(userData[1]);
-        setLoggedIn(true);
+        setUser(userData[0]);
       });
   }, []);
 
@@ -65,13 +64,9 @@ function App() {
     });
   };
 
-  const handleVehicleSaveClick = (vehicleResults) => {
+  const handleVehicleSaveClick = (vehicleResults) => {};
 
-  }
-
-  const handleVehicleDelete = (vehicle) => {
-
-  }
+  const handleVehicleDelete = (vehicle) => {};
 
   function handleShippingSaveClick(shippingResults) {
     fetch(`http://localhost:3001/users/${user.id}`, {
@@ -112,7 +107,11 @@ function App() {
           />
         </Route>
         <Route exact path="/estimate">
-          <Estimate onSaveFlightClick={handleFlightSaveClick} onSaveVehicleClick={handleVehicleSaveClick} onSaveShippingClick={handleShippingSaveClick}/>
+          <Estimate
+            onSaveFlightClick={handleFlightSaveClick}
+            onSaveVehicleClick={handleVehicleSaveClick}
+            onSaveShippingClick={handleShippingSaveClick}
+          />
         </Route>
         <Route exact path="/">
           <Welcome />
