@@ -10,7 +10,8 @@
       "image": "https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg",
       "flightHistory": [],
       "shippingHistory": [],
-      "vehicleHistory": []
+      "vehicleHistory": [],
+      "electricityHistory": []
     },
     {
       "id": 2,
@@ -64,20 +65,12 @@
       ],
       "shippingHistory": [
         {
-          "date": "2022-01-03T18:11:58.520Z",
-          "weight": 25,
-          "distance": 300,
-          "method": "ship",
-          "carbon_lb": 0.1,
-          "id": "2cb23c31-93b9-4b0a-ae4a-f30f82c97ff3"
-        },
-        {
-          "date": "2022-01-03T23:52:38.633Z",
+          "date": "2022-01-04T17:53:08.965Z",
           "weight": 30,
-          "distance": 300,
-          "method": "train",
-          "carbon_lb": 0.32,
-          "id": "ca75b745-2fce-4a11-9ad5-6c30c2f68415"
+          "distance": 230,
+          "method": "truck",
+          "carbon_lb": 0.71,
+          "id": "23a0f8f9-cfdd-47d0-85e2-dfca0186869a"
         }
       ],
       "vehicleHistory": [
@@ -100,6 +93,16 @@
           "vehicle_year": 2012,
           "carbon_lb": 100.41,
           "id": "a059943a-5097-40c6-b1fe-920ad001f270"
+        }
+      ],
+      "electricityHistory": [
+        {
+          "date": "2022-01-04T17:41:36.757Z",
+          "country": "US",
+          "state": "NY",
+          "electricity_value": 23.5,
+          "carbon_lb": 8886.18,
+          "id": "5722cb5b-e0ec-46f7-b631-f0897491b9e6"
         }
       ]
     }

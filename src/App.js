@@ -22,6 +22,7 @@ function App() {
     flightHistory: [],
     shippingHistory: [],
     vehicleHistory: [],
+    electricityHistory: []
   });
 
   //Fetches User Data
@@ -115,6 +116,20 @@ function App() {
       .then((userUpdate) => setUser(userUpdate));
   }
 
+  function handleElectricitySaveClick(electricityResults) {
+    console.log("saving")
+    fetch(`http://localhost:3001/users/${user.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        electricityHistory: [...user.electricityHistory, electricityResults],
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((userUpdate) => setUser(userUpdate));
+  }
+  
+
   return (
     <div className="App">
       <NavBar
@@ -149,16 +164,7 @@ function App() {
               onSaveFlightClick={handleFlightSaveClick}
               onSaveVehicleClick={handleVehicleSaveClick}
               onSaveShippingClick={handleShippingSaveClick}
-            />
-          )}
-        />
-        <Route
-          path="/estimate"
-          component={() => (
-            <Estimate
-              onSaveFlightClick={handleFlightSaveClick}
-              onSaveVehicleClick={handleVehicleSaveClick}
-              onSaveShippingClick={handleShippingSaveClick}
+              onSaveElectricityClick={handleElectricitySaveClick}
             />
           )}
         />
