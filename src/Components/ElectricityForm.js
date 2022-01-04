@@ -27,7 +27,7 @@ function ElectricityForm({ handleFormSubmit }) {
                 <label>Electricity used:</label>
                 <input
                     type="text"
-                    placeholder="Enter value in MWH"
+                    placeholder="Enter value in kWh"
                     name="electricity_value"
                     onChange={handleElectricityDataChange}
                 ></input>
