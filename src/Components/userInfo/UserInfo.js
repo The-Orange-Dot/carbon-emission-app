@@ -1,6 +1,7 @@
 import "./UserInfo.css";
 import FlightCard from "./FlightCard";
 import ShippingCard from "./ShippingCard";
+import VehicleCard from "./VehicleCard";
 
 function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
   const totalFlightCarbon = user.flightHistory.reduce(
@@ -84,11 +85,11 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
       <h3>
         {user.vehicleHistory.length !== 0
           ? "Vehicle History"
-          : "No saved shipments yet"}
+          : "No saved vehicles yet"}
       </h3>
       <div className="card-container">
         {user.vehicleHistory.map((vehicle) => (
-          <ShippingCard
+          <VehicleCard
             key={vehicle.id}
             vehicle={vehicle}
             onVehicleDelete={onVehicleDelete}
