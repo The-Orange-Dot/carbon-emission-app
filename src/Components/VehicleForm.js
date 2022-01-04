@@ -41,7 +41,6 @@ function VehicleForm({ handleVehicleFormSubmit }) {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         let vehicleModels = [];
         for (let i = 0; i < data.length; i++) {
           vehicleModels.push({
