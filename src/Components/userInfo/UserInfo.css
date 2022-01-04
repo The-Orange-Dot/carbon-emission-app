@@ -65,8 +65,10 @@
 
 .flight-carbon-result,
 .shipping-carbon-result,
-.vehicle-carbon-result {
+.vehicle-carbon-result,
+.electricity-carbon-result {
   margin-bottom: 20px;
+  width: 50%;
 }
 
 .total-user-emission {
@@ -75,7 +77,7 @@
 }
 
 .carbon-breakdown-container {
-  width: 550px;
+  width: 500px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -99,4 +101,5 @@
   justify-content: space-between;
   align-items: center;
   width: 1200px;
+  flex-wrap: wrap;
 }
