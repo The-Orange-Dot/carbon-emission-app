@@ -39,20 +39,20 @@ function NavBar() {
           </li>
           <li>
             <NavLink
-              to="/user"
-              style={linkStyle}
-              activestyle={{ color: "blue" }}
-            >
-              User-Info
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/estimate"
               style={linkStyle}
               activestyle={{ color: "blue" }}
             >
-              Estimate
+              Estimates
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/user"
+              style={linkStyle}
+              activestyle={{ color: "blue" }}
+            >
+              My History
             </NavLink>
           </li>
         </ul>
