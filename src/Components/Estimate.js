@@ -154,7 +154,7 @@ function Estimate({
           {flightResults.id.length !== 0 ? (
             <FlightResults
               flightData={flightResults}
-              onSaveDataClick={onSaveFlightClick}
+              onSaveFlightClick={onSaveFlightClick}
             />
           ) : null}
         </div>

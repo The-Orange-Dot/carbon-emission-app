@@ -9,7 +9,7 @@ import Charts from "./Charts";
 import ChartSelector from "./ChartSelector";
 
 //Prevents scrolling on homepage
-document.body.style.overflow = "hidden";
+//document.body.style.overflow = "hidden";
 
 function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
   const [worldData, setWorldData] = useState([]);

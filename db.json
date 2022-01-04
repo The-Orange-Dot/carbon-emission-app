@@ -61,6 +61,14 @@
           "method": "ship",
           "carbon_lb": 0.1,
           "id": "2cb23c31-93b9-4b0a-ae4a-f30f82c97ff3"
+        },
+        {
+          "date": "2022-01-03T23:52:38.633Z",
+          "weight": 30,
+          "distance": 300,
+          "method": "train",
+          "carbon_lb": 0.32,
+          "id": "ca75b745-2fce-4a11-9ad5-6c30c2f68415"
         }
       ]
     }
