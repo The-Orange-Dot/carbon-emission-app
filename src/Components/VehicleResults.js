@@ -7,7 +7,7 @@ function VehicleResults({ vehicleData, onSaveVehicleClick }) {
       <p>vehicle estimate</p>
 
       <h4>Date:</h4>
-      <p>{vehicleData.estimated_at}</p>
+      <p>{vehicleData.date}</p>
 
       <h4>Distance:</h4>
       <p>{vehicleData.distance_value} {vehicleData.distance_unit}</p>

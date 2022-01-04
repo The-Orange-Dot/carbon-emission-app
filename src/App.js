@@ -21,6 +21,8 @@ function App() {
     email: "",
     image: { defaultImage },
     flightHistory: [],
+    shippingHistory: [],
+    vehicleHistory: [],
   });
 
   //Fetches User Data
