@@ -5,19 +5,22 @@ import VehicleForm from "./VehicleForm";
 import VehicleResults from "./VehicleResults";
 import ShippingForm from "./ShippingForm";
 import ShippingResults from "./ShippingResults";
+import ElectricityForm from "./ElectricityForm";
+import ElectricityResults from "./Electricity.Results";
 import "./EmissionPage.css";
 
 function Estimate({
   onSaveFlightClick,
   onSaveVehicleClick,
   onSaveShippingClick,
+  onSaveElectricityClick
 }) {
   const [flightResults, setFlightResults] = useState({
     date: "",
     passengers: "",
     departure: "",
     destination: "",
-    carbon_lb: "",
+    carbon_lb: 0,
     id: "",
   });
 
@@ -28,7 +31,7 @@ function Estimate({
     vehicle_make: "",
     vehicle_model: "",
     vehicle_year: "",
-    carbon_lb: "",
+    carbon_lb: 0,
     id: "",
   });
 
@@ -37,8 +40,17 @@ function Estimate({
     weight: 0,
     distance: 0,
     method: "",
-    carbon_lb: "",
+    carbon_lb: 0,
     id: "",
+  });
+
+  const [electricityResults, setElectricityResults] = useState({
+    date: "",
+    country: "",
+    state: "",
+    electricity_value: "",
+    carbon_lb: 0,
+    id: ""
   });
 
   function handleFlightFormSubmit(formData) {
@@ -107,7 +119,6 @@ function Estimate({
   }
 
   function handleShippingFormSubmit(shippingData) {
-    console.log("beforefetch");
     fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
 
@@ -126,7 +137,6 @@ function Estimate({
     })
       .then((resp) => resp.json())
       .then((shippingData) => {
-        console.log(shippingData);
         setShippingResults({
           date: shippingData.data.attributes.estimated_at,
           weight: shippingData.data.attributes.weight_value,
@@ -137,6 +147,39 @@ function Estimate({
         });
       });
   }
+
+  function handleElectricityFormSubmit(elecrticityData) {
+    fetch("https://www.carboninterface.com/api/v1/estimates", {
+      method: "POST",
+
+      headers: {
+        Authorization: "Bearer 55NshTJnqIgD0wWtt246eg",
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify({
+        type: "electricity",
+        electricity_unit: "mwh",
+        electricity_value: elecrticityData.electricity_value,
+        country: "us",
+        state: elecrticityData.state
+      })
+    })
+    .then(resp => resp.json()) 
+    .then(results => {
+      console.log(results)
+      setElectricityResults({
+        date: results.data.attributes.estimated_at,
+        country: "US",
+        state: results.data.attributes.state.toUpperCase(),
+        electricity_value: results.data.attributes.electricity_value,
+        carbon_lb: results.data.attributes.carbon_lb,
+        id: results.data.id
+      })
+    })
+
+  }
+
 
   return (
     <div className="emission-container">
@@ -171,6 +214,16 @@ function Estimate({
             <ShippingResults
               shippingData={shippingResults}
               onSaveShippingClick={onSaveShippingClick}
+            />
+          ) : null}
+        </div>
+        <div className="form-container">
+          <h2>Electricity</h2>
+          <ElectricityForm handleFormSubmit={handleElectricityFormSubmit} />
+          {electricityResults.id.length !== 0 ? (
+            <ElectricityResults
+              electricityData={electricityResults}
+              onSaveElectricityClick={onSaveElectricityClick}
             />
           ) : null}
         </div>

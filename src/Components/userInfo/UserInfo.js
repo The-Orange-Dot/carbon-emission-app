@@ -2,8 +2,9 @@ import "./UserInfo.css";
 import FlightCard from "./FlightCard";
 import ShippingCard from "./ShippingCard";
 import VehicleCard from "./VehicleCard";
+import ElectricityCard from "./ElectricityCard";
 
-function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
+function UserInfo({ user, onFlightDelete, onVehicleDelete, onElectricityDelete }) {
   const totalFlightCarbon = user.flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
@@ -16,6 +17,11 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
 
   const totalVehicleCarbon = user.vehicleHistory.reduce(
     (count, vehicle) => (count += vehicle.carbon_lb),
+    0
+  );
+
+  const totalElectricCarbon = user.electricityHistory.reduce(
+    (count, electricity) => (count += electricity.carbon_lb),
     0
   );
 
@@ -56,7 +62,8 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
                 Math.round(
                   (totalFlightCarbon +
                     totalShippingCarbon +
-                    totalVehicleCarbon) *
+                    totalVehicleCarbon +
+                    totalElectricCarbon) *
                     100
                 ) / 100
               )
@@ -87,6 +94,12 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
                 <h2>Shipping: </h2>
                 <h1>
                   {emissionHandler(user.shippingHistory, totalShippingCarbon)}
+                </h1>
+              </div>
+              <div className="shipping-carbon-result">
+                <h2>Electricity: </h2>
+                <h1>
+                  {emissionHandler(user.electricityHistory, totalElectricCarbon)}
                 </h1>
               </div>
             </div>
@@ -133,6 +146,20 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
             key={shipment.id}
             shipment={shipment}
             onShipmentDelete={null}
+          />
+        ))}
+      </div>
+      <h3>
+        {user.electricityHistory.length !== 0
+          ? "Electricity Usage History"
+          : null}
+      </h3>
+      <div className="card-container">
+        {user.electricityHistory.map((electricity) => (
+          <ElectricityCard
+            key={electricity.id}
+            electricity={electricity}
+            onElectricityDelete={onElectricityDelete}
           />
         ))}
       </div>
