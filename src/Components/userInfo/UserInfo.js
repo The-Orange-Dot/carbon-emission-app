@@ -48,22 +48,48 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
           <br />
           <button>Edit Info</button>
         </div>
-        <div>
-          <div className="flight-carbon-result">
-            <h2>Total carbon from flight travel: </h2>
-            <h1>{emissionHandler(user.flightHistory, totalFlightCarbon)}</h1>
-          </div>
-          <div className="vehicle-carbon-result">
-            <h2>Total carbon from vehicles: </h2>
-            <h1>
-              {emissionHandler(user.vehicleHistory, totalVehicleCarbon)}
+        <div className="carbon-emission-container">
+          <div className="carbon-total">
+            <h1>Total carbon emission</h1>
+            <h1 className="total-user-emission">
+              {(
+                Math.round(
+                  (totalFlightCarbon +
+                    totalShippingCarbon +
+                    totalVehicleCarbon) *
+                    100
+                ) / 100
+              )
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+              lbs
             </h1>
           </div>
-          <div className="shipping-carbon-result">
-            <h2>Total carbon from shipping: </h2>
-            <h1>
-              {emissionHandler(user.shippingHistory, totalShippingCarbon)}
-            </h1>
+
+          <div className="carbon-breakdown-container">
+            <div className="carbon-breakdown-title">
+              <h2>Breakdown of carbon emission</h2>
+            </div>
+            <div className="carbon-breakdown-list">
+              <div className="flight-carbon-result">
+                <h2>Flight travel: </h2>
+                <h1>
+                  {emissionHandler(user.flightHistory, totalFlightCarbon)}
+                </h1>
+              </div>
+              <div className="vehicle-carbon-result">
+                <h2>Automobile: </h2>
+                <h1>
+                  {emissionHandler(user.vehicleHistory, totalVehicleCarbon)}
+                </h1>
+              </div>
+              <div className="shipping-carbon-result">
+                <h2>Shipping: </h2>
+                <h1>
+                  {emissionHandler(user.shippingHistory, totalShippingCarbon)}
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -84,7 +110,7 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
       </div>
       <h3>
         {user.vehicleHistory.length !== 0
-          ? "Vehicle History"
+          ? "Automobile History"
           : "No saved vehicles yet"}
       </h3>
       <div className="card-container">

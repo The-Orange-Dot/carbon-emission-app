@@ -68,3 +68,35 @@
 .vehicle-carbon-result {
   margin-bottom: 20px;
 }
+
+.total-user-emission {
+  font-size: 3rem;
+  margin-top: 10px;
+}
+
+.carbon-breakdown-container {
+  width: 550px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.carbon-emission-container {
+  display: flex;
+  width: 700px;
+  height: 400px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.carbon-breakdown-title {
+  margin-bottom: 10px;
+}
+
+.carbon-breakdown-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+}

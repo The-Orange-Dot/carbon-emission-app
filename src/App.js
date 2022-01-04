@@ -5,7 +5,6 @@ import Login from "./Components/login/Login";
 import Homepage from "./Components/homepage/Homepage";
 import About from "./Components/about/About";
 import UserInfo from "./Components/userInfo/UserInfo";
-import Welcome from "./Components/welcome/Welcome";
 import NavBar from "./Components/navBar/NavBar";
 import Estimate from "./Components/Estimate";
 import defaultImage from "./images/default-profile.png";
@@ -142,27 +141,38 @@ function App() {
             />
           )}
         />
+
         <Route
           path="/estimate"
           component={() => (
             <Estimate
-            onSaveFlightClick={handleFlightSaveClick}
-            onSaveVehicleClick={handleVehicleSaveClick}
-            onSaveShippingClick={handleShippingSaveClick}
+              onSaveFlightClick={handleFlightSaveClick}
+              onSaveVehicleClick={handleVehicleSaveClick}
+              onSaveShippingClick={handleShippingSaveClick}
             />
-            )}
+          )}
         />
-            <Route
-              path="/"
-              component={() => (
-                <Homepage
-                  user={user}
-                  loggedIn={loggedIn}
-                  setUser={setUser}
-                  setLoggedIn={setLoggedIn}
-                />
-              )}
+        <Route
+          path="/estimate"
+          component={() => (
+            <Estimate
+              onSaveFlightClick={handleFlightSaveClick}
+              onSaveVehicleClick={handleVehicleSaveClick}
+              onSaveShippingClick={handleShippingSaveClick}
             />
+          )}
+        />
+        <Route
+          path="/"
+          component={() => (
+            <Homepage
+              user={user}
+              loggedIn={loggedIn}
+              setUser={setUser}
+              setLoggedIn={setLoggedIn}
+            />
+          )}
+        />
       </Switch>
     </div>
   );
