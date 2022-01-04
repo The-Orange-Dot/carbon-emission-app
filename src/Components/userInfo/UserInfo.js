@@ -56,7 +56,7 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
           <div className="vehicle-carbon-result">
             <h2>Total carbon from vehicles: </h2>
             <h1>
-              {emissionHandler(user.vehicleHistory, totalVehicleCarbon)}s
+              {emissionHandler(user.vehicleHistory, totalVehicleCarbon)}
             </h1>
           </div>
           <div className="shipping-carbon-result">

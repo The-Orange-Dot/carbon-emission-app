@@ -6,9 +6,9 @@ function VehicleCard({ vehicle, onVehicleDelete }) {
       <h4 className="card-header">{vehicle.vehicle_year} {vehicle.vehicle_make} {vehicle.vehicle_model}</h4>
       <ul>
         <p>Date estimated: {vehicle.date.slice(0, 10)}</p>
-        <p>{vehicle.distance_value} {vehicle.distance_unit}</p>
+        <p>Trip: {vehicle.distance_value} {vehicle.distance_unit}</p>
         <div>
-          <p>Estimated carbon:</p>
+          <p>Estimated carbon emission:</p>
           <p>
             <strong>{vehicle.carbon_lb} lbs</strong>
           </p>
@@ -18,7 +18,7 @@ function VehicleCard({ vehicle, onVehicleDelete }) {
         onClick={() => onVehicleDelete(vehicle)}
         className="carbon-estimate-btn"
       >
-        Delete Flight
+        Delete Vehicle
       </button>
     </div>
   );
