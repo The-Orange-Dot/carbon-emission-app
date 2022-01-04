@@ -25,6 +25,11 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
     0
   );
 
+  const totalVehicleCarbon = user.vehicleHistory.reduce(
+    (count, vehicle) => (count += vehicle.carbon_lb),
+    0
+  );
+
   //Logs out of account
   const logoutHandler = () => {
     fetch("http://localhost:3001/users")
@@ -87,7 +92,10 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
                   {user.flightHistory.length !== 0
                     ? `${(
                         Math.round(
-                          (totalFlightCarbon + totalShippingCarbon) * 100
+                          (totalFlightCarbon +
+                            totalShippingCarbon +
+                            totalVehicleCarbon) *
+                            100
                         ) / 100
                       )
                         .toString()
