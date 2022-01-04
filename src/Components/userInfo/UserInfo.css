@@ -6,13 +6,18 @@
   margin-bottom: 100px;
 }
 
-.flight-card {
+.flight-card,
+.vehicle-card {
   margin: 20px;
   height: 160px;
   width: 300px;
   background-color: #80e2ff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .flight-card:hover {

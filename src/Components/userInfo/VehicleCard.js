@@ -3,10 +3,16 @@ import "./UserInfo.css";
 function VehicleCard({ vehicle, onVehicleDelete }) {
   return (
     <div className="vehicle-card">
-      <h4 className="card-header">{vehicle.vehicle_year} {vehicle.vehicle_make} {vehicle.vehicle_model}</h4>
+      <h4 className="card-header">
+        {vehicle.vehicle_year} {vehicle.vehicle_make} {vehicle.vehicle_model}
+      </h4>
       <ul>
         <p>Date estimated: {vehicle.date.slice(0, 10)}</p>
-        <p>Trip: {vehicle.distance_value} {vehicle.distance_unit}</p>
+
+        <p>
+          Trip: {vehicle.distance_value} {vehicle.distance_unit}
+        </p>
+
         <div>
           <p>Estimated carbon emission:</p>
           <p>
