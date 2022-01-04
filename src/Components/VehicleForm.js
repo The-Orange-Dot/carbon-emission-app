@@ -46,18 +46,20 @@ function VehicleForm({ handleVehicleFormSubmit }) {
           vehicleModels.push({
             name: data[i].data.attributes.name,
             id: data[i].data.id,
-            year: data[i].data.attributes.year
+            year: data[i].data.attributes.year,
           });
         }
 
-        let sorted = vehicleModels.sort(
-          (a, b) => {
-            if(a.name < b.name) { return -1; }
-            if(a.name > b.name) { return 1; }
-            return 0;
+        let sorted = vehicleModels.sort((a, b) => {
+          if (a.name < b.name) {
+            return -1;
           }
-        )
-          
+          if (a.name > b.name) {
+            return 1;
+          }
+          return 0;
+        });
+
         setModels(sorted);
       });
   }
@@ -67,7 +69,8 @@ function VehicleForm({ handleVehicleFormSubmit }) {
     handleVehicleFormSubmit(vehicleFormData);
   }
 
-  function getMakes() {
+  useEffect(() => {
+    let isAPISubscribed = true;
     fetch(`https://www.carboninterface.com/api/v1/vehicle_makes`, {
       method: "GET",
       headers: {
@@ -77,28 +80,31 @@ function VehicleForm({ handleVehicleFormSubmit }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        let vehicleMakes = [];
-        for (let i = 0; i < data.length; i++) {
-          vehicleMakes.push({
-            name: data[i].data.attributes.name,
-            id: data[i].data.id,
-          });
-        }
-
-        let sorted = vehicleMakes.sort(
-          (a, b) => {
-            if(a.name < b.name) { return -1; }
-            if(a.name > b.name) { return 1; }
-            return 0;
+        if (isAPISubscribed) {
+          let vehicleMakes = [];
+          for (let i = 0; i < data.length; i++) {
+            vehicleMakes.push({
+              name: data[i].data.attributes.name,
+              id: data[i].data.id,
+            });
           }
-        )
 
-        setMakes(sorted);
+          let sorted = vehicleMakes.sort((a, b) => {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return 1;
+            }
+            return 0;
+          });
+
+          setMakes(sorted);
+        }
       });
-  }
-
-  useEffect(() => {
-    getMakes();
+    return () => {
+      isAPISubscribed = false;
+    };
   }, []);
 
   return (
@@ -129,7 +135,7 @@ function VehicleForm({ handleVehicleFormSubmit }) {
         <div>
           <label>Vehicle Model:</label>
           <select name="vehicle_model_id" onChange={handleVehicleFormChange}>
-          <option value="Select a Model">Select a Model</option>
+            <option value="Select a Model">Select a Model</option>
             {models.map((model) => {
               return (
                 <option key={model.id} id={model.id} value={model.name}>

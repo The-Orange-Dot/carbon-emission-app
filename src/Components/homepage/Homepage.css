@@ -55,3 +55,7 @@
 .data::-webkit-scrollbar {
   display: none;
 }
+
+.emission-by-countries:hover {
+  background-color: #6ed0ee;
+}
