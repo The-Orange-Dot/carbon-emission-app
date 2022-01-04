@@ -143,26 +143,26 @@ function App() {
           )}
         />
         <Route
-          path="/"
-          component={() => (
-            <Homepage
-              user={user}
-              loggedIn={loggedIn}
-              setUser={setUser}
-              setLoggedIn={setLoggedIn}
-            />
-          )}
-        />
-        <Route
           path="/estimate"
           component={() => (
             <Estimate
-              onSaveFlightClick={handleFlightSaveClick}
-              onSaveVehicleClick={handleVehicleSaveClick}
-              onSaveShippingClick={handleShippingSaveClick}
+            onSaveFlightClick={handleFlightSaveClick}
+            onSaveVehicleClick={handleVehicleSaveClick}
+            onSaveShippingClick={handleShippingSaveClick}
             />
-          )}
+            )}
         />
+            <Route
+              path="/"
+              component={() => (
+                <Homepage
+                  user={user}
+                  loggedIn={loggedIn}
+                  setUser={setUser}
+                  setLoggedIn={setLoggedIn}
+                />
+              )}
+            />
       </Switch>
     </div>
   );

@@ -5,8 +5,6 @@ function VehicleForm({ handleVehicleFormSubmit }) {
   const [models, setModels] = useState([]);
 
   const [vehicleFormData, setVehicleFormData] = useState({
-    type: "vehicle",
-    distance_unit: "mi",
     distance_value: 0,
     vehicle_model_id: "",
   });
@@ -43,15 +41,25 @@ function VehicleForm({ handleVehicleFormSubmit }) {
     )
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         let vehicleModels = [];
         for (let i = 0; i < data.length; i++) {
           vehicleModels.push({
             name: data[i].data.attributes.name,
             id: data[i].data.id,
+            year: data[i].data.attributes.year
           });
         }
 
-        setModels(vehicleModels);
+        let sorted = vehicleModels.sort(
+          (a, b) => {
+            if(a.name < b.name) { return -1; }
+            if(a.name > b.name) { return 1; }
+            return 0;
+          }
+        )
+          
+        setModels(sorted);
       });
   }
 
@@ -78,7 +86,15 @@ function VehicleForm({ handleVehicleFormSubmit }) {
           });
         }
 
-        setMakes(vehicleMakes);
+        let sorted = vehicleMakes.sort(
+          (a, b) => {
+            if(a.name < b.name) { return -1; }
+            if(a.name > b.name) { return 1; }
+            return 0;
+          }
+        )
+
+        setMakes(sorted);
       });
   }
 
@@ -90,7 +106,7 @@ function VehicleForm({ handleVehicleFormSubmit }) {
     <div className="emission-form-container">
       <form onSubmit={onVehicleFormSubmit}>
         <div>
-          <label>Distance in miles:</label>
+          <label>Distance (mi):</label>
           <input
             type="text"
             placeholder="enter mileage"
@@ -101,6 +117,7 @@ function VehicleForm({ handleVehicleFormSubmit }) {
         <div>
           <label>Vehicle Make:</label>
           <select name="vehicle_make" onChange={handleMakes}>
+            <option value="Select a Make">Select a Make</option>
             {makes.map((make) => {
               return (
                 <option key={make.id} id={make.id} value={make.name}>
@@ -113,10 +130,11 @@ function VehicleForm({ handleVehicleFormSubmit }) {
         <div>
           <label>Vehicle Model:</label>
           <select name="vehicle_model_id" onChange={handleVehicleFormChange}>
+          <option value="Select a Model">Select a Model</option>
             {models.map((model) => {
               return (
                 <option key={model.id} id={model.id} value={model.name}>
-                  {model.name}
+                  {model.name} {model.year}
                 </option>
               );
             })}
