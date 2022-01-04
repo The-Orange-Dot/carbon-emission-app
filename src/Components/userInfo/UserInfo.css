@@ -103,3 +103,12 @@
   width: 1200px;
   flex-wrap: wrap;
 }
+
+.results-container {
+  display: flex;
+}
+
+.results-column {
+  display: flex;
+  flex-direction: column;
+}
