@@ -42,7 +42,7 @@ function UserInfo({
     <div className="user-info">
       <div className="user-card-container">
         <div className="user-card">
-          <h1>User Info</h1>
+          <br />
           <img src={user.image} alt="user" className="user-image" />
           <p>
             <strong>First Name:</strong> {user.firstName}
@@ -61,7 +61,7 @@ function UserInfo({
         </div>
         <div className="carbon-emission-container">
           <div className="carbon-total">
-            <h1>Total carbon emission</h1>
+            <h1>{user.firstName}'s total carbon emission</h1>
             <h1 className="total-user-emission">
               {(
                 Math.round(
