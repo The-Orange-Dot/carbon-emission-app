@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
 import WorldDataCard from "./WorldDataCard";
 import "./Homepage.css";
-import GrayColor from "../login/GrayColor";
-import EmissionPage from "../EmissionPage";
 import { NavLink } from "react-router-dom";
 import Footer from "../Footer";
 import Charts from "./Charts";
 import ChartSelector from "./ChartSelector";
 
 //Prevents scrolling on homepage
-//document.body.style.overflow = "hidden";
+// document.body.style.overflow = "hidden";
 
 function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
   const [worldData, setWorldData] = useState([]);
-  const [hideNewForm, setHideNewForm] = useState(true);
   const [chartSelector, setChartSelector] = useState("");
 
   const totalFlightCarbon = user.flightHistory.reduce(
@@ -63,13 +60,8 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
   const selectHandler = (e) => {
     setChartSelector(e.target.value);
   };
-
   return (
     <div>
-      <div>
-        <GrayColor setHideNewForm={setHideNewForm} hideNewForm={hideNewForm} />
-        <EmissionPage hideNewForm={hideNewForm} />
-      </div>
       <div className="homepage-container">
         <div className="user-data-container"></div>
         <div className="world-data-container">
