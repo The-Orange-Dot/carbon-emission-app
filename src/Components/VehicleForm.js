@@ -108,7 +108,7 @@ function VehicleForm({ handleVehicleFormSubmit }) {
           <label>Distance (mi):</label>
           <input
             type="text"
-            placeholder="enter mileage"
+            placeholder="Ex: 123"
             name="distance_value"
             onChange={handleVehicleFormChange}
           ></input>
