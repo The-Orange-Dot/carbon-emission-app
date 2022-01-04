@@ -115,61 +115,74 @@ function UserInfo({
         </div>
       </div>
       <h1 style={{ marginBottom: "10px" }}>Carbon Estimate History</h1>
-      <h3>
-        {user.flightHistory.length !== 0
-          ? "Flight History"
-          : "No saved flights yet"}
-      </h3>
-      <div className="card-container">
-        {user.flightHistory.map((flight) => (
-          <FlightCard
-            key={flight.id}
-            flight={flight}
-            onFlightDelete={onFlightDelete}
-          />
-        ))}
-      </div>
-      <h3>
-        {user.vehicleHistory.length !== 0
-          ? "Automobile History"
-          : "No saved vehicles yet"}
-      </h3>
-      <div className="card-container">
-        {user.vehicleHistory.map((vehicle) => (
-          <VehicleCard
-            key={vehicle.id}
-            vehicle={vehicle}
-            onVehicleDelete={onVehicleDelete}
-          />
-        ))}
-      </div>
-      <h3>
-        {user.shippingHistory.length !== 0
-          ? "Shipping History"
-          : "No saved shipments yet"}
-      </h3>
-      <div className="card-container">
-        {user.shippingHistory.map((shipment) => (
-          <ShippingCard
-            key={shipment.id}
-            shipment={shipment}
-            onShipmentDelete={null}
-          />
-        ))}
-      </div>
-      <h3>
-        {user.electricityHistory.length !== 0
-          ? "Electricity Usage History"
-          : null}
-      </h3>
-      <div className="card-container">
-        {user.electricityHistory.map((electricity) => (
-          <ElectricityCard
-            key={electricity.id}
-            electricity={electricity}
-            onElectricityDelete={onElectricityDelete}
-          />
-        ))}
+      <div className="results-container">
+        <div className="results-cloumn">
+          <h3>
+            {user.flightHistory.length !== 0
+              ? "Flight History"
+              : "No saved flights yet"}
+          </h3>
+          <div className="card-container">
+            {user.flightHistory.map((flight) => (
+              <FlightCard
+                key={flight.id}
+                flight={flight}
+                onFlightDelete={onFlightDelete}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="results-cloumn">
+          <h3>
+            {user.vehicleHistory.length !== 0
+              ? "Automobile History"
+              : "No saved vehicles yet"}
+          </h3>
+          <div className="card-container">
+            {user.vehicleHistory.map((vehicle) => (
+              <VehicleCard
+                key={vehicle.id}
+                vehicle={vehicle}
+                onVehicleDelete={onVehicleDelete}
+              />
+            ))}
+          </div>
+        </div>
+        
+        <div className="results-column">
+          <h3>
+            {user.shippingHistory.length !== 0
+              ? "Shipping History"
+              : "No saved shipments yet"}
+          </h3>
+          <div className="card-container">
+            {user.shippingHistory.map((shipment) => (
+              <ShippingCard
+                key={shipment.id}
+                shipment={shipment}
+                onShipmentDelete={null}
+              />
+            ))}
+          </div>
+        </div>
+        
+        <div className="results-column">
+          <h3>
+            {user.electricityHistory.length !== 0
+              ? "Electricity Usage History"
+              : null}
+          </h3>
+          <div className="card-container">
+            {user.electricityHistory.map((electricity) => (
+              <ElectricityCard
+                key={electricity.id}
+                electricity={electricity}
+                onElectricityDelete={onElectricityDelete}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
