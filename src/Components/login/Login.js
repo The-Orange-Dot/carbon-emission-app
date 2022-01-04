@@ -23,7 +23,7 @@ function Login({ setUser, setLoggedIn }) {
           setUser(loginUser);
           setLoggedIn(true);
           setFailedLogin(false);
-          history.push("/home");
+          history.push("/");
         } else {
           setUser(userData[0]);
           setLoggedIn(false);
@@ -54,7 +54,7 @@ function Login({ setUser, setLoggedIn }) {
           <button onClick={() => setHideNewForm(false)}>
             Register new account
           </button>
-          <Link to={"/home"}>
+          <Link to={"/"}>
             <button>Go back</button>
           </Link>
         </div>

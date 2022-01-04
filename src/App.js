@@ -143,7 +143,7 @@ function App() {
           )}
         />
         <Route
-          path="/home"
+          path="/"
           component={() => (
             <Homepage
               user={user}
@@ -163,7 +163,6 @@ function App() {
             />
           )}
         />
-        <Route path="/" component={Welcome} />
       </Switch>
     </div>
   );

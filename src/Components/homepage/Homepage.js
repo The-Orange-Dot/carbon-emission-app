@@ -41,12 +41,18 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
   };
 
   useEffect(() => {
+    let isAPISubscribed = true;
     fetch("http://localhost:3001/countryAverageCapita")
       .then((r) => r.json())
       .then((data) => {
-        setWorldData(data.sort((a, b) => (a.average < b.average ? 1 : -1)));
-        setChartSelector("mode-of-transport");
+        if (isAPISubscribed) {
+          setWorldData(data.sort((a, b) => (a.average < b.average ? 1 : -1)));
+          setChartSelector("mode-of-transport");
+        }
       });
+    return () => {
+      isAPISubscribed = false;
+    };
   }, []);
 
   const selectHandler = (e) => {
@@ -77,7 +83,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
                   {user.firstName} {user.lastName}
                 </h2>
                 {loggedIn ? (
-                  <NavLink to="/home">
+                  <NavLink to="/">
                     <button onClick={logoutHandler}>Log Out</button>
                   </NavLink>
                 ) : (

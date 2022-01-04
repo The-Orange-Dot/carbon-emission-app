@@ -7,7 +7,8 @@
 }
 
 .flight-card,
-.vehicle-card {
+.vehicle-card,
+.shipping-history {
   margin: 20px;
   height: 160px;
   width: 300px;
@@ -20,7 +21,9 @@
   align-items: center;
 }
 
-.flight-card:hover {
+.flight-card:hover,
+.vehicle-card:hover,
+.shipping-history:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
