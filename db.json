@@ -90,6 +90,16 @@
           "vehicle_year": 2016,
           "carbon_lb": 87.05,
           "id": "1786cca2-9a2f-4d1a-b6c2-d341f0122408"
+        },
+        {
+          "date": "2022-01-04T16:23:42.278Z",
+          "distance_value": 123,
+          "distance_unit": "mi",
+          "vehicle_make": "Audi",
+          "vehicle_model": "A3",
+          "vehicle_year": 2012,
+          "carbon_lb": 100.41,
+          "id": "a059943a-5097-40c6-b1fe-920ad001f270"
         }
       ]
     }
