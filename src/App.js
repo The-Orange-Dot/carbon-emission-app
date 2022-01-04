@@ -31,8 +31,8 @@ function App() {
       .then((r) => r.json())
       .then((userData) => {
         if (isAPISubscribed) {
-          setUser(userData[0]);
-          setLoggedIn(false);
+          setUser(userData[1]);
+          setLoggedIn(true);
         }
       });
     return () => {
@@ -133,7 +133,11 @@ function App() {
         <Route
           path="/user"
           component={() => (
-            <UserInfo user={user} onFlightDelete={handleFlightDelete} onVehicleDelete={handleVehicleDelete} />
+            <UserInfo
+              user={user}
+              onFlightDelete={handleFlightDelete}
+              onVehicleDelete={handleVehicleDelete}
+            />
           )}
         />
         <Route
