@@ -40,7 +40,7 @@ function UserInfo({
 
   return (
     <div className="user-info">
-      <div className="card-container">
+      <div className="user-card-container">
         <div className="user-card">
           <h1>User Info</h1>
           <img src={user.image} alt="user" className="user-image" />
@@ -149,7 +149,7 @@ function UserInfo({
             ))}
           </div>
         </div>
-        
+
         <div className="results-column">
           <h3>
             {user.shippingHistory.length !== 0
@@ -166,7 +166,7 @@ function UserInfo({
             ))}
           </div>
         </div>
-        
+
         <div className="results-column">
           <h3>
             {user.electricityHistory.length !== 0
