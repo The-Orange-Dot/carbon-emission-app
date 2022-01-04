@@ -1,8 +1,8 @@
-import { useState } from "react";
-import "./Login.css";
+import { Link, useHistory } from "react-router-dom";
 import NewAccountForm from "./NewAccountForm";
 import GrayColor from "./GrayColor";
-import { Link, useHistory } from "react-router-dom";
+import { useState } from "react";
+import "./Login.css";
 
 function Login({ setUser, setLoggedIn }) {
   const [hideNewForm, setHideNewForm] = useState(true);
@@ -28,7 +28,6 @@ function Login({ setUser, setLoggedIn }) {
           setUser(userData[0]);
           setLoggedIn(false);
           setFailedLogin(true);
-          history.push("/login");
         }
       });
   };
@@ -38,9 +37,9 @@ function Login({ setUser, setLoggedIn }) {
       <div className="login-page">
         <h1>Login Page</h1>
         {failedLogin ? (
-          <p className="failed-login-notification">
+          <h5 className="failed-login-notification">
             Invalid Username or Password
-          </p>
+          </h5>
         ) : null}
         <div className="login-container">
           <form
@@ -55,7 +54,7 @@ function Login({ setUser, setLoggedIn }) {
           <button onClick={() => setHideNewForm(false)}>
             Register new account
           </button>
-          <Link to="/home">
+          <Link to={"/home"}>
             <button>Go back</button>
           </Link>
         </div>

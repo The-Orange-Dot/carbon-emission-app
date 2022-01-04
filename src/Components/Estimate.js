@@ -88,7 +88,7 @@ function Estimate({
         type: "vehicle",
         distance_unit: "mi",
         distance_value: vehicleFormData.distance_value,
-        vehicle_model_id: vehicleFormData.vehicle_model_id
+        vehicle_model_id: vehicleFormData.vehicle_model_id,
       }),
     })
       .then((resp) => resp.json())
@@ -101,12 +101,10 @@ function Estimate({
           vehicle_model: vehicleData.data.attributes.vehicle_model,
           vehicle_year: vehicleData.data.attributes.vehicle_year,
           carbon_lb: vehicleData.data.attributes.carbon_lb,
-          id: vehicleData.data.id
+          id: vehicleData.data.id,
         })
       );
   }
-
-  console.log(vehicleResults)
 
   function handleShippingFormSubmit(shippingData) {
     console.log("beforefetch");
@@ -140,16 +138,14 @@ function Estimate({
       });
   }
 
-  console.log(shippingResults);
-
   return (
     <div className="emission-container">
       <div>
-        <h1 className="welcome-text">Calculate carbon emissions</h1>
+        <h1 className="emission-welcome-text">Calculate carbon emissions</h1>
       </div>
       <div className="all-the-forms">
         <div className="form-container">
-          <h3>Calculate emissions for flight</h3>
+          <h2>Flights</h2>
           <FlightForm handleFormSubmit={handleFlightFormSubmit} />
           {flightResults.id.length !== 0 ? (
             <FlightResults
@@ -159,14 +155,17 @@ function Estimate({
           ) : null}
         </div>
         <div className="form-container">
-            <h3>Calculate emissions for Vehicles</h3>
-            <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
-              {vehicleResults.id.length !== 0 ? (
-              <VehicleResults vehicleData={vehicleResults} onSaveDataClick={onSaveVehicleClick} />
-      ) : null}
+          <h2>Automobiles</h2>
+          <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
+          {vehicleResults.id.length !== 0 ? (
+            <VehicleResults
+              vehicleData={vehicleResults}
+              onSaveDataClick={onSaveVehicleClick}
+            />
+          ) : null}
         </div>
         <div className="form-container">
-          <h3>Calculate emissions for shipping</h3>
+          <h2>Shipping</h2>
           <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
           {shippingResults.id.length !== 0 ? (
             <ShippingResults

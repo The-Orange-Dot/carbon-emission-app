@@ -8,14 +8,25 @@ function UserInfo({ user, onFlightDelete }) {
     0
   );
 
+  const totalShippingCarbon = user.shippingHistory.reduce(
+    (count, shipping) => (count += shipping.carbon_lb),
+    0
+  );
+
+  const emissionHandler = (userInfo, total) => {
+    return userInfo.length !== 0
+      ? `${(Math.round(total * 100) / 100)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} lbs`
+      : 0;
+  };
+
   return (
     <div className="user-info">
       <div className="card-container">
         <div className="user-card">
           <h1>User Info</h1>
-
           <img src={user.image} alt="user" className="user-image" />
-
           <p>
             <strong>First Name:</strong> {user.firstName}
           </p>
@@ -31,18 +42,20 @@ function UserInfo({ user, onFlightDelete }) {
           <br />
           <button>Edit Info</button>
         </div>
-        <div className="total-carbon-result">
-          <h2>Total carbon from flight travel: </h2>
-          <h1>
-            {user.flightHistory.length !== 0
-              ? `${(Math.round(totalFlightCarbon * 100) / 100)
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} lbs`
-              : 0}
-          </h1>
+        <div>
+          <div className="flight-carbon-result">
+            <h2>Total carbon from flight travel: </h2>
+            <h1>{emissionHandler(user.flightHistory, totalFlightCarbon)}</h1>
+          </div>
+          <div className="shipping-carbon-result">
+            <h2>Total carbon from shipping: </h2>
+            <h1>
+              {emissionHandler(user.shippingHistory, totalShippingCarbon)}
+            </h1>
+          </div>
         </div>
       </div>
-      <h1>Carbon Estimate History</h1>
+      <h1 style={{ marginBottom: "10px" }}>Carbon Estimate History</h1>
       <h3>
         {user.flightHistory.length !== 0
           ? "Flight History"

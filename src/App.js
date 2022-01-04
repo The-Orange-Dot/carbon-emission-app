@@ -8,6 +8,7 @@ import UserInfo from "./Components/userInfo/UserInfo";
 import Welcome from "./Components/welcome/Welcome";
 import NavBar from "./Components/navBar/NavBar";
 import Estimate from "./Components/Estimate";
+import defaultImage from "./images/default-profile.png";
 
 function App() {
   //Default if user isn't logged in
@@ -16,21 +17,27 @@ function App() {
     id: 0,
     firstName: "",
     lastName: "",
-    username: "Username",
+    username: "",
     email: "",
-    image:
-      "https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg",
+    image: { defaultImage },
     flightHistory: [],
   });
 
   //Fetches User Data
   const userAPI = "http://localhost:3001/users";
   useEffect(() => {
+    let isAPISubscribed = true;
     fetch(userAPI)
       .then((r) => r.json())
       .then((userData) => {
-        setUser(userData[0]);
+        if (isAPISubscribed) {
+          setUser(userData[0]);
+          setLoggedIn(false);
+        }
       });
+    return () => {
+      isAPISubscribed = false;
+    };
   }, []);
 
   const handleFlightSaveClick = (results) => {
@@ -89,33 +96,41 @@ function App() {
         setLoggedIn={setLoggedIn}
       />
       <Switch>
-        <Route exact path="/login">
-          <Login setUser={setUser} setLoggedIn={setLoggedIn} />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/user">
-          <UserInfo user={user} onFlightDelete={handleFlightDelete} />
-        </Route>
-        <Route exact path="/home">
-          <Homepage
-            user={user}
-            loggedIn={loggedIn}
-            setUser={setUser}
-            setLoggedIn={setLoggedIn}
-          />
-        </Route>
-        <Route exact path="/estimate">
-          <Estimate
-            onSaveFlightClick={handleFlightSaveClick}
-            onSaveVehicleClick={handleVehicleSaveClick}
-            onSaveShippingClick={handleShippingSaveClick}
-          />
-        </Route>
-        <Route exact path="/">
-          <Welcome />
-        </Route>
+        <Route
+          path="/login"
+          component={() => (
+            <Login setUser={setUser} setLoggedIn={setLoggedIn} />
+          )}
+        />
+        <Route path="/about" component={About} />
+        <Route
+          path="/user"
+          component={() => (
+            <UserInfo user={user} onFlightDelete={handleFlightDelete} />
+          )}
+        />
+        <Route
+          path="/home"
+          component={() => (
+            <Homepage
+              user={user}
+              loggedIn={loggedIn}
+              setUser={setUser}
+              setLoggedIn={setLoggedIn}
+            />
+          )}
+        />
+        <Route
+          path="/estimate"
+          component={() => (
+            <Estimate
+              onSaveFlightClick={handleFlightSaveClick}
+              onSaveVehicleClick={handleVehicleSaveClick}
+              onSaveShippingClick={handleShippingSaveClick}
+            />
+          )}
+        />
+        <Route path="/" component={Welcome} />
       </Switch>
     </div>
   );

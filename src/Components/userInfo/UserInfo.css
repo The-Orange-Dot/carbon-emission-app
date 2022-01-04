@@ -8,7 +8,7 @@
 
 .flight-card {
   margin: 20px;
-  height: 150px;
+  height: 160px;
   width: 300px;
   background-color: #80e2ff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -53,4 +53,9 @@
 .total-carbon-result > h1 {
   font-weight: bold;
   margin-top: 30px;
+}
+
+.flight-carbon-result,
+.shipping-carbon-result {
+  margin-bottom: 20px;
 }

@@ -75,3 +75,9 @@ button {
 .new-account-form-container > div > img {
   width: 250px;
 }
+
+.failed-login-notification {
+  font-size: 20px;
+  margin-top: 30px;
+  color: red;
+}

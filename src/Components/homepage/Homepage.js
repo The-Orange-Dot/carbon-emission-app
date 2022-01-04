@@ -20,6 +20,10 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
   );
+  const totalShippingCarbon = user.shippingHistory.reduce(
+    (count, shipping) => (count += shipping.carbon_lb),
+    0
+  );
 
   //Logs out of account
   const logoutHandler = () => {
@@ -81,7 +85,11 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
                 <h5>Total Carbon Footprint</h5>
                 <h1>
                   {user.flightHistory.length !== 0
-                    ? `${(Math.round(totalFlightCarbon * 100) / 100)
+                    ? `${(
+                        Math.round(
+                          (totalFlightCarbon + totalShippingCarbon) * 100
+                        ) / 100
+                      )
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} lbs`
                     : 0}
