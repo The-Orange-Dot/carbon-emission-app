@@ -1,5 +1,8 @@
 .about-container {
   padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .user-page-container > div {
@@ -9,4 +12,44 @@
   justify-content: center;
   align-items: flex-end;
   flex-direction: column;
+}
+
+.about-card {
+  margin: 20px;
+  padding: 10px;
+  height: 300px;
+  width: 90%;
+  background-color: #80e2ff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.developer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.developer-card {
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.info-card {
+  background-color: #80e2ff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 20px;
+  padding-top: 10px;
+  border-radius: 10px;
+  width: 70%;
+}
+
+.dev-img {
+  border-radius: 50%;
 }

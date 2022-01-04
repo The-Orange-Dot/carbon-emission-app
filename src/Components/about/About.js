@@ -1,15 +1,18 @@
 import "./About.css";
+import AboutCard from "./AboutCard";
+
 function About() {
   return (
-    <div>
-      <div className="about-container">
-        <h1>About Tab</h1>
-        <p>a tab in the nav bar?</p>
-        <p>
-          will route to a page that describes the functionality/purpose of the
-          app and lists its creators
-        </p>
-      </div>
+    <div className="about-container">
+        <div className="about-card">
+          <h1>About</h1>
+          <p>description of app</p>
+        </div>
+        <div classname="developer-container"> 
+          <AboutCard name="Katherine Roll"/>
+          <AboutCard name="Eleni"/>
+          <AboutCard name="Hung"/>
+        </div>
     </div>
   );
 }
