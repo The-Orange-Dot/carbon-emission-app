@@ -4,7 +4,12 @@ import ShippingCard from "./ShippingCard";
 import VehicleCard from "./VehicleCard";
 import ElectricityCard from "./ElectricityCard";
 
-function UserInfo({ user, onFlightDelete, onVehicleDelete, onElectricityDelete }) {
+function UserInfo({
+  user,
+  onFlightDelete,
+  onVehicleDelete,
+  onElectricityDelete,
+}) {
   const totalFlightCarbon = user.flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
@@ -99,7 +104,10 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete, onElectricityDelete }
               <div className="shipping-carbon-result">
                 <h2>Electricity: </h2>
                 <h1>
-                  {emissionHandler(user.electricityHistory, totalElectricCarbon)}
+                  {emissionHandler(
+                    user.electricityHistory,
+                    totalElectricCarbon
+                  )}
                 </h1>
               </div>
             </div>
