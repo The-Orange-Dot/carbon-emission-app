@@ -32,7 +32,7 @@ function About() {
         />
         <AboutCard
           name="Hung Le"
-          info="Graduating with a degree in Fine Arts, Hung's passion had always been to create. Soon after graduating, he left the traditional creative field to live and work in Tokyo, Japan. For the past 11 years, he has continued his studies from Japan seeking opportunities to challenge himself and continue his education. With his passion to create still lingering, and the growing creative tech field continuing to grow, Hung joined FlatIron School's software engineer bootcamp to pursue full-time work as a full-stack software developer."
+          info="Graduating with a degree in Fine Arts, Hung's passion had always been to create. Soon after graduating, he left the traditional creative field to live and work in Tokyo, Japan. For the past 11 years, he has continued his studies from Japan seeking opportunities to challenge himself and continue his education. With his passion to create still lingering, and the growing creative tech field continuing to grow, Hung joined Flatiron School's software engineer bootcamp to pursue full-time work as a full-stack software developer."
           image={hung}
         />
       </div>
