@@ -159,7 +159,7 @@ function Estimate({
 
       body: JSON.stringify({
         type: "electricity",
-        electricity_unit: "mwh",
+        electricity_unit: "kwh",
         electricity_value: elecrticityData.electricity_value,
         country: "us",
         state: elecrticityData.state

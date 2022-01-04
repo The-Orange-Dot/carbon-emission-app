@@ -39,14 +39,6 @@
           "id": "3360c3e6-e99e-45d6-a904-95fbf8599fce"
         },
         {
-          "date": "2021-12-29T23:07:24.713Z",
-          "passengers": 1,
-          "departure": "MCO",
-          "destination": "CDG",
-          "carbon_lb": 2428.27,
-          "id": "6dd02d3a-83a0-4d21-97ba-ee74b954f6e5"
-        },
-        {
           "date": "2021-12-29T23:13:55.833Z",
           "passengers": 2,
           "departure": "BDL",
@@ -97,12 +89,12 @@
       ],
       "electricityHistory": [
         {
-          "date": "2022-01-04T17:41:36.757Z",
+          "date": "2022-01-04T20:47:20.519Z",
           "country": "US",
           "state": "NY",
           "electricity_value": 23.5,
-          "carbon_lb": 8886.18,
-          "id": "5722cb5b-e0ec-46f7-b631-f0897491b9e6"
+          "carbon_lb": 8.89,
+          "id": "a4d536e1-fd82-4b12-a77b-b305a566decf"
         }
       ]
     }
