@@ -1,7 +1,7 @@
 import logo from "../../images/treeLogo.png";
 import "./About.css";
 
-function AboutCard({ name, info, image }) {
+function AboutCard({ name, info, image, linkedIn }) {
   return (
     <div className="developer-card">
       <img src={image} alt={name} className="dev-img" />
