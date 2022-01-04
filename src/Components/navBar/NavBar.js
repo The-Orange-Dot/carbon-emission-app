@@ -15,7 +15,7 @@ function NavBar() {
   return (
     <div className="navbar-container">
       <div className="user-info-container">
-        <NavLink to="/home">
+        <NavLink to="/">
           <img src={logo} alt="logo" className="logo" />
         </NavLink>
         <h1 style={{ color: "white" }}>App Name Here?</h1>
@@ -24,11 +24,7 @@ function NavBar() {
       <div className="nav-buttons">
         <ul>
           <li>
-            <NavLink
-              style={linkStyle}
-              activestyle={{ color: "blue" }}
-              to="/home"
-            >
+            <NavLink style={linkStyle} activestyle={{ color: "blue" }} to="/">
               Home
             </NavLink>
           </li>
@@ -39,6 +35,15 @@ function NavBar() {
               activestyle={{ color: "blue" }}
             >
               About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/user"
+              style={linkStyle}
+              activestyle={{ color: "blue" }}
+            >
+              User-Info
             </NavLink>
           </li>
           <li>
