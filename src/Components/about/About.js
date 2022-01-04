@@ -17,12 +17,15 @@ function About() {
       <div className="">
         <AboutCard name="Katherine Roll" 
         info=""
+        // image={}
         />
         <AboutCard name="Eleni Papanicolas" 
           info="For the past 16 years Eleni called various restaurants home. When the pandemic hit, and restaurants closed down, she had an unusual opportunity to use her newfound free time to learn something new. She started taking coding courses and was totally hooked on creating cool stuff from scratch. It was then that she decided that this was something she wanted to pursue full time. Eleni is currently a software engineering student at Flatiron School and she likes building things that are accessible, inclusive, responsive and dynamic."
+          // image={}
           />
         <AboutCard name="Hung Le"
         info=""
+        // image={}
         />
       </div>
     </div>
