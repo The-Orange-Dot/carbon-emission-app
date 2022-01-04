@@ -70,6 +70,18 @@
           "carbon_lb": 0.32,
           "id": "ca75b745-2fce-4a11-9ad5-6c30c2f68415"
         }
+      ],
+      "vehicleHistory": [
+        {
+          "date": "2022-01-04T14:08:48.780Z",
+          "distance_value": 667,
+          "distance_unit": "mi",
+          "vehicle_make": "Dodge",
+          "vehicle_model": "B150/B250 Wagon 2WD",
+          "vehicle_year": 1985,
+          "carbon_lb": 1005.24,
+          "id": "9d400f3a-1751-4680-96e8-23ccee9de0be"
+        }
       ]
     }
   ],

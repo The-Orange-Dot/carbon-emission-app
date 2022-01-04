@@ -71,9 +71,36 @@ function App() {
     });
   };
 
-  const handleVehicleSaveClick = (vehicleResults) => {};
+  const handleVehicleSaveClick = (vehicleResults) => {
+    fetch(`http://localhost:3001/users/${user.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        vehicleHistory: [...user.vehicleHistory, vehicleResults],
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((userUpdate) => setUser(userUpdate));
+  };
 
-  const handleVehicleDelete = (vehicle) => {};
+  const handleVehicleDelete = (vehicle) => {
+    const filteredVehicles = user.vehicleHistory.filter(
+      (trip) => trip.id !== vehicle.id
+    );
+
+    fetch(`http://localhost:3001/users/${user.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        vehicleHistory: filteredVehicles,
+      }),
+    });
+
+    setUser({
+      ...user,
+      vehicleHistory: filteredVehicles,
+    });
+  };
 
   function handleShippingSaveClick(shippingResults) {
     fetch(`http://localhost:3001/users/${user.id}`, {
@@ -106,7 +133,7 @@ function App() {
         <Route
           path="/user"
           component={() => (
-            <UserInfo user={user} onFlightDelete={handleFlightDelete} />
+            <UserInfo user={user} onFlightDelete={handleFlightDelete} onVehicleDelete={handleVehicleDelete} />
           )}
         />
         <Route

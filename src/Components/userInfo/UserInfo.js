@@ -2,7 +2,7 @@ import "./UserInfo.css";
 import FlightCard from "./FlightCard";
 import ShippingCard from "./ShippingCard";
 
-function UserInfo({ user, onFlightDelete }) {
+function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
   const totalFlightCarbon = user.flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
@@ -10,6 +10,11 @@ function UserInfo({ user, onFlightDelete }) {
 
   const totalShippingCarbon = user.shippingHistory.reduce(
     (count, shipping) => (count += shipping.carbon_lb),
+    0
+  );
+
+  const totalVehicleCarbon = user.vehicleHistory.reduce(
+    (count, vehicle) => (count += vehicle.carbon_lb),
     0
   );
 
@@ -47,6 +52,12 @@ function UserInfo({ user, onFlightDelete }) {
             <h2>Total carbon from flight travel: </h2>
             <h1>{emissionHandler(user.flightHistory, totalFlightCarbon)}</h1>
           </div>
+          <div className="vehicle-carbon-result">
+            <h2>Total carbon from vehicles: </h2>
+            <h1>
+              {emissionHandler(user.vehicleHistory, totalVehicleCarbon)}s
+            </h1>
+          </div>
           <div className="shipping-carbon-result">
             <h2>Total carbon from shipping: </h2>
             <h1>
@@ -67,6 +78,20 @@ function UserInfo({ user, onFlightDelete }) {
             key={flight.id}
             flight={flight}
             onFlightDelete={onFlightDelete}
+          />
+        ))}
+      </div>
+      <h3>
+        {user.vehicleHistory.length !== 0
+          ? "Vehicle History"
+          : "No saved shipments yet"}
+      </h3>
+      <div className="card-container">
+        {user.vehicleHistory.map((vehicle) => (
+          <ShippingCard
+            key={vehicle.id}
+            vehicle={vehicle}
+            onVehicleDelete={onVehicleDelete}
           />
         ))}
       </div>

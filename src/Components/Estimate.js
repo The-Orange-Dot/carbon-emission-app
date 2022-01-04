@@ -160,7 +160,7 @@ function Estimate({
           {vehicleResults.id.length !== 0 ? (
             <VehicleResults
               vehicleData={vehicleResults}
-              onSaveDataClick={onSaveVehicleClick}
+              onSaveVehicleClick={onSaveVehicleClick}
             />
           ) : null}
         </div>
