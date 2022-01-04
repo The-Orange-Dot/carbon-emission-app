@@ -53,10 +53,10 @@ function Estimate({
     id: ""
   });
 
-  const [onFForm, setOnFForm] = useState(true);
-  const [onVForm, setOnVForm] = useState(true);
-  const [onSForm, setOnSForm] = useState(true);
-  const [onEForm, setOnEForm] = useState(true);
+  const [onFForm, setOnFForm] = useState(false);
+  const [onVForm, setOnVForm] = useState(false);
+  const [onSForm, setOnSForm] = useState(false);
+  const [onEForm, setOnEForm] = useState(false);
 
   function handleFlightFormSubmit(formData) {
     fetch("https://www.carboninterface.com/api/v1/estimates", {
@@ -208,7 +208,7 @@ function Estimate({
         <h1 className="emission-welcome-text">Calculate carbon emissions</h1>
       </div>
       <div className="all-the-forms">
-        <div className="form-container" onClick={handleFFormClick}>
+        <div className="form-container" >
 
           { onFForm ? 
             <h2>Flights</h2> :
@@ -224,7 +224,7 @@ function Estimate({
           }
 
         </div>
-        <div className="form-container" onClick={handleVFormClick}>
+        <div className="form-container">
 
           { onVForm ? 
             <h2>Automobiles</h2> :
@@ -240,8 +240,8 @@ function Estimate({
           }
 
         </div>
-        <div className="form-container" onClick={handleSFormClick}>
-
+        <div className="form-container" >
+          <div>
           { onSForm ? 
             <h2>Shipping</h2> :
             <>
@@ -254,9 +254,9 @@ function Estimate({
               ) : null}
             </>
           }
-
+          </div>
         </div>
-        <div className="form-container" onClick={handleEFormClick}>
+        <div className="form-container" >
 
           { onEForm ?
             <h2>Electricity</h2> :
