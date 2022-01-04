@@ -2,6 +2,7 @@ import "./About.css";
 import AboutCard from "./AboutCard";
 import eleni from "../../images/creators/eleni.jpg";
 import hung from "../../images/creators/hung.jpg";
+import kat from "../../images/creators/kat.jpg";
 
 function About() {
   return (
@@ -24,7 +25,11 @@ function About() {
         </p>
       </div>
       <div className="">
-        <AboutCard name="Katherine Roll" info="" />
+        <AboutCard 
+          name="Katherine Roll" 
+          info="Studying Math in her undergraduate degree along with a bit of computer science on the side, Katherine has always had a long term goal to go into the software engineering field. However, after graduating, she took a 3 year pause on that goal to pursue another passion — working with livestock and horses on ranches in Colorado. Now, back in New England, she took the opportunity to attend the Flatiron School’s software engineering bootcamp where she is currently a student." 
+          image={kat}
+          />
         <AboutCard
           name="Eleni Papanicolas"
           info="For the past 16 years Eleni called various restaurants home. When the pandemic hit, and restaurants closed down, she had an unusual opportunity to use her newfound free time to learn something new. She started taking coding courses and was totally hooked on creating cool stuff from scratch. It was then that she decided that this was something she wanted to pursue full time. Eleni is currently a software engineering student at Flatiron School and she likes building things that are accessible, inclusive, responsive and dynamic."
