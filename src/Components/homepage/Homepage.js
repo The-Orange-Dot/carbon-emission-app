@@ -30,6 +30,11 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
     0
   );
 
+  const totalElectricCarbon = user.electricityHistory.reduce(
+    (count, electricity) => (count += electricity.carbon_lb),
+    0
+  );
+
   //Logs out of account
   const logoutHandler = () => {
     fetch("http://localhost:3001/users")
@@ -100,7 +105,8 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
                         Math.round(
                           (totalFlightCarbon +
                             totalShippingCarbon +
-                            totalVehicleCarbon) *
+                            totalVehicleCarbon +
+                            totalElectricCarbon) *
                             100
                         ) / 100
                       )
