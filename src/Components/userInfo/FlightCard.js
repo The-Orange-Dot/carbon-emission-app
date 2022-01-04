@@ -10,7 +10,13 @@ function FlightCard({ flight, onFlightDelete }) {
         <div>
           <p>Estimated carbon per person:</p>
           <p>
-            <strong>{flight.carbon_lb / flight.passengers} lbs</strong>
+            <strong>
+              {" "}
+              {(Math.round((flight.carbon_lb / flight.passengers) * 100) / 100)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+              lbs
+            </strong>
           </p>
         </div>
       </ul>
