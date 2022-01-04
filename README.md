@@ -1,20 +1,15 @@
-Carbon Emissions App thing:
+# insert-app-name
 
-APP.JS :
+insert-app-name was created to give users a fun and easy way to get a snapshot of their personal carbon footprint. The app takes a look at some of the most common carbon emitting activities and provides user the ability to fill in their personal details and receive an estimate of carbon emissions based on data provided by the Carbon Interface REST API. The data that powers the API is sourced from governments, non-profits, and leading researchers around the world including the EPA, GHG Protocol, and Environment Canada. The app is designed to create awareness by powering carbon measurement to combat climate change.
 
-HOMEPAGE:
+### technologies & resources
 
-has a welcome message
+- JavaScript
+- REACT
+- [Carbon Interface](https://www.carboninterface.com/)
 
-REGISTER:
-Send a post request to db.json to create a new user
+### creators
 
-NAVBAR:
-
-About tab to get a description of the apps functionality and list the creators
-
-Tabs in nav bar to bring up forms etc to GET data from API and POST response to user info
-
-USERINFO:
-
-lists user info (name etc.) and history of emissions requests and summary of emissions use
+- [Eleni Papanicolas](https://github.com/e-papanicolas)
+- [Katherine Roll](https://github.com/katroll)
+- [Hung Le](https://github.com/The-Orange-Dot)
