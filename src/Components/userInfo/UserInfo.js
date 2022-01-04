@@ -40,7 +40,7 @@ function UserInfo({ user, onFlightDelete, onVehicleDelete }) {
             <strong>Last Name:</strong> {user.lastName}
           </p>
           <p>
-            <strong>email:</strong> {user.email}
+            <strong>Email:</strong> {user.email}
           </p>
           <p>
             <strong>Username:</strong> {user.username}
