@@ -53,6 +53,11 @@ function Estimate({
     id: ""
   });
 
+  const [onFForm, setOnFForm] = useState(true);
+  const [onVForm, setOnVForm] = useState(true);
+  const [onSForm, setOnSForm] = useState(true);
+  const [onEForm, setOnEForm] = useState(true);
+
   function handleFlightFormSubmit(formData) {
     fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
@@ -180,6 +185,22 @@ function Estimate({
 
   }
 
+  function handleFFormClick () {
+    setOnFForm(!onFForm);
+  }
+
+  function handleVFormClick () {
+    setOnVForm(!onVForm);
+  }
+
+  function handleSFormClick () {
+    setOnSForm(!onSForm);
+  }
+
+  function handleEFormClick () {
+    setOnEForm(!onEForm);
+  }
+
 
   return (
     <div className="emission-container">
@@ -187,45 +208,69 @@ function Estimate({
         <h1 className="emission-welcome-text">Calculate carbon emissions</h1>
       </div>
       <div className="all-the-forms">
-        <div className="form-container">
-          <h2>Flights</h2>
-          <FlightForm handleFormSubmit={handleFlightFormSubmit} />
-          {flightResults.id.length !== 0 ? (
-            <FlightResults
-              flightData={flightResults}
-              onSaveFlightClick={onSaveFlightClick}
-            />
-          ) : null}
+        <div className="form-container" onClick={handleFFormClick}>
+
+          { onFForm ? 
+            <h2>Flights</h2> :
+            <>
+              <FlightForm handleFormSubmit={handleFlightFormSubmit} />
+              {flightResults.id.length !== 0 ? (
+                <FlightResults
+                  flightData={flightResults}
+                  onSaveFlightClick={onSaveFlightClick}
+              />
+              ) : null}
+            </>
+          }
+
         </div>
-        <div className="form-container">
-          <h2>Automobiles</h2>
-          <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
-          {vehicleResults.id.length !== 0 ? (
-            <VehicleResults
-              vehicleData={vehicleResults}
-              onSaveVehicleClick={onSaveVehicleClick}
-            />
-          ) : null}
+        <div className="form-container" onClick={handleVFormClick}>
+
+          { onVForm ? 
+            <h2>Automobiles</h2> :
+            <>
+              <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
+              {vehicleResults.id.length !== 0 ? (
+                <VehicleResults
+                  vehicleData={vehicleResults}
+                  onSaveVehicleClick={onSaveVehicleClick}
+              />
+              ) : null}
+            </>
+          }
+
         </div>
-        <div className="form-container">
-          <h2>Shipping</h2>
-          <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
-          {shippingResults.id.length !== 0 ? (
-            <ShippingResults
-              shippingData={shippingResults}
-              onSaveShippingClick={onSaveShippingClick}
-            />
-          ) : null}
+        <div className="form-container" onClick={handleSFormClick}>
+
+          { onSForm ? 
+            <h2>Shipping</h2> :
+            <>
+              <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
+              {shippingResults.id.length !== 0 ? (
+                <ShippingResults
+                  shippingData={shippingResults}
+                  onSaveShippingClick={onSaveShippingClick}
+              />
+              ) : null}
+            </>
+          }
+
         </div>
-        <div className="form-container">
-          <h2>Electricity</h2>
-          <ElectricityForm handleFormSubmit={handleElectricityFormSubmit} />
-          {electricityResults.id.length !== 0 ? (
-            <ElectricityResults
-              electricityData={electricityResults}
-              onSaveElectricityClick={onSaveElectricityClick}
-            />
-          ) : null}
+        <div className="form-container" onClick={handleEFormClick}>
+
+          { onEForm ?
+            <h2>Electricity</h2> :
+            <>
+              <ElectricityForm handleFormSubmit={handleElectricityFormSubmit} />
+              {electricityResults.id.length !== 0 ? (
+                <ElectricityResults
+                  electricityData={electricityResults}
+                  onSaveElectricityClick={onSaveElectricityClick}
+              />
+            ) : null}
+            </>
+          }
+
         </div>
       </div>
     </div>
