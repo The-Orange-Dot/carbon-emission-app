@@ -2,7 +2,9 @@ import "./About.css";
 import AboutCard from "./AboutCard";
 import eleni from "../../images/creators/eleni.jpg";
 import hung from "../../images/creators/hung.jpg";
-import filler from "../../images/default-profile.png";
+import kat from "../../images/creators/kat.jpg";
+
+
 
 function About() {
   return (
@@ -26,10 +28,10 @@ function About() {
           </p>
         </div>
         <div className="creators-card">
-          <AboutCard
-            name="Katherine Roll"
-            info="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            image={filler}
+          <AboutCard 
+          name="Katherine Roll" 
+          info="Studying Math in her undergraduate degree along with a bit of computer science on the side, Katherine has always had a long term goal to go into the software engineering field. However, after graduating, she took a 3 year pause on that goal to pursue another passion — working with livestock and horses on ranches in Colorado. Now, back in New England, she took the opportunity to attend the Flatiron School’s software engineering bootcamp where she is currently a student." 
+          image={kat}
           />
           <AboutCard
             name="Eleni Papanicolas"
