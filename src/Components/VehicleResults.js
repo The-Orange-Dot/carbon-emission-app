@@ -3,11 +3,8 @@ function VehicleResults({ vehicleData, onSaveVehicleClick }) {
     <div>
       <h2>Carbon Estimate:</h2>
 
-      <h4>Type:</h4>
-      <p>vehicle estimate</p>
-
       <h4>Date:</h4>
-      <p>{vehicleData.date}</p>
+      <p>{vehicleData.date.slice(0, 10)}</p>
 
       <h4>Distance:</h4>
       <p>{vehicleData.distance_value} {vehicleData.distance_unit}</p>
