@@ -87,3 +87,7 @@
 .developer-card > p {
   overflow: scroll;
 }
+
+.link {
+  color: black;
+}
