@@ -1,7 +1,7 @@
 .add-new-emission {
   width: 700px;
   height: 500px;
-  background-color: #80e2ff;
+  background-color: #516373;
   position: absolute;
   transform: translate(30vw, 20vh);
   display: flex;
@@ -14,6 +14,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  background-color: #f2e6d8;
 }
 
 .emission-welcome-text {
@@ -40,7 +41,7 @@
   width: 400px;
   max-width: 400px;
   max-height: 380px;
-  background-color: #80e2ff;
+  background-color: #8aa699;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   display: flex;

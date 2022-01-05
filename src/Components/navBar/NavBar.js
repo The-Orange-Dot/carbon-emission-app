@@ -18,7 +18,7 @@ function NavBar({ loggedIn }) {
         <NavLink to="/">
           <img src={logo} alt="logo" className="logo" />
         </NavLink>
-        <h1 style={{ color: "white" }}>App Name Here?</h1>
+        <h1 style={{ color: "white" }}>My Carbon Footprint</h1>
       </div>
 
       <div className="nav-buttons">
