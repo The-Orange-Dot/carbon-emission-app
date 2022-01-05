@@ -59,3 +59,7 @@
 .emission-by-countries:hover {
   background-color: #6ed0ee;
 }
+
+.homepage-total-emission {
+  font-size: 2.5em;
+}

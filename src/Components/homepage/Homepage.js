@@ -90,8 +90,8 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
                 )}
               </div>
               <div className="user">
-                <h5>Total Carbon Footprint</h5>
-                <h1>
+                <h4>Total Carbon Footprint</h4>
+                <h1 className="homepage-total-emission">
                   {user.flightHistory.length !== 0
                     ? `${(
                         Math.round(
