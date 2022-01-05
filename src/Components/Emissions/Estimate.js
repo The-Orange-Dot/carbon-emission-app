@@ -9,12 +9,7 @@ import ElectricityForm from "./Electricity/ElectricityForm";
 import ElectricityResults from "./Electricity/Electricity.Results";
 import "./EmissionPage.css";
 
-function Estimate({
-  onSaveData,
-  //onSaveVehicleClick,
-  //onSaveShippingClick,
-  //onSaveElectricityClick
-}) {
+function Estimate({ onSaveData }) {
   const [flightResults, setFlightResults] = useState({
     date: "",
     passengers: "",

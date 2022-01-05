@@ -4,10 +4,8 @@ import ShippingCard from "./ShippingCard";
 import VehicleCard from "./VehicleCard";
 import ElectricityCard from "./ElectricityCard";
 
-function UserInfo({
-  user,
-  onDeleteData,
-}) {
+function UserInfo({ user, onDeleteData }) {
+  
   const totalFlightCarbon = user.flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
