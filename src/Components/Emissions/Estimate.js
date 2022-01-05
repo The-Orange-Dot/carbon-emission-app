@@ -48,6 +48,8 @@ function Estimate({ onSaveData }) {
     id: "",
   });
 
+  const [closedPopup, setClosedPopup] = useState(false);
+
   function handleFlightFormSubmit(formData) {
     fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
@@ -181,6 +183,8 @@ function Estimate({ onSaveData }) {
             <ShippingResults
               shippingData={shippingResults}
               onSaveData={onSaveData}
+              closedPopup={closedPopup}
+              setClosedPopup={setClosedPopup}
             />
           ) : null}
         </div>
@@ -189,20 +193,28 @@ function Estimate({ onSaveData }) {
             <VehicleResults
               vehicleData={vehicleResults}
               onSaveData={onSaveData}
+              closedPopup={closedPopup}
+              setClosedPopup={setClosedPopup}
             />
           ) : null}
         </div>
         <div className="popup-position">
           {flightResults.id.length !== 0 ? (
-            <FlightResults flightData={flightResults} onSaveData={onSaveData} />
+            <FlightResults
+              flightData={flightResults}
+              onSaveData={onSaveData}
+              closedPopup={closedPopup}
+              setClosedPopup={setClosedPopup}
+            />
           ) : null}
         </div>
-
         <div className="popup-position">
           {electricityResults.id.length !== 0 ? (
             <ElectricityResults
               electricityData={electricityResults}
               onSaveData={onSaveData}
+              closedPopup={closedPopup}
+              setClosedPopup={setClosedPopup}
             />
           ) : null}
         </div>
@@ -215,28 +227,40 @@ function Estimate({ onSaveData }) {
           <div>
             <div className="airplane"></div>
             <h2>Flights</h2>
-            <FlightForm handleFormSubmit={handleFlightFormSubmit} />
+            <FlightForm
+              handleFormSubmit={handleFlightFormSubmit}
+              setClosedPopup={setClosedPopup}
+            />
           </div>
         </div>
         <div className="form-container">
           <div>
             <div className="road"></div>
             <h2>Automobiles</h2>
-            <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
+            <VehicleForm
+              handleVehicleFormSubmit={handleVehicleFormSubmit}
+              setClosedPopup={setClosedPopup}
+            />
           </div>
         </div>
         <div className="form-container">
           <div>
             <div className="shipping"></div>
             <h2>Shipping</h2>
-            <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
+            <ShippingForm
+              handleFormSubmit={handleShippingFormSubmit}
+              setClosedPopup={setClosedPopup}
+            />
           </div>
         </div>
         <div className="form-container">
           <div>
             <div className="electricity"></div>
             <h2>Electricity</h2>
-            <ElectricityForm handleFormSubmit={handleElectricityFormSubmit} />
+            <ElectricityForm
+              handleFormSubmit={handleElectricityFormSubmit}
+              setClosedPopup={setClosedPopup}
+            />
           </div>
         </div>
       </div>

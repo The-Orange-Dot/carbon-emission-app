@@ -1,7 +1,12 @@
 import "../EmissionPage.css";
 
-function ElectricityResults({ electricityData, onSaveData }) {
-  return (
+function ElectricityResults({
+  electricityData,
+  onSaveData,
+  closedPopup,
+  setClosedPopup,
+}) {
+  return closedPopup ? null : (
     <div className="emission-popup">
       <h2>Carbon Estimate:</h2>
 
@@ -23,6 +28,8 @@ function ElectricityResults({ electricityData, onSaveData }) {
       <button onClick={() => onSaveData("electricityHistory", electricityData)}>
         Save to History
       </button>
+
+      <button onClick={() => setClosedPopup(true)}>Go Back</button>
     </div>
   );
 }

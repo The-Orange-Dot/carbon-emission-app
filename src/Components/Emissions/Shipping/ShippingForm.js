@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ShippingForm({ handleFormSubmit }) {
+function ShippingForm({ handleFormSubmit, setClosedPopup }) {
   const [shippingData, setShippingData] = useState({
     weight: 0,
     distance: 0,
@@ -17,6 +17,7 @@ function ShippingForm({ handleFormSubmit }) {
   function onFormSubmit(e) {
     e.preventDefault();
     handleFormSubmit(shippingData);
+    setClosedPopup(false);
   }
 
   return (

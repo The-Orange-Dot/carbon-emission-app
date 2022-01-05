@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function FlightForm({ handleFormSubmit }) {
+function FlightForm({ handleFormSubmit, setClosedPopup }) {
   const [formData, setFormData] = useState({
     origin: "",
     destination: "",
@@ -17,6 +17,7 @@ function FlightForm({ handleFormSubmit }) {
   function onFormSubmit(e) {
     e.preventDefault();
     handleFormSubmit(formData);
+    setClosedPopup(false);
   }
 
   return (

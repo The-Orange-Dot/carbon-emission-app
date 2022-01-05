@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function VehicleForm({ handleVehicleFormSubmit }) {
+function VehicleForm({ handleVehicleFormSubmit, setClosedPopup }) {
   const [makes, setMakes] = useState([]);
   const [models, setModels] = useState([]);
 
@@ -67,6 +67,7 @@ function VehicleForm({ handleVehicleFormSubmit }) {
   function onVehicleFormSubmit(e) {
     e.preventDefault();
     handleVehicleFormSubmit(vehicleFormData);
+    setClosedPopup(false);
   }
 
   useEffect(() => {

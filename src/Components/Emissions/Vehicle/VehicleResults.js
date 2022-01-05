@@ -1,7 +1,12 @@
 import "../EmissionPage.css";
 
-function VehicleResults({ vehicleData, onSaveData }) {
-  return (
+function VehicleResults({
+  vehicleData,
+  onSaveData,
+  closedPopup,
+  setClosedPopup,
+}) {
+  return closedPopup ? null : (
     <div className="emission-popup">
       <div>
         <h2>Carbon Estimate:</h2>
@@ -26,6 +31,8 @@ function VehicleResults({ vehicleData, onSaveData }) {
         <button onClick={() => onSaveData("vehicleHistory", vehicleData)}>
           Save to History
         </button>
+
+        <button onClick={() => setClosedPopup(true)}>Go Back</button>
       </div>
     </div>
   );
