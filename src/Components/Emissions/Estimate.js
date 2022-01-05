@@ -87,7 +87,7 @@ function Estimate({ onSaveData }) {
       method: "POST",
 
       headers: {
-        Authorization: `Bearer 55NshTJnqIgD0wWtt246eg`,
+        Authorization: "Bearer 55NshTJnqIgD0wWtt246eg",
         "Content-Type": "application/json",
       },
 
@@ -175,64 +175,68 @@ function Estimate({ onSaveData }) {
 
   return (
     <div className="emission-container">
+      <div className="popup-container">
+        <div className="popup-position">
+          {shippingResults.id.length !== 0 ? (
+            <ShippingResults
+              shippingData={shippingResults}
+              onSaveData={onSaveData}
+            />
+          ) : null}
+        </div>
+        <div className="popup-position">
+          {vehicleResults.id.length !== 0 ? (
+            <VehicleResults
+              vehicleData={vehicleResults}
+              onSaveData={onSaveData}
+            />
+          ) : null}
+        </div>
+        <div className="popup-position">
+          {flightResults.id.length !== 0 ? (
+            <FlightResults flightData={flightResults} onSaveData={onSaveData} />
+          ) : null}
+        </div>
+
+        <div className="popup-position">
+          {electricityResults.id.length !== 0 ? (
+            <ElectricityResults
+              electricityData={electricityResults}
+              onSaveData={onSaveData}
+            />
+          ) : null}
+        </div>
+      </div>
       <div>
         <h1 className="emission-welcome-text">Calculate carbon emissions</h1>
       </div>
       <div className="all-the-forms">
         <div className="form-container">
           <div>
-            {/* Testing image for cards */}
             <div className="airplane"></div>
             <h2>Flights</h2>
             <FlightForm handleFormSubmit={handleFlightFormSubmit} />
-            {flightResults.id.length !== 0 ? (
-              <FlightResults
-                flightData={flightResults}
-                onSaveData={onSaveData}
-              />
-            ) : null}
           </div>
         </div>
         <div className="form-container">
           <div>
-            {/* Testing image for cards */}
             <div className="road"></div>
             <h2>Automobiles</h2>
             <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
-            {vehicleResults.id.length !== 0 ? (
-              <VehicleResults
-                vehicleData={vehicleResults}
-                onSaveData={onSaveData}
-              />
-            ) : null}
           </div>
         </div>
         <div className="form-container">
           <div>
-            {/* Testing image for cards */}
             <div className="shipping"></div>
             <h2>Shipping</h2>
             <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
-            {shippingResults.id.length !== 0 ? (
-              <ShippingResults
-                shippingData={shippingResults}
-                onSaveData={onSaveData}
-              />
-            ) : null}
           </div>
         </div>
         <div className="form-container">
           <div>
-            {/* Testing image for cards */}
             <div className="electricity"></div>
             <h2>Electricity</h2>
             <ElectricityForm handleFormSubmit={handleElectricityFormSubmit} />
-            {electricityResults.id.length !== 0 ? (
-              <ElectricityResults
-                electricityData={electricityResults}
-                onSaveData={onSaveData}
-              />
-            ) : null}
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
+import "../EmissionPage.css";
+
 function ShippingResults({ shippingData, onSaveShippingClick }) {
   return (
-    <div>
-      <h2>Carbon Estimate:</h2>
+    <div className="emission-popup">
+      <h3>Carbon Estimate:</h3>
 
       <h4>Date: </h4>
       <p>{shippingData.date}</p>

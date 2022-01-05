@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import React from "react";
 import logo from "../../images/treeLogo.png";
 
-function NavBar() {
+function NavBar({ loggedIn }) {
   //Style for navbar links
   const linkStyle = {
     color: "black",
@@ -48,7 +48,7 @@ function NavBar() {
           </li>
           <li>
             <NavLink
-              to="/user"
+              to={loggedIn ? "/user" : "/login"}
               style={linkStyle}
               activestyle={{ color: "blue" }}
             >
