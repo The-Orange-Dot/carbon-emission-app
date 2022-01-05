@@ -35,7 +35,6 @@
 }
 
 .form-container {
-  margin: 20px;
   padding: 10px;
   height: 380px;
   width: 400px;
@@ -46,12 +45,8 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.form-container > h2 {
-  margin-bottom: 30px;
+  margin: 20px;
 }
 
 .all-the-forms {
@@ -70,7 +65,7 @@
   height: 160px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  transform: translateY(-46px);
+  transform: translateY(-10px);
   background-image: url("../../images/airplane.jpeg");
   transition: 0.2s;
 }
@@ -81,7 +76,7 @@
   height: 160px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  transform: translateY(-46px);
+  transform: translateY(-10px);
   background-image: url("../../images/road.jpeg");
   transition: 0.2s;
 }
@@ -92,7 +87,7 @@
   height: 160px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  transform: translateY(-46px);
+  transform: translateY(-10px);
   background-image: url("../../images/shipping.jpeg");
   transition: 0.2s;
 }
@@ -103,7 +98,7 @@
   height: 160px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  transform: translateY(-61px);
+  transform: translateY(-10px);
   background-image: url("../../images/electricity.png");
   transition: 0.2s;
 }
@@ -114,4 +109,11 @@
 .form-container:hover .airplane {
   opacity: 100%;
   transition: 0.2s;
+}
+
+.form-container h2 {
+  transform: translateY(-120px);
+  color: white;
+  font-size: 3rem;
+  margin: 0;
 }
