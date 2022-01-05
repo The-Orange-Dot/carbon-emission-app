@@ -48,6 +48,68 @@ function About() {
             linkedin="https://www.linkedin.com/in/hung-le-fullstack/"
           />
         </div>
+        <div className="more-info-card">
+          <h1>Want to Learn More About Climate Change ?</h1>
+          <br />
+          <div>
+            <h3>
+              Here are some external links with more information on climate
+              change & carbon emissions
+            </h3>
+            <br />
+            <ul className="link-list">
+              <li>
+                <a href="https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data">
+                  EPA Greenhouse Gas Emissions
+                </a>
+              </li>
+              <li>
+                <a href="https://climate.nasa.gov/evidence/">
+                  NASA Climate Evidence
+                </a>
+              </li>
+              <li>
+                <a href="https://www.climatelinks.org/blog">
+                  Climate Links Global Knowledge Portal
+                </a>
+              </li>
+              <li>
+                <a href="https://www.climate.gov/">
+                  NOAA Science & Information for a Climate-Smart Nation
+                </a>
+              </li>
+              <li>
+                <a href="https://www.climatecentral.org/">
+                  Climate Central: An independent organiztion of leading
+                  scientists
+                </a>
+              </li>
+              <li>
+                <a href="https://www.nytimes.com/section/climate">
+                  New York Times Climate & Environment
+                </a>
+              </li>
+              <li>
+                <a href="https://www.aspeninstitute.org/topics/climate/">
+                  Aspen Institute's Climate Change Section
+                </a>
+              </li>
+              <li>
+                <a href="https://www.greenpeace.org/usa/blog/">
+                  GreenPeace The Environmentalist
+                </a>
+              </li>
+              <li>
+                <a href="https://www.brookings.edu/blog/planetpolicy/">
+                  Planet Policy
+                </a>
+              </li>
+              <li>
+                <a href="https://wwf.panda.org/">World Wildlife Fund</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
