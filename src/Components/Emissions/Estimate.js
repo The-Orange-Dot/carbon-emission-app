@@ -8,7 +8,6 @@ import ShippingResults from "./Shipping/ShippingResults";
 import ElectricityForm from "./Electricity/ElectricityForm";
 import ElectricityResults from "./Electricity/Electricity.Results";
 import "./EmissionPage.css";
-import airplane from "../../images/airplane.jpeg";
 
 const API = process.env.REACT_APP_CARBONINTERFACE_API;
 const API_KEY = process.env.REACT_APP_CARBONINTERFACE_KEY;
@@ -211,38 +210,49 @@ function Estimate({
       </div>
       <div className="all-the-forms">
         <div className="form-container">
-          {/* <img src={airplane} alt="airplane" /> */}
-          {onFForm ? (
-            <h2>Flights</h2>
-          ) : (
-            <>
-              <FlightForm handleFormSubmit={handleFlightFormSubmit} />
-              {flightResults.id.length !== 0 ? (
-                <FlightResults
-                  flightData={flightResults}
-                  onSaveData={onSaveData}
-                />
-              ) : null}
-            </>
-          )}
-        </div>
-        <div className="form-container">
-          {onVForm ? (
-            <h2>Automobiles</h2>
-          ) : (
-            <>
-              <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
-              {vehicleResults.id.length !== 0 ? (
-                <VehicleResults
-                  vehicleData={vehicleResults}
-                  onSaveData={onSaveData}
-                />
-              ) : null}
-            </>
-          )}
+          <div>
+            {/* Testing image for cards */}
+            <div className="airplane"></div>
+            {onFForm ? (
+              <h2>Flights</h2>
+            ) : (
+              <>
+                <FlightForm handleFormSubmit={handleFlightFormSubmit} />
+                {flightResults.id.length !== 0 ? (
+                  <FlightResults
+                    flightData={flightResults}
+                    onSaveData={onSaveData}
+                  />
+                ) : null}
+              </>
+            )}
+          </div>
         </div>
         <div className="form-container">
           <div>
+            {/* Testing image for cards */}
+            <div className="road"></div>
+            {onVForm ? (
+              <h2>Automobiles</h2>
+            ) : (
+              <>
+                <VehicleForm
+                  handleVehicleFormSubmit={handleVehicleFormSubmit}
+                />
+                {vehicleResults.id.length !== 0 ? (
+                  <VehicleResults
+                    vehicleData={vehicleResults}
+                    onSaveData={onSaveData}
+                  />
+                ) : null}
+              </>
+            )}
+          </div>
+        </div>
+        <div className="form-container">
+          <div>
+            {/* Testing image for cards */}
+            <div className="shipping"></div>
             {onSForm ? (
               <h2>Shipping</h2>
             ) : (
@@ -259,19 +269,25 @@ function Estimate({
           </div>
         </div>
         <div className="form-container">
-          {onEForm ? (
-            <h2>Electricity</h2>
-          ) : (
-            <>
-              <ElectricityForm handleFormSubmit={handleElectricityFormSubmit} />
-              {electricityResults.id.length !== 0 ? (
-                <ElectricityResults
-                  electricityData={electricityResults}
-                  onSaveData={onSaveData}
+          <div>
+            {/* Testing image for cards */}
+            <div className="electricity"></div>
+            {onEForm ? (
+              <h2>Electricity</h2>
+            ) : (
+              <>
+                <ElectricityForm
+                  handleFormSubmit={handleElectricityFormSubmit}
                 />
-              ) : null}
-            </>
-          )}
+                {electricityResults.id.length !== 0 ? (
+                  <ElectricityResults
+                    electricityData={electricityResults}
+                    onSaveData={onSaveData}
+                  />
+                ) : null}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>

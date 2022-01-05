@@ -39,6 +39,8 @@
   padding: 10px;
   height: 380px;
   width: 400px;
+  max-width: 400px;
+  max-height: 380px;
   background-color: #80e2ff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -61,8 +63,54 @@
   margin: 10px;
 }
 
-.form-container > img {
-  overflow: hidden;
-  transform: scale(30%);
-  position: sticky;
+.airplane {
+  opacity: 50%;
+  width: 420px;
+  height: 160px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transform: translateY(-60px);
+  background-image: url("../../images/airplane.jpeg");
+  transition: 0.2s;
+}
+
+.road {
+  opacity: 50%;
+  width: 420px;
+  height: 160px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transform: translateY(-60px);
+  background-image: url("../../images/road.jpeg");
+  transition: 0.2s;
+}
+
+.shipping {
+  opacity: 50%;
+  width: 420px;
+  height: 160px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transform: translateY(-60px);
+  background-image: url("../../images/shipping.jpeg");
+  transition: 0.2s;
+}
+
+.electricity {
+  opacity: 50%;
+  width: 420px;
+  height: 160px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transform: translateY(-75px);
+  background-image: url("../../images/electricity.png");
+  transition: 0.2s;
+}
+
+.form-container:hover .road,
+.form-container:hover .electricity,
+.form-container:hover .shipping,
+.form-container:hover .airplane {
+  opacity: 100%;
+  transition: 0.2s;
 }
