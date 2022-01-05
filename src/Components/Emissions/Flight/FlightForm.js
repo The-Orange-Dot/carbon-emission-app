@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function FlightForm({ handleFormSubmit, setClosedPopup }) {
+function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
   const [formData, setFormData] = useState({
     origin: "",
     destination: "",
@@ -17,7 +17,7 @@ function FlightForm({ handleFormSubmit, setClosedPopup }) {
   function onFormSubmit(e) {
     e.preventDefault();
     handleFormSubmit(formData);
-    setClosedPopup(false);
+    setFlightResults({ ...flightResults, id: "" });
   }
 
   return (

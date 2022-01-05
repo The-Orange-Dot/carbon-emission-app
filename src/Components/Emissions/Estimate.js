@@ -48,7 +48,6 @@ function Estimate({ onSaveData }) {
     id: "",
   });
 
-  const [closedPopup, setClosedPopup] = useState(false);
 
   function handleFlightFormSubmit(formData) {
     fetch("https://www.carboninterface.com/api/v1/estimates", {
@@ -183,8 +182,7 @@ function Estimate({ onSaveData }) {
             <ShippingResults
               shippingData={shippingResults}
               onSaveData={onSaveData}
-              closedPopup={closedPopup}
-              setClosedPopup={setClosedPopup}
+              setShippingResults={setShippingResults}
             />
           ) : null}
         </div>
@@ -193,8 +191,7 @@ function Estimate({ onSaveData }) {
             <VehicleResults
               vehicleData={vehicleResults}
               onSaveData={onSaveData}
-              closedPopup={closedPopup}
-              setClosedPopup={setClosedPopup}
+              setVehicleResults={setVehicleResults}
             />
           ) : null}
         </div>
@@ -203,8 +200,7 @@ function Estimate({ onSaveData }) {
             <FlightResults
               flightData={flightResults}
               onSaveData={onSaveData}
-              closedPopup={closedPopup}
-              setClosedPopup={setClosedPopup}
+              setFlightResults={setFlightResults}
             />
           ) : null}
         </div>
@@ -213,8 +209,7 @@ function Estimate({ onSaveData }) {
             <ElectricityResults
               electricityData={electricityResults}
               onSaveData={onSaveData}
-              closedPopup={closedPopup}
-              setClosedPopup={setClosedPopup}
+              setElectricityResults={setElectricityResults}
             />
           ) : null}
         </div>
@@ -229,7 +224,8 @@ function Estimate({ onSaveData }) {
             <h2>Flights</h2>
             <FlightForm
               handleFormSubmit={handleFlightFormSubmit}
-              setClosedPopup={setClosedPopup}
+              setFlightResults={setFlightResults}
+              flightResults={flightResults}
             />
           </div>
         </div>
@@ -239,7 +235,8 @@ function Estimate({ onSaveData }) {
             <h2>Automobiles</h2>
             <VehicleForm
               handleVehicleFormSubmit={handleVehicleFormSubmit}
-              setClosedPopup={setClosedPopup}
+              setVehicleResults={setVehicleResults}
+              vehicleResults={vehicleResults}
             />
           </div>
         </div>
@@ -249,7 +246,8 @@ function Estimate({ onSaveData }) {
             <h2>Shipping</h2>
             <ShippingForm
               handleFormSubmit={handleShippingFormSubmit}
-              setClosedPopup={setClosedPopup}
+              setShippingResults={setShippingResults}
+              shippingResults={shippingResults}
             />
           </div>
         </div>
@@ -259,7 +257,8 @@ function Estimate({ onSaveData }) {
             <h2>Electricity</h2>
             <ElectricityForm
               handleFormSubmit={handleElectricityFormSubmit}
-              setClosedPopup={setClosedPopup}
+              setElectricityResults={setElectricityResults}
+              electricityResults={electricityResults}
             />
           </div>
         </div>
