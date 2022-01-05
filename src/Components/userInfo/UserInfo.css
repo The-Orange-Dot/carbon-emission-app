@@ -6,11 +6,9 @@
   margin-bottom: 100px;
 }
 
-.flight-card,
-.vehicle-card,
-.shipping-history {
-  margin: 20px;
-  height: 160px;
+.emission-card {
+  margin: 20px 20px 0px 20px;
+  height: 120px;
   width: 300px;
   background-color: #80e2ff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -19,12 +17,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: 0.2s;
 }
 
-.flight-card:hover,
-.vehicle-card:hover,
-.shipping-history:hover {
+.emission-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  height: 200px;
+  transition: 0.2s;
+}
+
+.hide {
+  display: none;
+  transition: 0.2s;
+}
+
+.emission-card:hover .hide {
+  display: block;
+  transition: 0.2s;
 }
 
 .card-container {

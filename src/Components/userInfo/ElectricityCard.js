@@ -2,11 +2,11 @@ import "./UserInfo.css";
 
 function ElectricityCard({ electricity, onElectricityDelete }) {
   return (
-    <div className="flight-card">
+    <div className="emission-card">
       <h4 className="card-header">{electricity.date.slice(0, 10)}</h4>
       <ul>
-        <p>Country: {electricity.country}</p>
-        <p>State: {electricity.state}</p>
+        <p className="hide">Country: {electricity.country}</p>
+        <p className="hide">State: {electricity.state}</p>
         <p>Electricity used: {electricity.electricity_value} kWh</p>
         <div>
           <p>Estimated carbon emission: </p>
@@ -17,9 +17,9 @@ function ElectricityCard({ electricity, onElectricityDelete }) {
       </ul>
       <button
         onClick={() => onElectricityDelete(electricity)}
-        className="carbon-estimate-btn"
+        className="carbon-estimate-btn + hide"
       >
-        Delete Flight
+        Delete History
       </button>
     </div>
   );

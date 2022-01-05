@@ -2,14 +2,14 @@ import "./UserInfo.css";
 
 function VehicleCard({ vehicle, onVehicleDelete }) {
   return (
-    <div className="vehicle-card">
+    <div className="emission-card">
       <h4 className="card-header">
         {vehicle.vehicle_year} {vehicle.vehicle_make} {vehicle.vehicle_model}
       </h4>
       <ul>
         <p>Date estimated: {vehicle.date.slice(0, 10)}</p>
 
-        <p>
+        <p className="hide">
           Trip: {vehicle.distance_value} {vehicle.distance_unit}
         </p>
 
@@ -22,9 +22,9 @@ function VehicleCard({ vehicle, onVehicleDelete }) {
       </ul>
       <button
         onClick={() => onVehicleDelete(vehicle)}
-        className="carbon-estimate-btn"
+        className="carbon-estimate-btn + hide"
       >
-        Delete Vehicle
+        Delete History
       </button>
     </div>
   );

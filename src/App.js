@@ -1,16 +1,16 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import Login from "./Components/login/Login";
-import Homepage from "./Components/homepage/Homepage";
-import About from "./Components/about/About";
-import UserInfo from "./Components/userInfo/UserInfo";
-import NavBar from "./Components/navBar/NavBar";
-import Estimate from "./Components/Estimate";
+import Login from "./Components/Login/Login";
+import Homepage from "./Components/Homepage/Homepage";
+import About from "./Components/About/About";
+import UserInfo from "./Components/UserInfo/UserInfo";
+import NavBar from "./Components/NavBar/NavBar";
+import Estimate from "./Components/Emissions/Estimate";
 import defaultImage from "./images/default-profile.png";
 
 function App() {
-  //Default if user isn't logged in
+  //Initial state
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({
     id: 0,
@@ -22,7 +22,7 @@ function App() {
     flightHistory: [],
     shippingHistory: [],
     vehicleHistory: [],
-    electricityHistory: []
+    electricityHistory: [],
   });
 
   //Fetches User Data
@@ -176,9 +176,7 @@ function App() {
     })
       .then((resp) => resp.json())
       .then((userUpdate) => setUser(userUpdate));
-
   }
-  
 
   return (
     <div className="App">

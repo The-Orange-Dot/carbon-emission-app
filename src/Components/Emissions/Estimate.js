@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import FlightForm from "./FlightForm";
-import FlightResults from "./FlightResults";
-import VehicleForm from "./VehicleForm";
-import VehicleResults from "./VehicleResults";
-import ShippingForm from "./ShippingForm";
-import ShippingResults from "./ShippingResults";
-import ElectricityForm from "./ElectricityForm";
-import ElectricityResults from "./Electricity.Results";
+import FlightForm from "./Flight/FlightForm";
+import FlightResults from "./Flight/FlightResults";
+import VehicleForm from "./Vehicle/VehicleForm";
+import VehicleResults from "./Vehicle/VehicleResults";
+import ShippingForm from "./Shipping/ShippingForm";
+import ShippingResults from "./Shipping/ShippingResults";
+import ElectricityForm from "./Electricity/ElectricityForm";
+import ElectricityResults from "./Electricity/Electricity.Results";
 import "./EmissionPage.css";
+import airplane from "../../images/airplane.jpeg";
+
+const API = process.env.REACT_APP_CARBONINTERFACE_API;
+const API_KEY = process.env.REACT_APP_CARBONINTERFACE_KEY;
 
 function Estimate({
   onSaveData,
@@ -50,7 +54,7 @@ function Estimate({
     state: "",
     electricity_value: "",
     carbon_lb: 0,
-    id: ""
+    id: "",
   });
 
   const [onFForm, setOnFForm] = useState(false);
@@ -59,11 +63,11 @@ function Estimate({
   const [onEForm, setOnEForm] = useState(false);
 
   function handleFlightFormSubmit(formData) {
-    fetch("https://www.carboninterface.com/api/v1/estimates", {
+    fetch(API, {
       method: "POST",
 
       headers: {
-        Authorization: "Bearer 55NshTJnqIgD0wWtt246eg",
+        Authorization: API_KEY,
         "Content-Type": "application/json",
       },
 
@@ -93,11 +97,11 @@ function Estimate({
   }
 
   function handleVehicleFormSubmit(vehicleFormData) {
-    fetch("https://www.carboninterface.com/api/v1/estimates", {
+    fetch(API, {
       method: "POST",
 
       headers: {
-        Authorization: "Bearer 5VRMUOEjTcf6Yl04DbDVg",
+        Authorization: API_KEY,
         "Content-Type": "application/json",
       },
 
@@ -124,11 +128,11 @@ function Estimate({
   }
 
   function handleShippingFormSubmit(shippingData) {
-    fetch("https://www.carboninterface.com/api/v1/estimates", {
+    fetch(API, {
       method: "POST",
 
       headers: {
-        Authorization: "Bearer 55NshTJnqIgD0wWtt246eg",
+        Authorization: API_KEY,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -154,11 +158,11 @@ function Estimate({
   }
 
   function handleElectricityFormSubmit(elecrticityData) {
-    fetch("https://www.carboninterface.com/api/v1/estimates", {
+    fetch(API, {
       method: "POST",
 
       headers: {
-        Authorization: "Bearer 55NshTJnqIgD0wWtt246eg",
+        Authorization: API_KEY,
         "Content-Type": "application/json",
       },
 
@@ -167,40 +171,38 @@ function Estimate({
         electricity_unit: "kwh",
         electricity_value: elecrticityData.electricity_value,
         country: "us",
-        state: elecrticityData.state
-      })
+        state: elecrticityData.state,
+      }),
     })
-    .then(resp => resp.json()) 
-    .then(results => {
-      console.log(results)
-      setElectricityResults({
-        date: results.data.attributes.estimated_at,
-        country: "US",
-        state: results.data.attributes.state.toUpperCase(),
-        electricity_value: results.data.attributes.electricity_value,
-        carbon_lb: results.data.attributes.carbon_lb,
-        id: results.data.id
-      })
-    })
-
+      .then((resp) => resp.json())
+      .then((results) => {
+        console.log(results);
+        setElectricityResults({
+          date: results.data.attributes.estimated_at,
+          country: "US",
+          state: results.data.attributes.state.toUpperCase(),
+          electricity_value: results.data.attributes.electricity_value,
+          carbon_lb: results.data.attributes.carbon_lb,
+          id: results.data.id,
+        });
+      });
   }
 
-  function handleFFormClick () {
+  function handleFFormClick() {
     setOnFForm(!onFForm);
   }
 
-  function handleVFormClick () {
+  function handleVFormClick() {
     setOnVForm(!onVForm);
   }
 
-  function handleSFormClick () {
+  function handleSFormClick() {
     setOnSForm(!onSForm);
   }
 
-  function handleEFormClick () {
+  function handleEFormClick() {
     setOnEForm(!onEForm);
   }
-
 
   return (
     <div className="emission-container">
@@ -208,69 +210,68 @@ function Estimate({
         <h1 className="emission-welcome-text">Calculate carbon emissions</h1>
       </div>
       <div className="all-the-forms">
-        <div className="form-container" >
-
-          { onFForm ? 
-            <h2>Flights</h2> :
+        <div className="form-container">
+          {/* <img src={airplane} alt="airplane" /> */}
+          {onFForm ? (
+            <h2>Flights</h2>
+          ) : (
             <>
               <FlightForm handleFormSubmit={handleFlightFormSubmit} />
               {flightResults.id.length !== 0 ? (
                 <FlightResults
                   flightData={flightResults}
                   onSaveData={onSaveData}
-              />
+                />
               ) : null}
             </>
-          }
-
+          )}
         </div>
         <div className="form-container">
-
-          { onVForm ? 
-            <h2>Automobiles</h2> :
+          {onVForm ? (
+            <h2>Automobiles</h2>
+          ) : (
             <>
               <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
               {vehicleResults.id.length !== 0 ? (
                 <VehicleResults
                   vehicleData={vehicleResults}
                   onSaveData={onSaveData}
-              />
+                />
               ) : null}
             </>
-          }
-
+          )}
         </div>
-        <div className="form-container" >
+        <div className="form-container">
           <div>
-          { onSForm ? 
-            <h2>Shipping</h2> :
-            <>
-              <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
-              {shippingResults.id.length !== 0 ? (
-                <ShippingResults
-                  shippingData={shippingResults}
-                  onSaveData={onSaveData}
-              />
-              ) : null}
-            </>
-          }
+            {onSForm ? (
+              <h2>Shipping</h2>
+            ) : (
+              <>
+                <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
+                {shippingResults.id.length !== 0 ? (
+                  <ShippingResults
+                    shippingData={shippingResults}
+                    onSaveData={onSaveData}
+                  />
+                ) : null}
+              </>
+            )}
           </div>
         </div>
-        <div className="form-container" >
-
-          { onEForm ?
-            <h2>Electricity</h2> :
+        <div className="form-container">
+          {onEForm ? (
+            <h2>Electricity</h2>
+          ) : (
             <>
               <ElectricityForm handleFormSubmit={handleElectricityFormSubmit} />
               {electricityResults.id.length !== 0 ? (
                 <ElectricityResults
                   electricityData={electricityResults}
                   onSaveData={onSaveData}
-              />
-            ) : null}
+                />
+              ) : null}
             </>
-          }
-
+          )}
         </div>
       </div>
     </div>

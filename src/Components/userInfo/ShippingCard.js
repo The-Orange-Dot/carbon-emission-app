@@ -1,11 +1,11 @@
 function ShippingCard({ shipment, onShipmentDelete }) {
   return (
-    <div className="flight-card">
+    <div className="emission-card">
       <h4 className="card-header">{shipment.date.slice(0, 10)}</h4>
       <ul>
-        <p>Weight: {shipment.weight} lbs</p>
+        <p className="hide">Weight: {shipment.weight} lbs</p>
         <p>Distance: {shipment.distance} mi</p>
-        <p>Shipment method: {shipment.method}</p>
+        <p className="hide">Shipment method: {shipment.method}</p>
         <div>
           <p>Estimated carbon emission: </p>
           <p>
@@ -15,9 +15,9 @@ function ShippingCard({ shipment, onShipmentDelete }) {
       </ul>
       <button
         onClick={() => onShipmentDelete(shipment)}
-        className="carbon-estimate-btn"
+        className="carbon-estimate-btn + hide"
       >
-        Delete Shipment
+        Delete History
       </button>
     </div>
   );

@@ -2,13 +2,14 @@ import "./UserInfo.css";
 
 function FlightCard({ flight, onFlightDelete }) {
   return (
-    <div className="flight-card">
+    <div className="emission-card">
       <h4 className="card-header">{`${flight.departure} → ${flight.destination}`}</h4>
       <ul>
         <p>Date estimated: {flight.date.slice(0, 10)}</p>
-        <p>Number of passengers: {flight.passengers}</p>
+        <p className="hide">Number of passengers: {flight.passengers}</p>
         <div>
-          <p>Estimated carbon per person:</p>
+          <p>Estimated carbon emission:</p>
+          <p className="hide"> (per person)</p>
           <p>
             <strong>
               {" "}
@@ -22,9 +23,9 @@ function FlightCard({ flight, onFlightDelete }) {
       </ul>
       <button
         onClick={() => onFlightDelete(flight)}
-        className="carbon-estimate-btn"
+        className="carbon-estimate-btn + hide"
       >
-        Delete Flight
+        Delete History
       </button>
     </div>
   );

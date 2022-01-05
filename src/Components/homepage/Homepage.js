@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import WorldDataCard from "./WorldDataCard";
 import "./Homepage.css";
 import { NavLink } from "react-router-dom";
-import Footer from "../Footer";
+import Footer from "./Footer";
 import Charts from "./Charts";
 import ChartSelector from "./ChartSelector";
 

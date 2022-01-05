@@ -60,3 +60,9 @@
 .emission-form-container div {
   margin: 10px;
 }
+
+.form-container > img {
+  overflow: hidden;
+  transform: scale(30%);
+  position: sticky;
+}
