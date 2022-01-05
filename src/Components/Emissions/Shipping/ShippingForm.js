@@ -47,6 +47,7 @@ function ShippingForm({ handleFormSubmit }) {
             id="transport_method"
             onChange={handleShippingDataChange}
           >
+            <option value="select method">Select Method</option>
             <option value="plane">Plane</option>
             <option value="truck">Truck</option>
             <option value="train">Train</option>
