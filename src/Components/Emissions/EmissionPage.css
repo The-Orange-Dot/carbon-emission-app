@@ -57,6 +57,7 @@
 .all-the-forms {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .emission-form-container div {

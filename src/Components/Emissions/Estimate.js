@@ -66,7 +66,7 @@ function Estimate({
       method: "POST",
 
       headers: {
-        Authorization: API_KEY,
+        Authorization: `Bearer ${API_KEY}`,
         "Content-Type": "application/json",
       },
 
@@ -100,7 +100,7 @@ function Estimate({
       method: "POST",
 
       headers: {
-        Authorization: API_KEY,
+        Authorization: `Bearer ${API_KEY}`,
         "Content-Type": "application/json",
       },
 
@@ -131,7 +131,7 @@ function Estimate({
       method: "POST",
 
       headers: {
-        Authorization: API_KEY,
+        Authorization: `Bearer ${API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -161,7 +161,7 @@ function Estimate({
       method: "POST",
 
       headers: {
-        Authorization: API_KEY,
+        Authorization: `Bearer ${API_KEY}`,
         "Content-Type": "application/json",
       },
 
