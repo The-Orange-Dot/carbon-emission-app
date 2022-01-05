@@ -11,7 +11,7 @@
 }
 
 .homepage-user-info {
-  background-color: #80e2ff;
+  background-color: #8aa699;
   width: 650px;
   padding: 20px;
   border-radius: 10px;
@@ -25,6 +25,7 @@
 
 .homepage-user-info img {
   margin-bottom: 10px;
+  border: 4px solid #302940;
 }
 
 .homepage-user-info button:hover {
@@ -47,9 +48,12 @@
   margin-top: 10px;
   margin-left: 5px;
   width: 680px;
-  background-color: #80e2ff;
+  background-color: white;
+  color: #302940;
   height: 300px;
   overflow: scroll;
+  border: 4px solid  #65858c;
+  border-radius: 10px;
 }
 
 .data::-webkit-scrollbar {
@@ -57,7 +61,7 @@
 }
 
 .emission-by-countries:hover {
-  background-color: #6ed0ee;
+  background-color: #65858c;
 }
 
 .homepage-total-emission {

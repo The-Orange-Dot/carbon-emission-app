@@ -66,7 +66,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
         <div className="user-data-container"></div>
         <div className="world-data-container">
           <div className="homepage-user-info">
-            <h1>Where do you rank in the world?</h1>
+            <h1>Where do you stand ..?</h1>
             <div>
               <div className="profile-image">
                 <NavLink to={loggedIn ? "/user" : "/login"}>
