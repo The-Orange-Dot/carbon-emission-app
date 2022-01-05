@@ -63,6 +63,14 @@
           "method": "plane",
           "carbon_lb": 1.43,
           "id": "3325691c-0205-48de-a2da-7ce7cd29e7d0"
+        },
+        {
+          "date": "2022-01-05T17:18:17.926Z",
+          "weight": 25,
+          "distance": 230,
+          "method": "train",
+          "carbon_lb": 0.2,
+          "id": "08eb2b0c-8de3-4879-bd97-90a9209b11d5"
         }
       ],
       "vehicleHistory": [

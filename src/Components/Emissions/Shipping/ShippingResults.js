@@ -19,7 +19,7 @@ function ShippingResults({ shippingData, onSaveData }) {
       <h4>Carbon Estimate (lbs): </h4>
       <p>{shippingData.carbon_lb}</p>
 
-      <button onClick={() => onSaveData(shippingData)}>
+      <button onClick={() => onSaveData("shippingHistory", shippingData)}>
         Save to History
       </button>
     </div>
