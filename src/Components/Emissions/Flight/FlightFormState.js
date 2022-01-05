@@ -2,8 +2,6 @@
 // import React, { useState } from "react";
 
 // const FlightFormState = () => {
-//   const API = process.env.REACT_APP_CARBONINTERFACE_API;
-//   const API_KEY = process.env.REACT_APP_CARBONINTERFACE_KEY;
 
 //   const [flightResults, setFlightResults] = useState({
 //     date: "",

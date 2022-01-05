@@ -9,9 +9,6 @@ import ElectricityForm from "./Electricity/ElectricityForm";
 import ElectricityResults from "./Electricity/Electricity.Results";
 import "./EmissionPage.css";
 
-const API = process.env.REACT_APP_CARBONINTERFACE_API;
-const API_KEY = process.env.REACT_APP_CARBONINTERFACE_KEY;
-
 function Estimate({
   onSaveData,
   //onSaveVehicleClick,
@@ -57,11 +54,11 @@ function Estimate({
   });
 
   function handleFlightFormSubmit(formData) {
-    fetch(API, {
+    fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
 
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer 55NshTJnqIgD0wWtt246eg`,
         "Content-Type": "application/json",
       },
 
@@ -91,11 +88,11 @@ function Estimate({
   }
 
   function handleVehicleFormSubmit(vehicleFormData) {
-    fetch(API, {
+    fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
 
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer 55NshTJnqIgD0wWtt246eg`,
         "Content-Type": "application/json",
       },
 
@@ -122,11 +119,11 @@ function Estimate({
   }
 
   function handleShippingFormSubmit(shippingData) {
-    fetch(API, {
+    fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
 
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer 55NshTJnqIgD0wWtt246eg`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -152,11 +149,11 @@ function Estimate({
   }
 
   function handleElectricityFormSubmit(elecrticityData) {
-    fetch(API, {
+    fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
 
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer 55NshTJnqIgD0wWtt246eg`,
         "Content-Type": "application/json",
       },
 
@@ -182,7 +179,6 @@ function Estimate({
       });
   }
 
-
   return (
     <div className="emission-container">
       <div>
@@ -193,60 +189,56 @@ function Estimate({
           <div>
             {/* Testing image for cards */}
             <div className="airplane"></div>
-              <h2>Flights</h2>
-              <FlightForm handleFormSubmit={handleFlightFormSubmit} />
-                {flightResults.id.length !== 0 ? (
-                  <FlightResults
-                    flightData={flightResults}
-                    onSaveData={onSaveData}
-                  />
-                ) : null}
+            <h2>Flights</h2>
+            <FlightForm handleFormSubmit={handleFlightFormSubmit} />
+            {flightResults.id.length !== 0 ? (
+              <FlightResults
+                flightData={flightResults}
+                onSaveData={onSaveData}
+              />
+            ) : null}
           </div>
         </div>
         <div className="form-container">
           <div>
             {/* Testing image for cards */}
             <div className="road"></div>
-              <h2>Automobiles</h2>
-              <VehicleForm
-                  handleVehicleFormSubmit={handleVehicleFormSubmit}
-                />
-                {vehicleResults.id.length !== 0 ? (
-                  <VehicleResults
-                    vehicleData={vehicleResults}
-                    onSaveData={onSaveData}
-                  />
-                ) : null}
+            <h2>Automobiles</h2>
+            <VehicleForm handleVehicleFormSubmit={handleVehicleFormSubmit} />
+            {vehicleResults.id.length !== 0 ? (
+              <VehicleResults
+                vehicleData={vehicleResults}
+                onSaveData={onSaveData}
+              />
+            ) : null}
           </div>
         </div>
         <div className="form-container">
           <div>
             {/* Testing image for cards */}
             <div className="shipping"></div>
-              <h2>Shipping</h2>
-              <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
-                {shippingResults.id.length !== 0 ? (
-                  <ShippingResults
-                    shippingData={shippingResults}
-                    onSaveData={onSaveData}
-                  />
-                ) : null}
+            <h2>Shipping</h2>
+            <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
+            {shippingResults.id.length !== 0 ? (
+              <ShippingResults
+                shippingData={shippingResults}
+                onSaveData={onSaveData}
+              />
+            ) : null}
           </div>
         </div>
         <div className="form-container">
           <div>
             {/* Testing image for cards */}
             <div className="electricity"></div>
-              <h2>Electricity</h2>
-              <ElectricityForm
-                  handleFormSubmit={handleElectricityFormSubmit}
-                />
-                {electricityResults.id.length !== 0 ? (
-                  <ElectricityResults
-                    electricityData={electricityResults}
-                    onSaveData={onSaveData}
-                  />
-                ) : null}
+            <h2>Electricity</h2>
+            <ElectricityForm handleFormSubmit={handleElectricityFormSubmit} />
+            {electricityResults.id.length !== 0 ? (
+              <ElectricityResults
+                electricityData={electricityResults}
+                onSaveData={onSaveData}
+              />
+            ) : null}
           </div>
         </div>
       </div>

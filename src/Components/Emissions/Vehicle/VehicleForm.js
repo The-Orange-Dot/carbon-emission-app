@@ -34,7 +34,7 @@ function VehicleForm({ handleVehicleFormSubmit }) {
       {
         method: "GET",
         headers: {
-          Authorization: "Bearer 5VRMUOEjTcf6Yl04DbDVg",
+          Authorization: `Bearer 5VRMUOEjTcf6Yl04DbDVg`,
           "Content-Type": "application/json",
         },
       }

@@ -70,7 +70,7 @@
   height: 160px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  transform: translateY(-60px);
+  transform: translateY(-46px);
   background-image: url("../../images/airplane.jpeg");
   transition: 0.2s;
 }
@@ -81,7 +81,7 @@
   height: 160px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  transform: translateY(-60px);
+  transform: translateY(-46px);
   background-image: url("../../images/road.jpeg");
   transition: 0.2s;
 }
@@ -92,7 +92,7 @@
   height: 160px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  transform: translateY(-60px);
+  transform: translateY(-46px);
   background-image: url("../../images/shipping.jpeg");
   transition: 0.2s;
 }
@@ -103,7 +103,7 @@
   height: 160px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  transform: translateY(-75px);
+  transform: translateY(-61px);
   background-image: url("../../images/electricity.png");
   transition: 0.2s;
 }

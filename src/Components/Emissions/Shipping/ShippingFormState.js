@@ -2,9 +2,7 @@
 // import React, { useState } from "react";
 
 // export const ShippingFormState = () => {
-//   const API = process.env.REACT_APP_CARBONINTERFACE_API;
-//   const API_KEY = process.env.REACT_APP_CARBONINTERFACE_KEY;
-
+//
 //   const [shippingResults, setShippingResults] = useState({
 //     date: "",
 //     weight: 0,
