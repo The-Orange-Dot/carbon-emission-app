@@ -42,17 +42,17 @@ function App() {
     };
   }, []);
 
-  const handleFlightSaveClick = (results) => {
-    fetch(`http://localhost:3001/users/${user.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        flightHistory: [...user.flightHistory, results],
-      }),
-    })
-      .then((resp) => resp.json())
-      .then((userUpdate) => setUser(userUpdate));
-  };
+  // const handleFlightSaveClick = (results) => {
+  //   fetch(`http://localhost:3001/users/${user.id}`, {
+  //     method: "PATCH",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       flightHistory: [...user.flightHistory, results],
+  //     }),
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then((userUpdate) => setUser(userUpdate));
+  // };
 
   const handleFlightDelete = (flight) => {
     const filteredFlights = user.flightHistory.filter(
@@ -73,17 +73,17 @@ function App() {
     });
   };
 
-  const handleVehicleSaveClick = (vehicleResults) => {
-    fetch(`http://localhost:3001/users/${user.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        vehicleHistory: [...user.vehicleHistory, vehicleResults],
-      }),
-    })
-      .then((resp) => resp.json())
-      .then((userUpdate) => setUser(userUpdate));
-  };
+  // const handleVehicleSaveClick = (vehicleResults) => {
+  //   fetch(`http://localhost:3001/users/${user.id}`, {
+  //     method: "PATCH",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       vehicleHistory: [...user.vehicleHistory, vehicleResults],
+  //     }),
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then((userUpdate) => setUser(userUpdate));
+  // };
 
   const handleVehicleDelete = (vehicle) => {
     const filteredVehicles = user.vehicleHistory.filter(
@@ -104,29 +104,79 @@ function App() {
     });
   };
 
-  function handleShippingSaveClick(shippingResults) {
+  // function handleShippingSaveClick(shippingResults) {
+  //   fetch(`http://localhost:3001/users/${user.id}`, {
+  //     method: "PATCH",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       shippingHistory: [...user.shippingHistory, shippingResults],
+  //     }),
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then((userUpdate) => setUser(userUpdate));
+  // }
+
+  function handleShipmentDelete(shipment) {
+    const filteredShipping = user.shippingHistory.filter(
+      (box) => box.id !== shipment.id
+    );
+
     fetch(`http://localhost:3001/users/${user.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        shippingHistory: [...user.shippingHistory, shippingResults],
+        shippingHistory: filteredShipping,
       }),
-    })
-      .then((resp) => resp.json())
-      .then((userUpdate) => setUser(userUpdate));
+    });
+
+    setUser({
+      ...user,
+      shippingHistory: filteredShipping,
+    });
   }
 
-  function handleElectricitySaveClick(electricityResults) {
-    console.log("saving")
+  // function handleElectricitySaveClick(electricityResults) {
+  //   fetch(`http://localhost:3001/users/${user.id}`, {
+  //     method: "PATCH",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       electricityHistory: [...user.electricityHistory, electricityResults],
+  //     }),
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then((userUpdate) => setUser(userUpdate));
+  // }
+
+  function handleElectricityDelete(electricity) {
+    const filteredElectric = user.electricityHistory.filter(
+      (electric) => electric.id !== electricity.id
+    );
+
     fetch(`http://localhost:3001/users/${user.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        electricityHistory: [...user.electricityHistory, electricityResults],
+        electricityHistory: filteredElectric,
+      }),
+    });
+
+    setUser({
+      ...user,
+      electricityHistory: filteredElectric,
+    });
+  }
+
+  function handleSaveData(location, item) {
+    fetch(`http://localhost:3001/users/${user.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        [location]: [...user[location], item],
       }),
     })
       .then((resp) => resp.json())
       .then((userUpdate) => setUser(userUpdate));
+
   }
   
 
@@ -153,6 +203,8 @@ function App() {
               user={user}
               onFlightDelete={handleFlightDelete}
               onVehicleDelete={handleVehicleDelete}
+              onElectricityDelete={handleElectricityDelete}
+              onShipmentDelete={handleShipmentDelete}
             />
           )}
         />
@@ -161,10 +213,10 @@ function App() {
           path="/estimate"
           component={() => (
             <Estimate
-              onSaveFlightClick={handleFlightSaveClick}
-              onSaveVehicleClick={handleVehicleSaveClick}
-              onSaveShippingClick={handleShippingSaveClick}
-              onSaveElectricityClick={handleElectricitySaveClick}
+              onSaveData={handleSaveData}
+              //onSaveVehicleClick={handleVehicleSaveClick}
+              //onSaveShippingClick={handleShippingSaveClick}
+              //onSaveElectricityClick={handleElectricitySaveClick}
             />
           )}
         />

@@ -8,6 +8,7 @@ function UserInfo({
   user,
   onFlightDelete,
   onVehicleDelete,
+  onShipmentDelete,
   onElectricityDelete,
 }) {
   const totalFlightCarbon = user.flightHistory.reduce(
@@ -161,7 +162,7 @@ function UserInfo({
               <ShippingCard
                 key={shipment.id}
                 shipment={shipment}
-                onShipmentDelete={null}
+                onShipmentDelete={onShipmentDelete}
               />
             ))}
           </div>

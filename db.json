@@ -63,6 +63,14 @@
           "method": "truck",
           "carbon_lb": 0.71,
           "id": "23a0f8f9-cfdd-47d0-85e2-dfca0186869a"
+        },
+        {
+          "date": "2022-01-05T00:14:28.424Z",
+          "weight": 12,
+          "distance": 123,
+          "method": "plane",
+          "carbon_lb": 1.43,
+          "id": "3325691c-0205-48de-a2da-7ce7cd29e7d0"
         }
       ],
       "vehicleHistory": [
@@ -85,16 +93,42 @@
           "vehicle_year": 2012,
           "carbon_lb": 100.41,
           "id": "a059943a-5097-40c6-b1fe-920ad001f270"
+        },
+        {
+          "date": "2022-01-05T00:11:40.092Z",
+          "distance_value": 254,
+          "distance_unit": "mi",
+          "vehicle_make": "ASC Incorporated",
+          "vehicle_model": "GNX",
+          "vehicle_year": 1987,
+          "carbon_lb": 311.03,
+          "id": "99406efc-490a-4a64-9781-556c8a5fb825"
         }
       ],
       "electricityHistory": [
         {
-          "date": "2022-01-04T20:47:20.519Z",
+          "date": "2022-01-04T23:52:10.013Z",
           "country": "US",
           "state": "NY",
           "electricity_value": 23.5,
           "carbon_lb": 8.89,
-          "id": "a4d536e1-fd82-4b12-a77b-b305a566decf"
+          "id": "a6430835-9c24-439c-b68d-4311b2202ca6"
+        },
+        {
+          "date": "2022-01-04T23:52:26.742Z",
+          "country": "US",
+          "state": "NY",
+          "electricity_value": 50.3,
+          "carbon_lb": 19.02,
+          "id": "700af74f-906c-4a3d-9854-d21e18cccbf9"
+        },
+        {
+          "date": "2022-01-05T00:17:50.493Z",
+          "country": "US",
+          "state": "NY",
+          "electricity_value": 10,
+          "carbon_lb": 3.78,
+          "id": "8d8ecf99-745d-4459-8fb7-d224ec62c4dd"
         }
       ]
     }

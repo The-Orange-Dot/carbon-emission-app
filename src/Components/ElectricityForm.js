@@ -24,10 +24,10 @@ function ElectricityForm({ handleFormSubmit }) {
         <div className="emission-form-container">
         <form onSubmit={onFormSubmit}>
             <div>
-                <label>Electricity used:</label>
+                <label>Electricity used (kWh):</label>
                 <input
                     type="text"
-                    placeholder="Enter value in kWh"
+                    placeholder="Ex: 12.3"
                     name="electricity_value"
                     onChange={handleElectricityDataChange}
                 ></input>

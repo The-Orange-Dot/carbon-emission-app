@@ -7,9 +7,9 @@ function ElectricityCard({ electricity, onElectricityDelete }) {
       <ul>
         <p>Country: {electricity.country}</p>
         <p>State: {electricity.state}</p>
-        <p>Electricity used: {electricity.electricity_value}</p>
+        <p>Electricity used: {electricity.electricity_value} kWh</p>
         <div>
-          <p>Estimated carbon: </p>
+          <p>Estimated carbon emission: </p>
           <p>
             <strong>{electricity.carbon_lb} lbs</strong>
           </p>

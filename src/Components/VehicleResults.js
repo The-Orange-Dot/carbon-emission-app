@@ -1,4 +1,4 @@
-function VehicleResults({ vehicleData, onSaveVehicleClick }) {
+function VehicleResults({ vehicleData, onSaveData }) {
   return (
     <div>
       <h2>Carbon Estimate:</h2>
@@ -15,7 +15,7 @@ function VehicleResults({ vehicleData, onSaveVehicleClick }) {
       <h4>Carbon Estimate (lbs): </h4>
       <p>{vehicleData.carbon_lb}</p>
 
-      <button onClick={() => onSaveVehicleClick(vehicleData)}>
+      <button onClick={() => onSaveData("vehicleHistory", vehicleData)}>
         Save to History
       </button>
     </div>
