@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { states } from "./ElectricityFormState";
 
-function ElectricityForm({ handleFormSubmit, setClosedPopup }) {
+function ElectricityForm({ handleFormSubmit, setElectricityResults, electricityResults }) {
   const [electricityData, setElectricityData] = useState({
     state: "",
     electricity_value: "",
@@ -10,7 +10,7 @@ function ElectricityForm({ handleFormSubmit, setClosedPopup }) {
   function onFormSubmit(e) {
     e.preventDefault();
     handleFormSubmit(electricityData);
-    setClosedPopup(false);
+    setElectricityResults({ ...electricityResults, id: "" })
   }
 
   function handleElectricityDataChange(e) {

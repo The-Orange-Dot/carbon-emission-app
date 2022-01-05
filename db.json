@@ -71,6 +71,14 @@
           "method": "train",
           "carbon_lb": 0.2,
           "id": "08eb2b0c-8de3-4879-bd97-90a9209b11d5"
+        },
+        {
+          "date": "2022-01-05T18:24:24.568Z",
+          "weight": 25,
+          "distance": 300,
+          "method": "plane",
+          "carbon_lb": 7.27,
+          "id": "46a46d20-2583-48af-b4b7-0dd35d25687f"
         }
       ],
       "vehicleHistory": [
@@ -83,16 +91,6 @@
           "vehicle_year": 2016,
           "carbon_lb": 87.05,
           "id": "1786cca2-9a2f-4d1a-b6c2-d341f0122408"
-        },
-        {
-          "date": "2022-01-05T00:11:40.092Z",
-          "distance_value": 254,
-          "distance_unit": "mi",
-          "vehicle_make": "ASC Incorporated",
-          "vehicle_model": "GNX",
-          "vehicle_year": 1987,
-          "carbon_lb": 311.03,
-          "id": "99406efc-490a-4a64-9781-556c8a5fb825"
         },
         {
           "date": "2022-01-05T16:54:57.705Z",
