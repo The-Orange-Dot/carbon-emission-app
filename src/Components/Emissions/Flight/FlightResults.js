@@ -2,7 +2,7 @@ import "../EmissionPage.css";
 
 function FlightResults({ flightData, onSaveData }) {
   return (
-    <div>
+    <div className="emission-popup">
       <h2>Carbon Estimate:</h2>
 
       <h4>Date: </h4>
