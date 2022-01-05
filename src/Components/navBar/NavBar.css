@@ -33,7 +33,7 @@
 }
 
 .nav-buttons > ul {
-  width: 600px;
+  width: 500px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -59,7 +59,7 @@
 }
 
 .nav-buttons > ul > li {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
 }
 
 .nav-buttons > ul > li:hover {
