@@ -87,16 +87,6 @@
           "vehicle_year": 1994,
           "carbon_lb": 61.23,
           "id": "1f10c3aa-7f83-4871-8bcb-867d3e3dbc53"
-        },
-        {
-          "date": "2022-01-05T16:55:08.604Z",
-          "distance_value": 50,
-          "distance_unit": "mi",
-          "vehicle_make": "Azure Dynamics",
-          "vehicle_model": "Transit Connect Electric Van",
-          "vehicle_year": 2012,
-          "carbon_lb": 0,
-          "id": "8b353bd8-a8d6-418b-9b72-34153fc920fc"
         }
       ],
       "electricityHistory": [

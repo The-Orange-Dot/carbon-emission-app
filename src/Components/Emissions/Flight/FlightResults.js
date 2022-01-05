@@ -1,3 +1,5 @@
+import "../EmissionPage.css";
+
 function FlightResults({ flightData, onSaveData }) {
   return (
     <div>

@@ -1,5 +1,7 @@
 import "../EmissionPage.css";
 
+import "../EmissionPage.css";
+
 function ShippingResults({ shippingData, onSaveShippingClick }) {
   return (
     <div className="emission-popup">
