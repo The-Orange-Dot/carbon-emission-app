@@ -6,10 +6,7 @@ import ElectricityCard from "./ElectricityCard";
 
 function UserInfo({
   user,
-  onFlightDelete,
-  onVehicleDelete,
-  onShipmentDelete,
-  onElectricityDelete,
+  onDeleteData,
 }) {
   const totalFlightCarbon = user.flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
@@ -128,7 +125,7 @@ function UserInfo({
               <FlightCard
                 key={flight.id}
                 flight={flight}
-                onFlightDelete={onFlightDelete}
+                onDeleteData={onDeleteData}
               />
             ))}
           </div>
@@ -145,7 +142,7 @@ function UserInfo({
               <VehicleCard
                 key={vehicle.id}
                 vehicle={vehicle}
-                onVehicleDelete={onVehicleDelete}
+                onDeleteData={onDeleteData}
               />
             ))}
           </div>
@@ -162,7 +159,7 @@ function UserInfo({
               <ShippingCard
                 key={shipment.id}
                 shipment={shipment}
-                onShipmentDelete={onShipmentDelete}
+                onDeleteData={onDeleteData}
               />
             ))}
           </div>
@@ -179,7 +176,7 @@ function UserInfo({
               <ElectricityCard
                 key={electricity.id}
                 electricity={electricity}
-                onElectricityDelete={onElectricityDelete}
+                onDeleteData={onDeleteData}
               />
             ))}
           </div>

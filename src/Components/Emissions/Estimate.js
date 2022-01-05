@@ -167,7 +167,6 @@ function Estimate({
     })
       .then((resp) => resp.json())
       .then((results) => {
-        console.log(results);
         setElectricityResults({
           date: results.data.attributes.estimated_at,
           country: "US",

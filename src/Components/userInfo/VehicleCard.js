@@ -1,6 +1,6 @@
 import "./UserInfo.css";
 
-function VehicleCard({ vehicle, onVehicleDelete }) {
+function VehicleCard({ vehicle, onDeleteData }) {
   return (
     <div className="emission-card">
       <h4 className="card-header">
@@ -21,7 +21,7 @@ function VehicleCard({ vehicle, onVehicleDelete }) {
         </div>
       </ul>
       <button
-        onClick={() => onVehicleDelete(vehicle)}
+        onClick={() => onDeleteData("vehicleHistory", vehicle)}
         className="carbon-estimate-btn + hide"
       >
         Delete History

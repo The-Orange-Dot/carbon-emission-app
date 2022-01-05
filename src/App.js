@@ -42,79 +42,22 @@ function App() {
     };
   }, []);
 
-  const handleFlightDelete = (flight) => {
-    const filteredFlights = user.flightHistory.filter(
-      (trip) => trip.id !== flight.id
+  function handleDeleteData(location, item) {
+    const filteredItems = user[location].filter(
+      (data) => data.id !== item.id
     );
 
     fetch(`http://localhost:3001/users/${user.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        flightHistory: filteredFlights,
+        [location]: filteredItems,
       }),
     });
 
     setUser({
       ...user,
-      flightHistory: filteredFlights,
-    });
-  };
-
-  const handleVehicleDelete = (vehicle) => {
-    const filteredVehicles = user.vehicleHistory.filter(
-      (trip) => trip.id !== vehicle.id
-    );
-
-    fetch(`http://localhost:3001/users/${user.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        vehicleHistory: filteredVehicles,
-      }),
-    });
-
-    setUser({
-      ...user,
-      vehicleHistory: filteredVehicles,
-    });
-  };
-
-  function handleShipmentDelete(shipment) {
-    const filteredShipping = user.shippingHistory.filter(
-      (box) => box.id !== shipment.id
-    );
-
-    fetch(`http://localhost:3001/users/${user.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        shippingHistory: filteredShipping,
-      }),
-    });
-
-    setUser({
-      ...user,
-      shippingHistory: filteredShipping,
-    });
-  }
-
-  function handleElectricityDelete(electricity) {
-    const filteredElectric = user.electricityHistory.filter(
-      (electric) => electric.id !== electricity.id
-    );
-
-    fetch(`http://localhost:3001/users/${user.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        electricityHistory: filteredElectric,
-      }),
-    });
-
-    setUser({
-      ...user,
-      electricityHistory: filteredElectric,
+      [location]: filteredItems,
     });
   }
 
@@ -151,10 +94,7 @@ function App() {
           component={() => (
             <UserInfo
               user={user}
-              onFlightDelete={handleFlightDelete}
-              onVehicleDelete={handleVehicleDelete}
-              onElectricityDelete={handleElectricityDelete}
-              onShipmentDelete={handleShipmentDelete}
+              onDeleteData={handleDeleteData}
             />
           )}
         />

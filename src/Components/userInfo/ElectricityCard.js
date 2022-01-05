@@ -1,6 +1,6 @@
 import "./UserInfo.css";
 
-function ElectricityCard({ electricity, onElectricityDelete }) {
+function ElectricityCard({ electricity, onDeleteData }) {
   return (
     <div className="emission-card">
       <h4 className="card-header">{electricity.date.slice(0, 10)}</h4>
@@ -16,7 +16,7 @@ function ElectricityCard({ electricity, onElectricityDelete }) {
         </div>
       </ul>
       <button
-        onClick={() => onElectricityDelete(electricity)}
+        onClick={() => onDeleteData("electricityHistory", electricity)}
         className="carbon-estimate-btn + hide"
       >
         Delete History
