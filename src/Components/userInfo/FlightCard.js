@@ -1,6 +1,6 @@
 import "./UserInfo.css";
 
-function FlightCard({ flight, onFlightDelete }) {
+function FlightCard({ flight, onDeleteData }) {
   return (
     <div className="emission-card">
       <h4 className="card-header">{`${flight.departure} → ${flight.destination}`}</h4>
@@ -22,7 +22,7 @@ function FlightCard({ flight, onFlightDelete }) {
         </div>
       </ul>
       <button
-        onClick={() => onFlightDelete(flight)}
+        onClick={() => onDeleteData("flightHistory", flight)}
         className="carbon-estimate-btn + hide"
       >
         Delete History

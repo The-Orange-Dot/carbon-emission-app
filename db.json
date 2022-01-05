@@ -31,14 +31,6 @@
           "id": "33a9f35f-903e-43ce-ad22-6c9ddaa55805"
         },
         {
-          "date": "2021-12-29T17:59:39.908Z",
-          "passengers": 2,
-          "departure": "BOS",
-          "destination": "LAX",
-          "carbon_lb": 1122.94,
-          "id": "3360c3e6-e99e-45d6-a904-95fbf8599fce"
-        },
-        {
           "date": "2021-12-29T23:13:55.833Z",
           "passengers": 2,
           "departure": "BDL",
@@ -56,14 +48,6 @@
         }
       ],
       "shippingHistory": [
-        {
-          "date": "2022-01-04T17:53:08.965Z",
-          "weight": 30,
-          "distance": 230,
-          "method": "truck",
-          "carbon_lb": 0.71,
-          "id": "23a0f8f9-cfdd-47d0-85e2-dfca0186869a"
-        },
         {
           "date": "2022-01-05T00:14:28.424Z",
           "weight": 12,
@@ -85,16 +69,6 @@
           "id": "1786cca2-9a2f-4d1a-b6c2-d341f0122408"
         },
         {
-          "date": "2022-01-04T16:23:42.278Z",
-          "distance_value": 123,
-          "distance_unit": "mi",
-          "vehicle_make": "Audi",
-          "vehicle_model": "A3",
-          "vehicle_year": 2012,
-          "carbon_lb": 100.41,
-          "id": "a059943a-5097-40c6-b1fe-920ad001f270"
-        },
-        {
           "date": "2022-01-05T00:11:40.092Z",
           "distance_value": 254,
           "distance_unit": "mi",
@@ -107,28 +81,20 @@
       ],
       "electricityHistory": [
         {
-          "date": "2022-01-04T23:52:10.013Z",
-          "country": "US",
-          "state": "NY",
-          "electricity_value": 23.5,
-          "carbon_lb": 8.89,
-          "id": "a6430835-9c24-439c-b68d-4311b2202ca6"
-        },
-        {
-          "date": "2022-01-04T23:52:26.742Z",
-          "country": "US",
-          "state": "NY",
-          "electricity_value": 50.3,
-          "carbon_lb": 19.02,
-          "id": "700af74f-906c-4a3d-9854-d21e18cccbf9"
-        },
-        {
           "date": "2022-01-05T00:17:50.493Z",
           "country": "US",
           "state": "NY",
           "electricity_value": 10,
           "carbon_lb": 3.78,
           "id": "8d8ecf99-745d-4459-8fb7-d224ec62c4dd"
+        },
+        {
+          "date": "2022-01-05T15:54:29.003Z",
+          "country": "US",
+          "state": "NY",
+          "electricity_value": 23.5,
+          "carbon_lb": 8.89,
+          "id": "9e96ba77-5ea8-4c59-9f8a-a627db198067"
         }
       ]
     }
