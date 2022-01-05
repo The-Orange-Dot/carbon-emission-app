@@ -56,11 +56,6 @@ function Estimate({
     id: "",
   });
 
-  const [onFForm, setOnFForm] = useState(false);
-  const [onVForm, setOnVForm] = useState(false);
-  const [onSForm, setOnSForm] = useState(false);
-  const [onEForm, setOnEForm] = useState(false);
-
   function handleFlightFormSubmit(formData) {
     fetch(API, {
       method: "POST",
@@ -187,21 +182,6 @@ function Estimate({
       });
   }
 
-  function handleFFormClick() {
-    setOnFForm(!onFForm);
-  }
-
-  function handleVFormClick() {
-    setOnVForm(!onVForm);
-  }
-
-  function handleSFormClick() {
-    setOnSForm(!onSForm);
-  }
-
-  function handleEFormClick() {
-    setOnEForm(!onEForm);
-  }
 
   return (
     <div className="emission-container">
@@ -213,30 +193,22 @@ function Estimate({
           <div>
             {/* Testing image for cards */}
             <div className="airplane"></div>
-            {onFForm ? (
               <h2>Flights</h2>
-            ) : (
-              <>
-                <FlightForm handleFormSubmit={handleFlightFormSubmit} />
+              <FlightForm handleFormSubmit={handleFlightFormSubmit} />
                 {flightResults.id.length !== 0 ? (
                   <FlightResults
                     flightData={flightResults}
                     onSaveData={onSaveData}
                   />
                 ) : null}
-              </>
-            )}
           </div>
         </div>
         <div className="form-container">
           <div>
             {/* Testing image for cards */}
             <div className="road"></div>
-            {onVForm ? (
               <h2>Automobiles</h2>
-            ) : (
-              <>
-                <VehicleForm
+              <VehicleForm
                   handleVehicleFormSubmit={handleVehicleFormSubmit}
                 />
                 {vehicleResults.id.length !== 0 ? (
@@ -245,38 +217,28 @@ function Estimate({
                     onSaveData={onSaveData}
                   />
                 ) : null}
-              </>
-            )}
           </div>
         </div>
         <div className="form-container">
           <div>
             {/* Testing image for cards */}
             <div className="shipping"></div>
-            {onSForm ? (
               <h2>Shipping</h2>
-            ) : (
-              <>
-                <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
+              <ShippingForm handleFormSubmit={handleShippingFormSubmit} />
                 {shippingResults.id.length !== 0 ? (
                   <ShippingResults
                     shippingData={shippingResults}
                     onSaveData={onSaveData}
                   />
                 ) : null}
-              </>
-            )}
           </div>
         </div>
         <div className="form-container">
           <div>
             {/* Testing image for cards */}
             <div className="electricity"></div>
-            {onEForm ? (
               <h2>Electricity</h2>
-            ) : (
-              <>
-                <ElectricityForm
+              <ElectricityForm
                   handleFormSubmit={handleElectricityFormSubmit}
                 />
                 {electricityResults.id.length !== 0 ? (
@@ -285,8 +247,6 @@ function Estimate({
                     onSaveData={onSaveData}
                   />
                 ) : null}
-              </>
-            )}
           </div>
         </div>
       </div>
