@@ -95,6 +95,14 @@
           "electricity_value": 23.5,
           "carbon_lb": 8.89,
           "id": "9e96ba77-5ea8-4c59-9f8a-a627db198067"
+        },
+        {
+          "date": "2022-01-05T16:34:59.993Z",
+          "country": "US",
+          "state": "MT",
+          "electricity_value": 23.5,
+          "carbon_lb": 29.67,
+          "id": "06045ea3-5270-4568-ac10-23ebccac9b6e"
         }
       ]
     }

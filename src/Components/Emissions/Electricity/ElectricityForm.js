@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { states } from "./ElectricityFormState";
 
 
 function ElectricityForm({ handleFormSubmit }) {
@@ -40,8 +41,8 @@ function ElectricityForm({ handleFormSubmit }) {
                     id="state"
                     onChange={handleElectricityDataChange}
                 >
-                    <option value="ma">MA</option>
-                    <option value="ny">NY</option>
+                    <option value="Select State">Select State</option>
+                    {states.map(state => <option key={state} value={state.toLowerCase()}>{state}</option>)}
                 </select>
             </div>
             <button type="submit">Get Carbon Estimate</button>
