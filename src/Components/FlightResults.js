@@ -1,4 +1,4 @@
-function FlightResults({ flightData, onSaveFlightClick }) {
+function FlightResults({ flightData, onSaveData }) {
   return (
     <div>
       <h2>Carbon Estimate:</h2>
@@ -18,7 +18,7 @@ function FlightResults({ flightData, onSaveFlightClick }) {
       <h4>Carbon Estimate (lbs): </h4>
       <p>{flightData.carbon_lb}</p>
 
-      <button onClick={() => onSaveFlightClick(flightData)}>
+      <button onClick={() => onSaveData("flightHistory", flightData)}>
         Save to History
       </button>
     </div>

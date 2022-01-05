@@ -1,4 +1,4 @@
-function  ElectricityResults({ electricityData, onSaveElectricityClick }) {
+function  ElectricityResults({ electricityData, onSaveData }) {
     return (
         <div>
             <h2>Carbon Estimate:</h2>
@@ -18,7 +18,7 @@ function  ElectricityResults({ electricityData, onSaveElectricityClick }) {
             <h4>Carbon Estimate (lbs): </h4>
             <p>{electricityData.carbon_lb}</p>
 
-            <button onClick={() => onSaveElectricityClick(electricityData)}>
+            <button onClick={() => onSaveData("electricityHistory", electricityData)}>
                 Save to History
             </button>
         </div>

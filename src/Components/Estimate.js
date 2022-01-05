@@ -10,10 +10,10 @@ import ElectricityResults from "./Electricity.Results";
 import "./EmissionPage.css";
 
 function Estimate({
-  onSaveFlightClick,
-  onSaveVehicleClick,
-  onSaveShippingClick,
-  onSaveElectricityClick
+  onSaveData,
+  //onSaveVehicleClick,
+  //onSaveShippingClick,
+  //onSaveElectricityClick
 }) {
   const [flightResults, setFlightResults] = useState({
     date: "",
@@ -217,7 +217,7 @@ function Estimate({
               {flightResults.id.length !== 0 ? (
                 <FlightResults
                   flightData={flightResults}
-                  onSaveFlightClick={onSaveFlightClick}
+                  onSaveData={onSaveData}
               />
               ) : null}
             </>
@@ -233,7 +233,7 @@ function Estimate({
               {vehicleResults.id.length !== 0 ? (
                 <VehicleResults
                   vehicleData={vehicleResults}
-                  onSaveVehicleClick={onSaveVehicleClick}
+                  onSaveData={onSaveData}
               />
               ) : null}
             </>
@@ -249,7 +249,7 @@ function Estimate({
               {shippingResults.id.length !== 0 ? (
                 <ShippingResults
                   shippingData={shippingResults}
-                  onSaveShippingClick={onSaveShippingClick}
+                  onSaveData={onSaveData}
               />
               ) : null}
             </>
@@ -265,7 +265,7 @@ function Estimate({
               {electricityResults.id.length !== 0 ? (
                 <ElectricityResults
                   electricityData={electricityResults}
-                  onSaveElectricityClick={onSaveElectricityClick}
+                  onSaveData={onSaveData}
               />
             ) : null}
             </>
