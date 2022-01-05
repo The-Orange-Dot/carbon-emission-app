@@ -103,6 +103,14 @@
           "electricity_value": 23.5,
           "carbon_lb": 29.67,
           "id": "06045ea3-5270-4568-ac10-23ebccac9b6e"
+        },
+        {
+          "date": "2022-01-05T16:49:31.858Z",
+          "country": "US",
+          "state": "DC",
+          "electricity_value": 23.5,
+          "carbon_lb": 18.74,
+          "id": "6866ddcd-fa71-43cb-9540-bb7e3161309d"
         }
       ]
     }
