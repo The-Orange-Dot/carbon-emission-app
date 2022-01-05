@@ -27,8 +27,12 @@ function ElectricityResults({
       <button onClick={() => onSaveData("electricityHistory", electricityData)}>
         Save to History
       </button>
-
-      <button onClick={() => setElectricityResults({ ...electricityData, id: "" })}>Go Back</button>
+      <br />
+      <button
+        onClick={() => setElectricityResults({ ...electricityData, id: "" })}
+      >
+        Go Back
+      </button>
     </div>
   );
 }

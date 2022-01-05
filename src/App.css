@@ -17,14 +17,12 @@
 }
 
 .App-link {
-  color: #65858c;
+  color: #049dd9;
 }
 
 .homepage-container {
   padding: 120px;
   padding-bottom: 90px;
-
-  background-color: #f2e6d8;
 }
 
 .carbon-estimate-btn {
@@ -32,7 +30,7 @@
 }
 
 .footer-container {
-  background-color: #516373;
+  background-color: #049dd9;
   height: 80px;
   opacity: 70%;
   display: flex;

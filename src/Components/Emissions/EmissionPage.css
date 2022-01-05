@@ -14,7 +14,6 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: #f2e6d8;
 }
 
 .emission-welcome-text {
@@ -41,7 +40,7 @@
   width: 400px;
   max-width: 400px;
   max-height: 380px;
-  background-color: #8aa699;
+  background-color: #f2bb13;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   display: flex;
@@ -120,7 +119,7 @@
 }
 
 .emission-popup {
-  background-color: #80e2ff;
+  background-color: #d9961a;
   width: 500px;
   height: 200px;
   z-index: 1;
