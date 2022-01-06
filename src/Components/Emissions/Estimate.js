@@ -48,7 +48,6 @@ function Estimate({ onSaveData }) {
     id: "",
   });
 
-
   function handleFlightFormSubmit(formData) {
     fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
@@ -213,9 +212,6 @@ function Estimate({ onSaveData }) {
             />
           ) : null}
         </div>
-      </div>
-      <div>
-        <h1 className="emission-welcome-text">Calculate carbon emissions</h1>
       </div>
       <div className="all-the-forms">
         <div className="form-container">
