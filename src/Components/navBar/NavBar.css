@@ -29,7 +29,8 @@
 
 #name-of-app {
   font-family: "Reenie Beanie", cursive;
-  font-size: 5rem;
+  font-size: 4rem;
+  transform: translateX(-20px);
 }
 
 .nav-buttons > ul {
@@ -59,7 +60,7 @@
 }
 
 .nav-buttons > ul > li {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .nav-buttons > ul > li:hover {
