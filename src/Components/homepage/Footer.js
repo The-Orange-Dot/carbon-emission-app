@@ -2,14 +2,14 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div>
-        <small>Carbon ledger API received from: </small>
+        <small>Carbon Ledger API received from: </small>
         <a href="https://www.carboninterface.com/">
           <small>https://www.carboninterface.com/</small>
         </a>
       </div>
 
       <div>
-        <small>CO2 emssions data published by: </small>
+        <small>CO2 emissions data published by: </small>
         <small>
           Graver, B., Zhang, K., & Rutherford, D. (2019). CO2 emissions from
           commercial aviation, 2018. The International Council of Clean
