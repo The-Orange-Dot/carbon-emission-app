@@ -27,7 +27,7 @@
   padding: 10px;
   height: 200px;
   width: 90%;
-  background-color: #d9961a;
+  background-color: #05c7f2;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   display: flex;
@@ -50,7 +50,7 @@
 }
 
 .info-card {
-  background-color: #f2bb13;
+  background-color: #05c7f2;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin-left: 20px;
   padding-top: 10px;
@@ -109,8 +109,8 @@
   padding: 10px;
   height: 310px;
   width: 90%;
-  background-color: #d9961a;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #049dd9;
+  box-shadow: 0 4px 8px 0 rgba(8, 4, 4, 0.2);
   border-radius: 5px;
   display: flex;
   flex-direction: column;

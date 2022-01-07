@@ -43,9 +43,7 @@ function App() {
   }, []);
 
   function handleDeleteData(location, item) {
-    const filteredItems = user[location].filter(
-      (data) => data.id !== item.id
-    );
+    const filteredItems = user[location].filter((data) => data.id !== item.id);
 
     fetch(`http://localhost:3001/users/${user.id}`, {
       method: "PATCH",
@@ -92,10 +90,7 @@ function App() {
         <Route
           path="/user"
           component={() => (
-            <UserInfo
-              user={user}
-              onDeleteData={handleDeleteData}
-            />
+            <UserInfo user={user} onDeleteData={handleDeleteData} />
           )}
         />
 

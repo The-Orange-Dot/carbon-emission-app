@@ -40,7 +40,7 @@
   width: 400px;
   max-width: 400px;
   max-height: 380px;
-  background-color: #f2bb13;
+  background-color: #05c7f2;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   display: flex;
@@ -53,6 +53,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-top: 120px;
 }
 
 .emission-form-container div {

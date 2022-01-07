@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-function VehicleForm({ handleVehicleFormSubmit, setVehicleResults, vehicleResults }) {
+function VehicleForm({
+  handleVehicleFormSubmit,
+  setVehicleResults,
+  vehicleResults,
+}) {
   const [makes, setMakes] = useState([]);
   const [models, setModels] = useState([]);
 
@@ -67,7 +71,7 @@ function VehicleForm({ handleVehicleFormSubmit, setVehicleResults, vehicleResult
   function onVehicleFormSubmit(e) {
     e.preventDefault();
     handleVehicleFormSubmit(vehicleFormData);
-    setVehicleResults({ ...vehicleResults, id: ""});
+    setVehicleResults({ ...vehicleResults, id: "" });
   }
 
   useEffect(() => {
