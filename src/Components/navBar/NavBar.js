@@ -6,7 +6,7 @@ import logo from "../../images/treeLogo.png";
 function NavBar({ loggedIn }) {
   //Style for navbar links
   const linkStyle = {
-    color: "black",
+    color: "white",
     backgrounColor: "black",
     fontWeight: "bold",
     textDecoration: "none",

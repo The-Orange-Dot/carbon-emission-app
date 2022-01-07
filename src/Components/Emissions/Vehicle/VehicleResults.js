@@ -22,14 +22,14 @@ function VehicleResults({ vehicleData, onSaveData, setVehicleResults }) {
 
         <h4>Carbon Estimate (lbs): </h4>
         <p>{vehicleData.carbon_lb}</p>
-
-        <button onClick={() => onSaveData("vehicleHistory", vehicleData)}>
-          Save to History
-        </button>
-        <br />
-        <button onClick={() => setVehicleResults({ ...vehicleData, id: "" })}>
-          Go Back
-        </button>
+        <div>
+          <button onClick={() => onSaveData("vehicleHistory", vehicleData)}>
+            Save to History
+          </button>
+          <button onClick={() => setVehicleResults({ ...vehicleData, id: "" })}>
+            Go Back
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -11,10 +11,11 @@
 }
 
 .homepage-user-info {
-  background-color: #05c7f2;
+  background-color: #98d3aa;
   width: 650px;
   padding: 20px;
   border-radius: 10px;
+  border: 5px solid #b9e344;
 }
 
 .homepage-user-info > div {
@@ -25,7 +26,7 @@
 
 .homepage-user-info img {
   margin-bottom: 10px;
-  border: 4px solid #049dd9;
+  border: 5px solid #b9e344;
 }
 
 .homepage-user-info button:hover {
@@ -49,10 +50,10 @@
   margin-left: 5px;
   width: 680px;
   background-color: white;
-  color: #302940;
+  color: black;
   height: 300px;
   overflow: scroll;
-  border: 4px solid #049dd9;
+  border: 5px solid #b9e344;
   border-radius: 10px;
 }
 
@@ -61,9 +62,21 @@
 }
 
 .emission-by-countries:hover {
-  background-color: #049dd9;
+  background-color: #4e944a;
+  color: white;
 }
 
 .homepage-total-emission {
   font-size: 2.5em;
+}
+
+.footer-container {
+  background-color: #4e944a;
+  height: 65px;
+  opacity: 70%;
+  display: flex;
+  justify-self: flex-end;
+  padding: 5px;
+  flex-direction: column;
+  color: white;
 }

@@ -2,7 +2,7 @@ const Charts = ({ chartSelector }) => {
   const iframeStyle = {
     width: "800px",
     height: "650px",
-    border: "0px none",
+    border: "5px solid #b9e344",
   };
 
   return (

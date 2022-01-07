@@ -24,15 +24,18 @@ function ElectricityResults({
       <h4>Carbon Estimate (lbs): </h4>
       <p>{electricityData.carbon_lb}</p>
 
-      <button onClick={() => onSaveData("electricityHistory", electricityData)}>
-        Save to History
-      </button>
-      <br />
-      <button
-        onClick={() => setElectricityResults({ ...electricityData, id: "" })}
-      >
-        Go Back
-      </button>
+      <div>
+        <button
+          onClick={() => onSaveData("electricityHistory", electricityData)}
+        >
+          Save to History
+        </button>
+        <button
+          onClick={() => setElectricityResults({ ...electricityData, id: "" })}
+        >
+          Go Back
+        </button>
+      </div>
     </div>
   );
 }

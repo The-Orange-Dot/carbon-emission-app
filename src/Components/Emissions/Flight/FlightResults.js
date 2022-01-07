@@ -20,13 +20,14 @@ function FlightResults({ flightData, onSaveData, setFlightResults }) {
       <h4>Carbon Estimate (lbs): </h4>
       <p>{flightData.carbon_lb}</p>
 
-      <button onClick={() => onSaveData("flightHistory", flightData)}>
-        Save to History
-      </button>
-      <br />
-      <button onClick={() => setFlightResults({ ...flightData, id: "" })}>
-        Go Back
-      </button>
+      <div>
+        <button onClick={() => onSaveData("flightHistory", flightData)}>
+          Save to History
+        </button>
+        <button onClick={() => setFlightResults({ ...flightData, id: "" })}>
+          Go Back
+        </button>
+      </div>
     </div>
   );
 }

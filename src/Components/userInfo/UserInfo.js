@@ -5,7 +5,6 @@ import VehicleCard from "./VehicleCard";
 import ElectricityCard from "./ElectricityCard";
 
 function UserInfo({ user, onDeleteData }) {
-  
   const totalFlightCarbon = user.flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
@@ -112,7 +111,7 @@ function UserInfo({ user, onDeleteData }) {
       </div>
       <h1 style={{ marginBottom: "10px" }}>Carbon Estimate History</h1>
       <div className="results-container">
-        <div className="results-cloumn">
+        <div className="results-column ">
           <h3>
             {user.flightHistory.length !== 0
               ? "Flight History"
@@ -129,7 +128,7 @@ function UserInfo({ user, onDeleteData }) {
           </div>
         </div>
 
-        <div className="results-cloumn">
+        <div className="results-column ">
           <h3>
             {user.vehicleHistory.length !== 0
               ? "Automobile History"

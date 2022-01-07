@@ -79,6 +79,14 @@
           "method": "plane",
           "carbon_lb": 7.27,
           "id": "46a46d20-2583-48af-b4b7-0dd35d25687f"
+        },
+        {
+          "date": "2022-01-07T16:29:33.163Z",
+          "weight": 20,
+          "distance": 100,
+          "method": "plane",
+          "carbon_lb": 1.94,
+          "id": "31777bb9-2f7c-48a8-9082-a4f65e2dabf7"
         }
       ],
       "vehicleHistory": [
@@ -153,6 +161,14 @@
           "electricity_value": 23.5,
           "carbon_lb": 22.91,
           "id": "0a31a998-4644-4cf8-a799-3befba9c0cc9"
+        },
+        {
+          "date": "2022-01-07T16:37:52.752Z",
+          "country": "US",
+          "state": "NY",
+          "electricity_value": 776,
+          "carbon_lb": 293.43,
+          "id": "8610f6d6-29cc-4ecf-8003-7dd744d3013f"
         }
       ]
     }

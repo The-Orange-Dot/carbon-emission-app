@@ -6,9 +6,11 @@
   width: 500px;
   padding: 50px;
   /* Change color to whatever you guys like */
-  background-color: #80e2ff;
+  background-color: #98d3aa;
   border-radius: 2rem;
+  border: 5px solid #b9e344;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .login-container {
@@ -29,15 +31,16 @@
 .new-account-form-container {
   width: 900px;
   height: 550px;
-  background-color: #80e2ff;
+  background-color: #98d3aa;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border-radius: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 5px solid #b9e344;
 }
 
 .register-form-container,
@@ -56,6 +59,17 @@
   opacity: 50%;
   width: 100%;
   height: 100vh;
+}
+
+.login-background {
+  background-image: url("../../images/background.png");
+  left: 0;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: fixed;
+  transform: translateY(50px);
 }
 
 button {

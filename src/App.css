@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Reenie+Beanie&family=Yuji+Boku&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Reenie+Beanie&family=Yuji+Boku&display=swap");
 
 * {
   padding: 0;
@@ -7,6 +7,17 @@
 }
 .App {
   text-align: center;
+}
+
+.background {
+  background-image: url("./images/background.png");
+  left: 0;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  position: fixed;
+  transform: translateY(50px);
 }
 
 .App-header {
@@ -32,18 +43,12 @@
   margin-top: 10px;
 }
 
-.footer-container {
-  background-color: #049dd9;
-  height: 80px;
-  opacity: 70%;
-  display: flex;
-  justify-self: flex-end;
-  padding: 5px;
-  flex-direction: column;
-}
-
 .map-and-charts {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.footer-container small {
+  color: white;
 }
