@@ -12,15 +12,16 @@ function About() {
           <h1>About My Carbon Footprint</h1>
           <br />
           <p>
-            My Carbon Footprint was created by Eleni, Kat, and Hung to give users a fun and easy way to
-            get a snapshot of their personal carbon footprint. The app takes a
-            look at some of the most common carbon emitting activities and
-            provides user the ability to fill in their personal details and
-            receive an estimate of carbon emissions based on data provided by
-            the <strong>Carbon Interface REST API</strong>. The data that powers
-            the API is sourced from governments, non-profits, and leading
-            researchers around the world including the <strong>EPA</strong>,{" "}
-            <strong>GHG Protocol</strong>, and{" "}
+            My Carbon Footprint was created by Eleni, Kat, and Hung to give you
+            a fun and easy way to get a snapshot of your personal carbon
+            footprint. The app takes a look at some of the most common carbon
+            emitting activities and provides you the ability to fill in your
+            personal details and receive an estimate of carbon emissions based
+            on data provided by the <strong>Carbon Interface REST API</strong>.
+            The data that powers the API is sourced from governments,
+            non-profits, and leading researchers around the world including the{" "}
+            <strong>EPA</strong>
+            <strong>GHG Protocol</strong> and
             <strong>Environment Canada</strong>. The app is designed to create
             awareness by powering carbon measurement to combat climate change.
           </p>
@@ -49,12 +50,12 @@ function About() {
           />
         </div>
         <div className="more-info-card">
-          <h1>Want to Learn More About Climate Change ?</h1>
+          <h1>Do you want to learn more about climate change?</h1>
           <br />
           <div>
             <h3>
-              Here are some external links with more information on climate
-              change & carbon emissions
+              Here are some links with more information on climate change &
+              carbon emissions
             </h3>
             <br />
             <ul className="link-list">
