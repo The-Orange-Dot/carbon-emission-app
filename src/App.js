@@ -47,25 +47,23 @@ function App() {
 
   useEffect(() => {
     fetch("http://localhost:3001/shipping_histories")
-    .then(resp => resp.json())
-    .then(data => setShippingHistory(data))
+      .then((resp) => resp.json())
+      .then((data) => setShippingHistory(data));
 
     fetch("http://localhost:3001/flight_histories")
-    .then(resp => resp.json())
-    .then(data => setFlightHistory(data))
+      .then((resp) => resp.json())
+      .then((data) => setFlightHistory(data));
 
     fetch("http://localhost:3001/vehicle_histories")
-    .then(resp => resp.json())
-    .then(data => setVehicleHistory(data))
+      .then((resp) => resp.json())
+      .then((data) => setVehicleHistory(data));
 
     fetch("http://localhost:3001/electricity_histories")
-    .then(resp => resp.json())
-    .then(data => setElectricityHistory(data))
-
-  }, [])
+      .then((resp) => resp.json())
+      .then((data) => setElectricityHistory(data));
+  }, []);
 
   function handleDeleteData(location, item) {
-    
     fetch(`http://localhost:3001/${location}/${item.id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
@@ -84,13 +82,11 @@ function App() {
         distance: shipment.distance,
         method: shipment.method,
         carbon_lb: shipment.carbon_lb,
-        user_id: user.id
+        user_id: user.id,
       }),
     })
-    .then(resp => resp.json())
-    .then(data => setShippingHistory([...shippingHistory, data]))
-    
-      
+      .then((resp) => resp.json())
+      .then((data) => setShippingHistory([...shippingHistory, data]));
   }
 
   function handleFlightSaveData(flight) {
@@ -103,12 +99,11 @@ function App() {
         departure: flight.departure,
         destination: flight.destination,
         carbon_lb: flight.carbon_lb,
-        user_id: user.id
+        user_id: user.id,
       }),
     })
-    .then(resp => resp.json())
-    .then(data => setFlightHistory([...flightHistory, data]))
-      
+      .then((resp) => resp.json())
+      .then((data) => setFlightHistory([...flightHistory, data]));
   }
 
   function handleVehicleSaveData(vehicle) {
@@ -123,12 +118,11 @@ function App() {
         vehicle_model: vehicle.vehicle_model,
         vehicle_year: vehicle.vehicle_year,
         carbon_lb: vehicle.carbon_lb,
-        user_id: user.id
+        user_id: user.id,
       }),
     })
-    .then(resp => resp.json())
-    .then(data => setVehicleHistory([...vehicleHistory, data]))
-      
+      .then((resp) => resp.json())
+      .then((data) => setVehicleHistory([...vehicleHistory, data]));
   }
 
   function handleElectricitySaveData(electricity) {
@@ -141,14 +135,12 @@ function App() {
         state: electricity.state,
         electricity_value: electricity.electricity_value,
         carbon_lb: electricity.carbon_lb,
-        user_id: user.id
+        user_id: user.id,
       }),
     })
-    .then(resp => resp.json())
-    .then(data => setElectricityHistory([...electricityHistory, data]))
-      
+      .then((resp) => resp.json())
+      .then((data) => setElectricityHistory([...electricityHistory, data]));
   }
-
 
   return (
     <div className="App">
@@ -176,11 +168,14 @@ function App() {
 
         <Route
           path="/estimate"
-          component={() => <Estimate 
-            onSaveVehicleData={handleVehicleSaveData} 
-            onSaveShippingData={handleShippingSaveData}
-            onSaveFlightData={handleFlightSaveData}
-            onSaveElectricityData={handleElectricitySaveData}/>}
+          component={() => (
+            <Estimate
+              onSaveVehicleData={handleVehicleSaveData}
+              onSaveShippingData={handleShippingSaveData}
+              onSaveFlightData={handleFlightSaveData}
+              onSaveElectricityData={handleElectricitySaveData}
+            />
+          )}
         />
         <Route
           path="/"

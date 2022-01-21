@@ -163,10 +163,10 @@
         {
           "date": "2022-01-07T17:17:23.601Z",
           "country": "US",
-          "state": "MD",
-          "electricity_value": 123,
-          "carbon_lb": 90.84,
-          "id": "51a34b03-ca3e-4abb-a259-783cce7aa8d8"
+          "state": "AK",
+          "electricity_value": 23.5,
+          "carbon_lb": 22.91,
+          "id": "0a31a998-4644-4cf8-a799-3befba9c0cc9"
         }
       ]
     }
