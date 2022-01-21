@@ -23,22 +23,6 @@
       "image": "https://i.imgflip.com/2af9ub.jpg",
       "flightHistory": [
         {
-          "date": "2021-12-29T17:59:07.008Z",
-          "passengers": 2,
-          "departure": "DIA",
-          "destination": "BOS",
-          "carbon_lb": 6678.45,
-          "id": "33a9f35f-903e-43ce-ad22-6c9ddaa55805"
-        },
-        {
-          "date": "2021-12-29T23:13:55.833Z",
-          "passengers": 2,
-          "departure": "BDL",
-          "destination": "BCN",
-          "carbon_lb": 3871.04,
-          "id": "4dd1a601-41e4-48b9-aca7-a4dbffbe1041"
-        },
-        {
           "date": "2022-01-04T15:52:49.217Z",
           "passengers": 165,
           "departure": "EWR",
@@ -49,12 +33,21 @@
       ],
       "shippingHistory": [
         {
+<<<<<<< HEAD
           "date": "2022-01-05T00:14:28.424Z",
           "weight": 12,
           "distance": 123,
           "method": "plane",
           "carbon_lb": 1.43,
           "id": "3325691c-0205-48de-a2da-7ce7cd29e7d0"
+=======
+          "date": "2022-01-05T17:18:17.926Z",
+          "weight": 25,
+          "distance": 230,
+          "method": "train",
+          "carbon_lb": 0.2,
+          "id": "08eb2b0c-8de3-4879-bd97-90a9209b11d5"
+>>>>>>> e37f5f28b1bfea58e7bf48823a77a31ffb8b0442
         },
         {
           "date": "2022-01-05T18:24:24.568Z",
@@ -103,6 +96,7 @@
           "id": "760822aa-b15a-4bdc-97d2-b93de0599385"
         },
         {
+<<<<<<< HEAD
           "date": "2022-01-07T21:47:26.350Z",
           "distance_value": 200,
           "distance_unit": "mi",
@@ -111,6 +105,26 @@
           "vehicle_year": 2005,
           "carbon_lb": 178.11,
           "id": "8e0e465b-cf5a-400a-936b-92b7307e0d41"
+=======
+          "date": "2022-01-07T17:17:02.868Z",
+          "distance_value": 667,
+          "distance_unit": "mi",
+          "vehicle_make": "Acura",
+          "vehicle_model": "Integra",
+          "vehicle_year": 1995,
+          "carbon_lb": 544.51,
+          "id": "798cd840-f73c-4d09-a0c0-cbdbc33f78fd"
+        },
+        {
+          "date": "2022-01-07T22:32:05.926Z",
+          "distance_value": 123,
+          "distance_unit": "mi",
+          "vehicle_make": "Ford",
+          "vehicle_model": "E150 Econoline 2WD",
+          "vehicle_year": 1987,
+          "carbon_lb": 172.13,
+          "id": "dac8575d-aef4-48d5-aa28-2efd09e5492a"
+>>>>>>> e37f5f28b1bfea58e7bf48823a77a31ffb8b0442
         }
       ],
       "electricityHistory": [
@@ -147,20 +161,12 @@
           "id": "6866ddcd-fa71-43cb-9540-bb7e3161309d"
         },
         {
-          "date": "2022-01-05T17:08:22.726Z",
+          "date": "2022-01-07T17:17:23.601Z",
           "country": "US",
-          "state": "AK",
-          "electricity_value": 23.5,
-          "carbon_lb": 22.91,
-          "id": "0a31a998-4644-4cf8-a799-3befba9c0cc9"
-        },
-        {
-          "date": "2022-01-07T16:37:52.752Z",
-          "country": "US",
-          "state": "NY",
-          "electricity_value": 776,
-          "carbon_lb": 293.43,
-          "id": "8610f6d6-29cc-4ecf-8003-7dd744d3013f"
+          "state": "MD",
+          "electricity_value": 123,
+          "carbon_lb": 90.84,
+          "id": "51a34b03-ca3e-4abb-a259-783cce7aa8d8"
         }
       ]
     }
