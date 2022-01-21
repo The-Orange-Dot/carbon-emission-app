@@ -9,7 +9,12 @@ import ElectricityForm from "./Electricity/ElectricityForm";
 import ElectricityResults from "./Electricity/Electricity.Results";
 import "./EmissionPage.css";
 
-function Estimate({ onSaveData }) {
+function Estimate({ 
+  onSaveFlightData,
+  onSaveShippingData,
+  onSaveElectricityData,
+  onSaveVehicleData
+ }) {
   const [flightResults, setFlightResults] = useState({
     date: "",
     passengers: "",
@@ -180,7 +185,7 @@ function Estimate({ onSaveData }) {
           {shippingResults.id.length !== 0 ? (
             <ShippingResults
               shippingData={shippingResults}
-              onSaveData={onSaveData}
+              onSaveShippingData={onSaveShippingData}
               setShippingResults={setShippingResults}
             />
           ) : null}
@@ -189,7 +194,7 @@ function Estimate({ onSaveData }) {
           {vehicleResults.id.length !== 0 ? (
             <VehicleResults
               vehicleData={vehicleResults}
-              onSaveData={onSaveData}
+              onSaveVehicleData={onSaveVehicleData}
               setVehicleResults={setVehicleResults}
             />
           ) : null}
@@ -198,7 +203,7 @@ function Estimate({ onSaveData }) {
           {flightResults.id.length !== 0 ? (
             <FlightResults
               flightData={flightResults}
-              onSaveData={onSaveData}
+              onSaveFlightData={onSaveFlightData}
               setFlightResults={setFlightResults}
             />
           ) : null}
@@ -207,7 +212,7 @@ function Estimate({ onSaveData }) {
           {electricityResults.id.length !== 0 ? (
             <ElectricityResults
               electricityData={electricityResults}
-              onSaveData={onSaveData}
+              onSaveElectricityData={onSaveElectricityData}
               setElectricityResults={setElectricityResults}
             />
           ) : null}

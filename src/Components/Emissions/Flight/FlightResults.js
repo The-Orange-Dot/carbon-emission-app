@@ -1,6 +1,6 @@
 import "../EmissionPage.css";
 
-function FlightResults({ flightData, onSaveData, setFlightResults }) {
+function FlightResults({ flightData, onSaveFlightData, setFlightResults }) {
   return (
     <div className="emission-popup">
       <h2>Carbon Estimate:</h2>
@@ -21,7 +21,7 @@ function FlightResults({ flightData, onSaveData, setFlightResults }) {
       <p>{flightData.carbon_lb}</p>
 
       <div>
-        <button onClick={() => onSaveData("flightHistory", flightData)}>
+        <button onClick={() => onSaveFlightData(flightData)}>
           Save to History
         </button>
         <button onClick={() => setFlightResults({ ...flightData, id: "" })}>

@@ -14,7 +14,7 @@ function ShippingCard({ shipment, onDeleteData }) {
         </div>
       </ul>
       <button
-        onClick={() => onDeleteData("shippingHistory", shipment)}
+        onClick={() => onDeleteData("shipping_histories", shipment)}
         className="carbon-estimate-btn + hide"
       >
         Delete History

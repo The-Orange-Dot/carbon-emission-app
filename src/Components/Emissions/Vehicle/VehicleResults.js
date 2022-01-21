@@ -1,6 +1,6 @@
 import "../EmissionPage.css";
 
-function VehicleResults({ vehicleData, onSaveData, setVehicleResults }) {
+function VehicleResults({ vehicleData, onSaveVehicleData, setVehicleResults }) {
   return (
     <div className="emission-popup">
       <div>
@@ -23,7 +23,7 @@ function VehicleResults({ vehicleData, onSaveData, setVehicleResults }) {
         <h4>Carbon Estimate (lbs): </h4>
         <p>{vehicleData.carbon_lb}</p>
         <div>
-          <button onClick={() => onSaveData("vehicleHistory", vehicleData)}>
+          <button onClick={() => onSaveVehicleData(vehicleData)}>
             Save to History
           </button>
           <button onClick={() => setVehicleResults({ ...vehicleData, id: "" })}>

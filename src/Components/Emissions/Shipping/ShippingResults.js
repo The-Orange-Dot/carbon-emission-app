@@ -2,7 +2,7 @@ import "../EmissionPage.css";
 
 import "../EmissionPage.css";
 
-function ShippingResults({ shippingData, onSaveData, setShippingResults }) {
+function ShippingResults({ shippingData, onSaveShippingData, setShippingResults }) {
   return (
     <div className="emission-popup">
       <h2>Carbon Estimate:</h2>
@@ -19,7 +19,7 @@ function ShippingResults({ shippingData, onSaveData, setShippingResults }) {
       <h4>Carbon Estimate (lbs): </h4>
       <p>{shippingData.carbon_lb}</p>
       <div>
-        <button onClick={() => onSaveData("shippingHistory", shippingData)}>
+        <button onClick={() => onSaveShippingData(shippingData)}>
           Save to History
         </button>
         <button onClick={() => setShippingResults({ ...shippingData, id: "" })}>

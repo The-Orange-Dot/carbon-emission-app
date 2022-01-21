@@ -45,14 +45,6 @@
           "destination": "LAX",
           "carbon_lb": 98113.63,
           "id": "39f319f0-dec3-4b51-bcd4-6429fb46b8fe"
-        },
-        {
-          "date": "2022-01-05T17:07:19.767Z",
-          "passengers": 1,
-          "departure": "MCO",
-          "destination": "CDG",
-          "carbon_lb": 2428.27,
-          "id": "353dab7f-588b-4827-a728-7e50b45aadef"
         }
       ],
       "shippingHistory": [
@@ -63,14 +55,6 @@
           "method": "plane",
           "carbon_lb": 1.43,
           "id": "3325691c-0205-48de-a2da-7ce7cd29e7d0"
-        },
-        {
-          "date": "2022-01-05T17:18:17.926Z",
-          "weight": 25,
-          "distance": 230,
-          "method": "train",
-          "carbon_lb": 0.2,
-          "id": "08eb2b0c-8de3-4879-bd97-90a9209b11d5"
         },
         {
           "date": "2022-01-05T18:24:24.568Z",
@@ -87,6 +71,14 @@
           "method": "plane",
           "carbon_lb": 1.94,
           "id": "31777bb9-2f7c-48a8-9082-a4f65e2dabf7"
+        },
+        {
+          "date": "2022-01-07T19:24:53.942Z",
+          "weight": 25,
+          "distance": 230,
+          "method": "train",
+          "carbon_lb": 0.2,
+          "id": "baf3a5ac-31bd-499d-a937-0c101615482b"
         }
       ],
       "vehicleHistory": [
@@ -101,16 +93,6 @@
           "id": "1786cca2-9a2f-4d1a-b6c2-d341f0122408"
         },
         {
-          "date": "2022-01-05T16:54:57.705Z",
-          "distance_value": 50,
-          "distance_unit": "mi",
-          "vehicle_make": "Alfa Romeo",
-          "vehicle_model": "164",
-          "vehicle_year": 1994,
-          "carbon_lb": 61.23,
-          "id": "1f10c3aa-7f83-4871-8bcb-867d3e3dbc53"
-        },
-        {
           "date": "2022-01-05T17:07:32.424Z",
           "distance_value": 250,
           "distance_unit": "mi",
@@ -119,6 +101,16 @@
           "vehicle_year": 1987,
           "carbon_lb": 222.64,
           "id": "760822aa-b15a-4bdc-97d2-b93de0599385"
+        },
+        {
+          "date": "2022-01-07T21:47:26.350Z",
+          "distance_value": 200,
+          "distance_unit": "mi",
+          "vehicle_make": "Volvo",
+          "vehicle_model": "S60 FWD",
+          "vehicle_year": 2005,
+          "carbon_lb": 178.11,
+          "id": "8e0e465b-cf5a-400a-936b-92b7307e0d41"
         }
       ],
       "electricityHistory": [
