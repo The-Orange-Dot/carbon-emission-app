@@ -9,25 +9,34 @@ import ChartSelector from "./ChartSelector";
 //Prevents scrolling on homepage
 // document.body.style.overflow = "hidden";
 
-function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
+function Homepage({ 
+  user, 
+  loggedIn, 
+  setUser, 
+  setLoggedIn,
+  flightHistory,
+  shippingHistory,
+  vehicleHistory,
+  electricityHistory
+ }) {
   const [worldData, setWorldData] = useState([]);
   const [chartSelector, setChartSelector] = useState("");
 
-  const totalFlightCarbon = user.flightHistory.reduce(
+  const totalFlightCarbon = flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
   );
-  const totalShippingCarbon = user.shippingHistory.reduce(
+  const totalShippingCarbon = shippingHistory.reduce(
     (count, shipping) => (count += shipping.carbon_lb),
     0
   );
 
-  const totalVehicleCarbon = user.vehicleHistory.reduce(
+  const totalVehicleCarbon = vehicleHistory.reduce(
     (count, vehicle) => (count += vehicle.carbon_lb),
     0
   );
 
-  const totalElectricCarbon = user.electricityHistory.reduce(
+  const totalElectricCarbon = electricityHistory.reduce(
     (count, electricity) => (count += electricity.carbon_lb),
     0
   );
@@ -92,7 +101,7 @@ function Homepage({ user, loggedIn, setUser, setLoggedIn }) {
               <div className="user">
                 <h4>Total Carbon Footprint</h4>
                 <h1 className="homepage-total-emission">
-                  {user.flightHistory.length !== 0
+                  {flightHistory.length !== 0
                     ? `${(
                         Math.round(
                           (totalFlightCarbon +

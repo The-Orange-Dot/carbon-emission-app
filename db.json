@@ -33,12 +33,21 @@
       ],
       "shippingHistory": [
         {
+<<<<<<< HEAD
+          "date": "2022-01-05T00:14:28.424Z",
+          "weight": 12,
+          "distance": 123,
+          "method": "plane",
+          "carbon_lb": 1.43,
+          "id": "3325691c-0205-48de-a2da-7ce7cd29e7d0"
+=======
           "date": "2022-01-05T17:18:17.926Z",
           "weight": 25,
           "distance": 230,
           "method": "train",
           "carbon_lb": 0.2,
           "id": "08eb2b0c-8de3-4879-bd97-90a9209b11d5"
+>>>>>>> e37f5f28b1bfea58e7bf48823a77a31ffb8b0442
         },
         {
           "date": "2022-01-05T18:24:24.568Z",
@@ -55,6 +64,14 @@
           "method": "plane",
           "carbon_lb": 1.94,
           "id": "31777bb9-2f7c-48a8-9082-a4f65e2dabf7"
+        },
+        {
+          "date": "2022-01-07T19:24:53.942Z",
+          "weight": 25,
+          "distance": 230,
+          "method": "train",
+          "carbon_lb": 0.2,
+          "id": "baf3a5ac-31bd-499d-a937-0c101615482b"
         }
       ],
       "vehicleHistory": [
@@ -69,16 +86,6 @@
           "id": "1786cca2-9a2f-4d1a-b6c2-d341f0122408"
         },
         {
-          "date": "2022-01-05T16:54:57.705Z",
-          "distance_value": 50,
-          "distance_unit": "mi",
-          "vehicle_make": "Alfa Romeo",
-          "vehicle_model": "164",
-          "vehicle_year": 1994,
-          "carbon_lb": 61.23,
-          "id": "1f10c3aa-7f83-4871-8bcb-867d3e3dbc53"
-        },
-        {
           "date": "2022-01-05T17:07:32.424Z",
           "distance_value": 250,
           "distance_unit": "mi",
@@ -89,6 +96,16 @@
           "id": "760822aa-b15a-4bdc-97d2-b93de0599385"
         },
         {
+<<<<<<< HEAD
+          "date": "2022-01-07T21:47:26.350Z",
+          "distance_value": 200,
+          "distance_unit": "mi",
+          "vehicle_make": "Volvo",
+          "vehicle_model": "S60 FWD",
+          "vehicle_year": 2005,
+          "carbon_lb": 178.11,
+          "id": "8e0e465b-cf5a-400a-936b-92b7307e0d41"
+=======
           "date": "2022-01-07T17:17:02.868Z",
           "distance_value": 667,
           "distance_unit": "mi",
@@ -107,6 +124,7 @@
           "vehicle_year": 1987,
           "carbon_lb": 172.13,
           "id": "dac8575d-aef4-48d5-aa28-2efd09e5492a"
+>>>>>>> e37f5f28b1bfea58e7bf48823a77a31ffb8b0442
         }
       ],
       "electricityHistory": [

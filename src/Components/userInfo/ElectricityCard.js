@@ -16,7 +16,7 @@ function ElectricityCard({ electricity, onDeleteData }) {
         </div>
       </ul>
       <button
-        onClick={() => onDeleteData("electricityHistory", electricity)}
+        onClick={() => onDeleteData("electricity_histories", electricity)}
         className="carbon-estimate-btn + hide"
       >
         Delete History

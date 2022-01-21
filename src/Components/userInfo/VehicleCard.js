@@ -21,7 +21,7 @@ function VehicleCard({ vehicle, onDeleteData }) {
         </div>
       </ul>
       <button
-        onClick={() => onDeleteData("vehicleHistory", vehicle)}
+        onClick={() => onDeleteData("vehicle_histories", vehicle)}
         className="carbon-estimate-btn + hide"
       >
         Delete History

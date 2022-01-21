@@ -2,7 +2,7 @@ import "../EmissionPage.css";
 
 function ElectricityResults({
   electricityData,
-  onSaveData,
+  onSaveElectricityData,
   setElectricityResults,
 }) {
   return (
@@ -26,7 +26,7 @@ function ElectricityResults({
 
       <div>
         <button
-          onClick={() => onSaveData("electricityHistory", electricityData)}
+          onClick={() => onSaveElectricityData(electricityData)}
         >
           Save to History
         </button>

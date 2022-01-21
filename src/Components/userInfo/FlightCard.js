@@ -22,7 +22,7 @@ function FlightCard({ flight, onDeleteData }) {
         </div>
       </ul>
       <button
-        onClick={() => onDeleteData("flightHistory", flight)}
+        onClick={() => onDeleteData("flight_histories", flight)}
         className="carbon-estimate-btn + hide"
       >
         Delete History
