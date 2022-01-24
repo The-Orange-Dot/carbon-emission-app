@@ -45,10 +45,10 @@ function NavBar({ loggedIn }) {
               style={linkStyle}
               activestyle={{ color: "blue" }}
             >
-              Estimates
+              My Estimates
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to={loggedIn ? "/user" : "/login"}
               style={linkStyle}
@@ -56,7 +56,7 @@ function NavBar({ loggedIn }) {
             >
               My History
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

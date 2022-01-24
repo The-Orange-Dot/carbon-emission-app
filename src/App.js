@@ -190,11 +190,15 @@ function App() {
               shippingHistory={shippingHistory}
               vehicleHistory={vehicleHistory}
               electricityHistory={electricityHistory}
+              onSaveVehicleData={handleVehicleSaveData}
+              onSaveShippingData={handleShippingSaveData}
+              onSaveFlightData={handleFlightSaveData}
+              onSaveElectricityData={handleElectricitySaveData}
             />
           )}
         />
 
-        <Route
+        {/* <Route
           path="/estimate"
           component={() => (
             <Estimate
@@ -204,7 +208,7 @@ function App() {
               onSaveElectricityData={handleElectricitySaveData}
             />
           )}
-        />
+        /> */}
         <Route
           path="/"
           component={() => (

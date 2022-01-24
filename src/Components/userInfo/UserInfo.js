@@ -3,6 +3,7 @@ import FlightCard from "./FlightCard";
 import ShippingCard from "./ShippingCard";
 import VehicleCard from "./VehicleCard";
 import ElectricityCard from "./ElectricityCard";
+import Estimate from "../Emissions/Estimate";
 
 function UserInfo({
   user,
@@ -11,6 +12,10 @@ function UserInfo({
   electricityHistory,
   shippingHistory,
   vehicleHistory,
+  onSaveFlightData,
+  onSaveElectricityData,
+  onSaveShippingData,
+  onSaveVehicleData,
 }) {
   const totalFlightCarbon = flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
@@ -107,6 +112,13 @@ function UserInfo({
           </div>
         </div>
       </div>
+      <Estimate
+        onSaveVehicleData={onSaveVehicleData}
+        onSaveShippingData={onSaveShippingData}
+        onSaveFlightData={onSaveFlightData}
+        onSaveElectricityData={onSaveElectricityData}
+      />
+
       <h1 style={{ marginBottom: "10px" }}>Carbon Estimate History</h1>
       <div className="results-container">
         <div className="results-column ">
