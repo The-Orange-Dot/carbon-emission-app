@@ -4,13 +4,13 @@ import ShippingCard from "./ShippingCard";
 import VehicleCard from "./VehicleCard";
 import ElectricityCard from "./ElectricityCard";
 
-function UserInfo({ 
-  user, 
+function UserInfo({
+  user,
   onDeleteData,
   flightHistory,
   electricityHistory,
   shippingHistory,
-  vehicleHistory 
+  vehicleHistory,
 }) {
   const totalFlightCarbon = flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
@@ -47,10 +47,10 @@ function UserInfo({
           <br />
           <img src={user.image} alt="user" className="user-image" />
           <p>
-            <strong>First Name:</strong> {user.firstName}
+            <strong>First Name:</strong> {user.first_name}
           </p>
           <p>
-            <strong>Last Name:</strong> {user.lastName}
+            <strong>Last Name:</strong> {user.last_name}
           </p>
           <p>
             <strong>Email:</strong> {user.email}
@@ -63,7 +63,7 @@ function UserInfo({
         </div>
         <div className="carbon-emission-container">
           <div className="carbon-total">
-            <h1>{user.firstName}'s total carbon emission</h1>
+            <h1>{user.first_name}'s total carbon emission</h1>
             <h1 className="total-user-emission">
               {(
                 Math.round(
@@ -87,29 +87,20 @@ function UserInfo({
             <div className="carbon-breakdown-list">
               <div className="flight-carbon-result">
                 <h2>Flight travel: </h2>
-                <h1>
-                  {emissionHandler(flightHistory, totalFlightCarbon)}
-                </h1>
+                <h1>{emissionHandler(flightHistory, totalFlightCarbon)}</h1>
               </div>
               <div className="vehicle-carbon-result">
                 <h2>Automobile: </h2>
-                <h1>
-                  {emissionHandler(vehicleHistory, totalVehicleCarbon)}
-                </h1>
+                <h1>{emissionHandler(vehicleHistory, totalVehicleCarbon)}</h1>
               </div>
               <div className="shipping-carbon-result">
                 <h2>Shipping: </h2>
-                <h1>
-                  {emissionHandler(shippingHistory, totalShippingCarbon)}
-                </h1>
+                <h1>{emissionHandler(shippingHistory, totalShippingCarbon)}</h1>
               </div>
               <div className="shipping-carbon-result">
                 <h2>Electricity: </h2>
                 <h1>
-                  {emissionHandler(
-                    electricityHistory,
-                    totalElectricCarbon
-                  )}
+                  {emissionHandler(electricityHistory, totalElectricCarbon)}
                 </h1>
               </div>
             </div>
