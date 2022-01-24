@@ -9,16 +9,16 @@ import ChartSelector from "./ChartSelector";
 //Prevents scrolling on homepage
 // document.body.style.overflow = "hidden";
 
-function Homepage({ 
-  user, 
-  loggedIn, 
-  setUser, 
+function Homepage({
+  user,
+  loggedIn,
+  setUser,
   setLoggedIn,
   flightHistory,
   shippingHistory,
   vehicleHistory,
-  electricityHistory
- }) {
+  electricityHistory,
+}) {
   const [worldData, setWorldData] = useState([]);
   const [chartSelector, setChartSelector] = useState("");
 
@@ -52,18 +52,12 @@ function Homepage({
   };
 
   useEffect(() => {
-    let isAPISubscribed = true;
     fetch("http://localhost:3001/countryAverageCapita")
       .then((r) => r.json())
       .then((data) => {
-        if (isAPISubscribed) {
-          setWorldData(data.sort((a, b) => (a.average < b.average ? 1 : -1)));
-          setChartSelector("mode-of-transport");
-        }
+        setWorldData(data.sort((a, b) => (a.average < b.average ? 1 : -1)));
+        setChartSelector("mode-of-transport");
       });
-    return () => {
-      isAPISubscribed = false;
-    };
   }, []);
 
   const selectHandler = (e) => {
