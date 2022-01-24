@@ -21,8 +21,6 @@ function App() {
     image: { defaultImage },
   });
 
-  const [update, setUpdate] = useState(false);
-
   const [shippingHistory, setShippingHistory] = useState([]);
   const [flightHistory, setFlightHistory] = useState([]);
   const [vehicleHistory, setVehicleHistory] = useState([]);
@@ -43,7 +41,7 @@ function App() {
     return () => {
       isAPISubscribed = false;
     };
-  }, [update]);
+  }, []);
 
   useEffect(() => {
     fetch("http://localhost:3001/shipping_histories")
@@ -64,14 +62,35 @@ function App() {
   }, []);
 
   function handleDeleteData(location, item) {
-    console.log(location)
-    console.log(item.id)
+    console.log(location);
+    console.log(item.id);
     fetch(`http://localhost:3001/${location}/${item.id}`, {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
     });
 
-    setUpdate(!update);
+    let update;
+    switch (location) {
+      case "shipping_histories":
+        update = shippingHistory.filter((shipping) => shipping.id !== item.id);
+        setShippingHistory(update);
+        break;
+      case "flight_histories":
+        update = flightHistory.filter((flight) => flight.id !== item.id);
+        setFlightHistory(update);
+        break;
+      case "electricity_histories":
+        update = electricityHistory.filter(
+          (electricity) => electricity.id !== item.id
+        );
+        setElectricityHistory(update);
+        break;
+      case "vehicle_histories":
+        update = vehicleHistory.filter((vehicle) => vehicle.id !== item.id);
+        setVehicleHistory(update);
+        break;
+      default:
+        console.log("deleted!!");
+    }
   }
 
   function handleShippingSaveData(shipment) {
@@ -164,13 +183,14 @@ function App() {
         <Route
           path="/user"
           component={() => (
-            <UserInfo 
-              user={user} 
+            <UserInfo
+              user={user}
               onDeleteData={handleDeleteData}
               flightHistory={flightHistory}
               shippingHistory={shippingHistory}
               vehicleHistory={vehicleHistory}
-              electricityHistory={electricityHistory} />
+              electricityHistory={electricityHistory}
+            />
           )}
         />
 

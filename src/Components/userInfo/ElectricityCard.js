@@ -11,7 +11,12 @@ function ElectricityCard({ electricity, onDeleteData }) {
         <div>
           <p>Estimated carbon emission: </p>
           <p>
-            <strong>{electricity.carbon_lb} lbs</strong>
+            <strong>
+              {(Math.round(electricity.carbon_lb * 100) / 100)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+              lbs
+            </strong>
           </p>
         </div>
       </ul>

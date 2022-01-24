@@ -9,7 +9,13 @@ function ShippingCard({ shipment, onDeleteData }) {
         <div>
           <p>Estimated carbon emission: </p>
           <p>
-            <strong> {shipment.carbon_lb} lbs</strong>
+            <strong>
+              {" "}
+              {(Math.round(shipment.carbon_lb * 100) / 100)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              lbs
+            </strong>
           </p>
         </div>
       </ul>
