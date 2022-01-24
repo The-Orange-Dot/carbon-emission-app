@@ -64,6 +64,8 @@ function App() {
   }, []);
 
   function handleDeleteData(location, item) {
+    console.log(location)
+    console.log(item.id)
     fetch(`http://localhost:3001/${location}/${item.id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
@@ -162,7 +164,13 @@ function App() {
         <Route
           path="/user"
           component={() => (
-            <UserInfo user={user} onDeleteData={handleDeleteData} />
+            <UserInfo 
+              user={user} 
+              onDeleteData={handleDeleteData}
+              flightHistory={flightHistory}
+              shippingHistory={shippingHistory}
+              vehicleHistory={vehicleHistory}
+              electricityHistory={electricityHistory} />
           )}
         />
 

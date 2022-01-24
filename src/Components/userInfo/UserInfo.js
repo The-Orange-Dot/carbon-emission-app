@@ -4,23 +4,30 @@ import ShippingCard from "./ShippingCard";
 import VehicleCard from "./VehicleCard";
 import ElectricityCard from "./ElectricityCard";
 
-function UserInfo({ user, onDeleteData }) {
-  const totalFlightCarbon = user.flightHistory.reduce(
+function UserInfo({ 
+  user, 
+  onDeleteData,
+  flightHistory,
+  electricityHistory,
+  shippingHistory,
+  vehicleHistory 
+}) {
+  const totalFlightCarbon = flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
   );
 
-  const totalShippingCarbon = user.shippingHistory.reduce(
+  const totalShippingCarbon = shippingHistory.reduce(
     (count, shipping) => (count += shipping.carbon_lb),
     0
   );
 
-  const totalVehicleCarbon = user.vehicleHistory.reduce(
+  const totalVehicleCarbon = vehicleHistory.reduce(
     (count, vehicle) => (count += vehicle.carbon_lb),
     0
   );
 
-  const totalElectricCarbon = user.electricityHistory.reduce(
+  const totalElectricCarbon = electricityHistory.reduce(
     (count, electricity) => (count += electricity.carbon_lb),
     0
   );
@@ -81,26 +88,26 @@ function UserInfo({ user, onDeleteData }) {
               <div className="flight-carbon-result">
                 <h2>Flight travel: </h2>
                 <h1>
-                  {emissionHandler(user.flightHistory, totalFlightCarbon)}
+                  {emissionHandler(flightHistory, totalFlightCarbon)}
                 </h1>
               </div>
               <div className="vehicle-carbon-result">
                 <h2>Automobile: </h2>
                 <h1>
-                  {emissionHandler(user.vehicleHistory, totalVehicleCarbon)}
+                  {emissionHandler(vehicleHistory, totalVehicleCarbon)}
                 </h1>
               </div>
               <div className="shipping-carbon-result">
                 <h2>Shipping: </h2>
                 <h1>
-                  {emissionHandler(user.shippingHistory, totalShippingCarbon)}
+                  {emissionHandler(shippingHistory, totalShippingCarbon)}
                 </h1>
               </div>
               <div className="shipping-carbon-result">
                 <h2>Electricity: </h2>
                 <h1>
                   {emissionHandler(
-                    user.electricityHistory,
+                    electricityHistory,
                     totalElectricCarbon
                   )}
                 </h1>
@@ -113,12 +120,12 @@ function UserInfo({ user, onDeleteData }) {
       <div className="results-container">
         <div className="results-column ">
           <h3>
-            {user.flightHistory.length !== 0
+            {flightHistory.length !== 0
               ? "Flight History"
               : "No saved flights yet"}
           </h3>
           <div className="card-container">
-            {user.flightHistory.map((flight) => (
+            {flightHistory.map((flight) => (
               <FlightCard
                 key={flight.id}
                 flight={flight}
@@ -130,12 +137,12 @@ function UserInfo({ user, onDeleteData }) {
 
         <div className="results-column ">
           <h3>
-            {user.vehicleHistory.length !== 0
+            {vehicleHistory.length !== 0
               ? "Automobile History"
               : "No saved vehicles yet"}
           </h3>
           <div className="card-container">
-            {user.vehicleHistory.map((vehicle) => (
+            {vehicleHistory.map((vehicle) => (
               <VehicleCard
                 key={vehicle.id}
                 vehicle={vehicle}
@@ -147,12 +154,12 @@ function UserInfo({ user, onDeleteData }) {
 
         <div className="results-column">
           <h3>
-            {user.shippingHistory.length !== 0
+            {shippingHistory.length !== 0
               ? "Shipping History"
               : "No saved shipments yet"}
           </h3>
           <div className="card-container">
-            {user.shippingHistory.map((shipment) => (
+            {shippingHistory.map((shipment) => (
               <ShippingCard
                 key={shipment.id}
                 shipment={shipment}
@@ -164,12 +171,12 @@ function UserInfo({ user, onDeleteData }) {
 
         <div className="results-column">
           <h3>
-            {user.electricityHistory.length !== 0
+            {electricityHistory.length !== 0
               ? "Electricity Usage History"
               : null}
           </h3>
           <div className="card-container">
-            {user.electricityHistory.map((electricity) => (
+            {electricityHistory.map((electricity) => (
               <ElectricityCard
                 key={electricity.id}
                 electricity={electricity}
