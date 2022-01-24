@@ -7,6 +7,10 @@ import ShippingForm from "./Shipping/ShippingForm";
 import ShippingResults from "./Shipping/ShippingResults";
 import ElectricityForm from "./Electricity/ElectricityForm";
 import ElectricityResults from "./Electricity/Electricity.Results";
+import FlightCard from "../UserInfo/FlightCard";
+import VehicleCard from "../UserInfo/VehicleCard";
+import ElectricityCard from "../UserInfo/ElectricityCard";
+import ShippingCard from "../UserInfo/ShippingCard";
 import "./EmissionPage.css";
 
 function Estimate({
@@ -14,6 +18,11 @@ function Estimate({
   onSaveShippingData,
   onSaveElectricityData,
   onSaveVehicleData,
+  onDeleteData,
+  flightHistory,
+  electricityHistory,
+  vehicleHistory,
+  shippingHistory,
 }) {
   const [flightResults, setFlightResults] = useState({
     date: "",
@@ -261,6 +270,78 @@ function Estimate({
               setElectricityResults={setElectricityResults}
               electricityResults={electricityResults}
             />
+          </div>
+        </div>
+      </div>
+      <div className="results-new-section">
+        <h1 style={{ marginBottom: "10px" }}>Carbon Estimate History</h1>
+        <div className="results-container">
+          <div className="results-column ">
+            <h3>
+              {flightHistory.length !== 0
+                ? "Flight History"
+                : "No saved flights yet"}
+            </h3>
+            <div className="card-container">
+              {flightHistory.map((flight) => (
+                <FlightCard
+                  key={flight.id}
+                  flight={flight}
+                  onDeleteData={onDeleteData}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="results-column ">
+            <h3>
+              {vehicleHistory.length !== 0
+                ? "Automobile History"
+                : "No saved vehicles yet"}
+            </h3>
+            <div className="card-container">
+              {vehicleHistory.map((vehicle) => (
+                <VehicleCard
+                  key={vehicle.id}
+                  vehicle={vehicle}
+                  onDeleteData={onDeleteData}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="results-column">
+            <h3>
+              {shippingHistory.length !== 0
+                ? "Shipping History"
+                : "No saved shipments yet"}
+            </h3>
+            <div className="card-container">
+              {shippingHistory.map((shipment) => (
+                <ShippingCard
+                  key={shipment.id}
+                  shipment={shipment}
+                  onDeleteData={onDeleteData}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="results-column">
+            <h3>
+              {electricityHistory.length !== 0
+                ? "Electricity Usage History"
+                : null}
+            </h3>
+            <div className="card-container">
+              {electricityHistory.map((electricity) => (
+                <ElectricityCard
+                  key={electricity.id}
+                  electricity={electricity}
+                  onDeleteData={onDeleteData}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

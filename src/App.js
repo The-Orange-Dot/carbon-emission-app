@@ -62,8 +62,6 @@ function App() {
   }, []);
 
   function handleDeleteData(location, item) {
-    console.log(location);
-    console.log(item.id);
     fetch(`http://localhost:3001/${location}/${item.id}`, {
       method: "DELETE",
     });
@@ -198,7 +196,7 @@ function App() {
           )}
         />
 
-        {/* <Route
+        <Route
           path="/estimate"
           component={() => (
             <Estimate
@@ -206,9 +204,14 @@ function App() {
               onSaveShippingData={handleShippingSaveData}
               onSaveFlightData={handleFlightSaveData}
               onSaveElectricityData={handleElectricitySaveData}
+              onDeleteData={handleDeleteData}
+              flightHistory={flightHistory}
+              electricityHistory={electricityHistory}
+              vehicleHistory={vehicleHistory}
+              shippingHistory={shippingHistory}
             />
           )}
-        /> */}
+        />
         <Route
           path="/"
           component={() => (
