@@ -19,7 +19,7 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
   });
 
   function handleAirportSearch(e) {
-    console.log(e.target.value)
+    console.log(e.target.value);
 
     let term = e.target.value;
     apca.request(term);
@@ -29,13 +29,13 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
 
       const allAirports = [];
 
-      data.airports.map(airport => {
-        if(airport.children) {
-          airport.children.forEach(airport => allAirports.push(airport))
+      data.airports.map((airport) => {
+        if (airport.children) {
+          airport.children.forEach((airport) => allAirports.push(airport));
         } else {
-          allAirports.push(airport)
+          allAirports.push(airport);
         }
-      })
+      });
 
       setAirportData(allAirports);
     };
@@ -46,26 +46,24 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
   }
 
   function handleAirportSelect(e) {
-
     const code = e.target.value.split(" ").slice(-1).join("");
 
-    console.log("target: ", e.target.name)
+    console.log("target: ", e.target.name);
 
     setFormData({
       ...formData,
       [e.target.name]: code,
     });
 
-    setAirportData([])
+    setAirportData([]);
   }
 
   function handleFormChange(e) {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
-
 
   function onFormSubmit(e) {
     e.preventDefault();
@@ -73,11 +71,11 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
     setFlightResults({ ...flightResults, id: "" });
   }
 
-  console.log(formData)
+  console.log(formData);
 
   return (
     <div className="emission-form-container">
-      <form onSubmit={onFormSubmit}>
+      <form onSubmit={onFormSubmit} className="flight-search-container">
         {/* <div>
           <label>Departure airport:</label>
           <input
@@ -96,50 +94,70 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
             onChange={handleFormChange}
           ></input>
         </div> */}
-        <label>
-          Origin Airport:{' '}
-            <Autocomplete
-              sx={{
-                display: 'inline-block',
-                '& input': {
-                  width: 200,
-                  bgcolor: 'background.paper',
-                  color: (theme) =>
-                    theme.palette.getContrastText(theme.palette.background.paper),
-                },
-              }}
-              id="custom-input-demo"
-              options={airportData.map(airport => `${airport.city}: ${airport.name} ${airport.iata}`)}
-              renderInput={(params) => (
-                <div ref={params.InputProps.ref} onChange={handleAirportSearch}>
-                  <input type="text" placeholder="Search City or Enter Airport Code" {...params.inputProps} name="origin" onSelect={handleAirportSelect}/>
-                </div>
-              )}
-            />
-          </label> 
-          <label>
-          Destination Airport:{' '}
-            <Autocomplete
-              sx={{
-                display: 'inline-block',
-                '& input': {
-                  width: 200,
-                  bgcolor: 'background.paper',
-                  color: (theme) =>
-                    theme.palette.getContrastText(theme.palette.background.paper),
-                },
-              }}
-              id="custom-input-demo"
-              options={airportData.map(airport => `${airport.city}: ${airport.name} ${airport.iata}`)}
-              renderInput={(params) => (
-                <div ref={params.InputProps.ref} onChange={handleAirportSearch}>
-                  <input type="text" placeholder="Search City or Enter Airport Code" {...params.inputProps} name="destination" onSelect={handleAirportSelect}/>
-                </div>
-              )}
-            />
-          </label> 
+        <div className="flight-search">
+          Origin Airport:{" "}
+          <Autocomplete
+            sx={{
+              display: "inline-block",
+              "& input": {
+                width: 220,
+                bgcolor: "background.paper",
+                border: "1px solid gray",
+                borderRadius: "2px",
+                color: (theme) =>
+                  theme.palette.getContrastText(theme.palette.background.paper),
+              },
+            }}
+            id="custom-input-demo"
+            options={airportData.map(
+              (airport) => `${airport.city}: ${airport.name} ${airport.iata}`
+            )}
+            renderInput={(params) => (
+              <div ref={params.InputProps.ref} onChange={handleAirportSearch}>
+                <input
+                  type="text"
+                  placeholder="Search City or Enter Airport Code"
+                  {...params.inputProps}
+                  name="origin"
+                  onSelect={handleAirportSelect}
+                />
+              </div>
+            )}
+          />
+        </div>
+        <div className="flight-search">
+          Destination Airport:{" "}
+          <Autocomplete
+            sx={{
+              display: "inline-block",
+              "& input": {
+                width: 180,
+                bgcolor: "background.paper",
+                border: "1px solid gray",
+                borderRadius: "2px",
+                color: (theme) =>
+                  theme.palette.getContrastText(theme.palette.background.paper),
+              },
+            }}
+            id="custom-input-demo"
+            options={airportData.map(
+              (airport) => `${airport.city}: ${airport.name} ${airport.iata}`
+            )}
+            renderInput={(params) => (
+              <div ref={params.InputProps.ref} onChange={handleAirportSearch}>
+                <input
+                  type="text"
+                  placeholder="Search City or Enter Airport Code"
+                  {...params.inputProps}
+                  name="destination"
+                  onSelect={handleAirportSelect}
+                />
+              </div>
+            )}
+          />
+        </div>
         <div>
-          <label>Number of Passengers:</label>
+          <label>Number of Passengers: </label>
           <input
             type="text"
             placeholder="Ex: 3"
