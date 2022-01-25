@@ -55,6 +55,8 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
       ...formData,
       [e.target.name]: code,
     });
+
+    setAirportData([])
   }
 
   function handleFormChange(e) {
