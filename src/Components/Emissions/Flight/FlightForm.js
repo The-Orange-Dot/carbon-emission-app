@@ -117,7 +117,7 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
               <div ref={params.InputProps.ref} onChange={handleAirportSearch}>
                 <input
                   type="text"
-                  placeholder="Search City or Enter Airport Code"
+                  placeholder="Search City or Airport Code"
                   {...params.inputProps}
                   name="origin"
                   onSelect={handleAirportSelect}
@@ -149,7 +149,7 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
               <div ref={params.InputProps.ref} onChange={handleAirportSearch}>
                 <input
                   type="text"
-                  placeholder="Search City or Enter Airport Code"
+                  placeholder="Search City or Airport Code"
                   {...params.inputProps}
                   name="destination"
                   onSelect={handleAirportSelect}
