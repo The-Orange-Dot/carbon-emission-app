@@ -19,6 +19,8 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
   });
 
   function handleAirportSearch(e) {
+    console.log(e.target.value)
+
     let term = e.target.value;
     apca.request(term);
 
@@ -46,9 +48,8 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
   function handleAirportSelect(e) {
 
     const code = e.target.value.split(" ").slice(-1).join("");
-    
-    console.log(code)
-    console.log(e.target.name)
+
+    console.log("target: ", e.target.name)
 
     setFormData({
       ...formData,
@@ -63,13 +64,14 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
     });
   }
 
-  console.log(formData)
 
   function onFormSubmit(e) {
     e.preventDefault();
     handleFormSubmit(formData);
     setFlightResults({ ...flightResults, id: "" });
   }
+
+  console.log(formData)
 
   return (
     <div className="emission-form-container">
@@ -92,25 +94,48 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
             onChange={handleFormChange}
           ></input>
         </div> */}
-        <div>
-          <Autocomplete
-              disablePortal
-              id="combo-box-demo"
+        <label>
+          Origin Airport:{' '}
+            <Autocomplete
+              sx={{
+                display: 'inline-block',
+                '& input': {
+                  width: 200,
+                  bgcolor: 'background.paper',
+                  color: (theme) =>
+                    theme.palette.getContrastText(theme.palette.background.paper),
+                },
+              }}
+              id="custom-input-demo"
               options={airportData.map(airport => `${airport.city}: ${airport.name} ${airport.iata}`)}
-              sx={{ width: 250 }}
-              renderInput={(params) => <TextField onChange={handleAirportSearch} name="origin" onSelect={handleAirportSelect} {...params} label="Origin Airport" />}
-          />
-        </div>
-        <div>
-          <Autocomplete
-              disablePortal
-              id="combo-box-demo"
+              renderInput={(params) => (
+                <div ref={params.InputProps.ref} onChange={handleAirportSearch}>
+                  <input type="text" placeholder="Search City or Enter Airport Code" {...params.inputProps} name="origin" onSelect={handleAirportSelect}/>
+                </div>
+              )}
+            />
+          </label> 
+          <label>
+          Destination Airport:{' '}
+            <Autocomplete
+              sx={{
+                display: 'inline-block',
+                '& input': {
+                  width: 200,
+                  bgcolor: 'background.paper',
+                  color: (theme) =>
+                    theme.palette.getContrastText(theme.palette.background.paper),
+                },
+              }}
+              id="custom-input-demo"
               options={airportData.map(airport => `${airport.city}: ${airport.name} ${airport.iata}`)}
-              sx={{ width: 250 }}
-              renderInput={(params) => <TextField onChange={handleAirportSearch} name="destination" onSelect={handleAirportSelect} {...params} label="Destination Airport" />}
-          />
-        </div>
-
+              renderInput={(params) => (
+                <div ref={params.InputProps.ref} onChange={handleAirportSearch}>
+                  <input type="text" placeholder="Search City or Enter Airport Code" {...params.inputProps} name="destination" onSelect={handleAirportSelect}/>
+                </div>
+              )}
+            />
+          </label> 
         <div>
           <label>Number of Passengers:</label>
           <input
