@@ -93,7 +93,8 @@ function Estimate({
           carbon_lb: flightData.data.attributes.carbon_lb,
           id: flightData.data.id,
         })
-      );
+      )
+      .catch(error => alert(`Please enter valid form data`));
   }
 
   function handleVehicleFormSubmit(vehicleFormData) {
@@ -124,7 +125,8 @@ function Estimate({
           carbon_lb: vehicleData.data.attributes.carbon_lb,
           id: vehicleData.data.id,
         })
-      );
+      )
+      .catch(error => alert(`Please enter valid form data`));
   }
 
   function handleShippingFormSubmit(shippingData) {
@@ -154,7 +156,8 @@ function Estimate({
           carbon_lb: shippingData.data.attributes.carbon_lb,
           id: shippingData.data.id,
         });
-      });
+      })
+      .catch(error => alert(`Please enter valid form data`));
   }
 
   function handleElectricityFormSubmit(elecrticityData) {
@@ -184,7 +187,8 @@ function Estimate({
           carbon_lb: results.data.attributes.carbon_lb,
           id: results.data.id,
         });
-      });
+      })
+      .catch(error => alert(`Please enter valid form data`));
   }
 
   return (
