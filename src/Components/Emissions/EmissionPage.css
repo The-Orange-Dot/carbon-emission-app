@@ -12,8 +12,16 @@
 
 .emission-container {
   display: flex;
+  width: 70%;
   justify-content: space-between;
   flex-direction: column;
+}
+
+.emission-forms-flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .emission-welcome-text {

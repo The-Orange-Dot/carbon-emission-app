@@ -188,91 +188,94 @@ function Estimate({
   }
 
   return (
-    <div className="emission-container">
-      <div className="popup-container">
-        <div className="popup-position">
-          {shippingResults.id.length !== 0 ? (
-            <ShippingResults
-              shippingData={shippingResults}
-              onSaveShippingData={onSaveShippingData}
-              setShippingResults={setShippingResults}
-            />
-          ) : null}
+    <div className="emission-forms-flex">
+      <div className="emission-container">
+        <div className="popup-container">
+          <div className="popup-position">
+            {shippingResults.id.length !== 0 ? (
+              <ShippingResults
+                shippingData={shippingResults}
+                onSaveShippingData={onSaveShippingData}
+                setShippingResults={setShippingResults}
+              />
+            ) : null}
+          </div>
+          <div className="popup-position">
+            {vehicleResults.id.length !== 0 ? (
+              <VehicleResults
+                vehicleData={vehicleResults}
+                onSaveVehicleData={onSaveVehicleData}
+                setVehicleResults={setVehicleResults}
+              />
+            ) : null}
+          </div>
+          <div className="popup-position">
+            {flightResults.id.length !== 0 ? (
+              <FlightResults
+                flightData={flightResults}
+                onSaveFlightData={onSaveFlightData}
+                setFlightResults={setFlightResults}
+              />
+            ) : null}
+          </div>
+          <div className="popup-position">
+            {electricityResults.id.length !== 0 ? (
+              <ElectricityResults
+                electricityData={electricityResults}
+                onSaveElectricityData={onSaveElectricityData}
+                setElectricityResults={setElectricityResults}
+              />
+            ) : null}
+          </div>
         </div>
-        <div className="popup-position">
-          {vehicleResults.id.length !== 0 ? (
-            <VehicleResults
-              vehicleData={vehicleResults}
-              onSaveVehicleData={onSaveVehicleData}
-              setVehicleResults={setVehicleResults}
-            />
-          ) : null}
-        </div>
-        <div className="popup-position">
-          {flightResults.id.length !== 0 ? (
-            <FlightResults
-              flightData={flightResults}
-              onSaveFlightData={onSaveFlightData}
-              setFlightResults={setFlightResults}
-            />
-          ) : null}
-        </div>
-        <div className="popup-position">
-          {electricityResults.id.length !== 0 ? (
-            <ElectricityResults
-              electricityData={electricityResults}
-              onSaveElectricityData={onSaveElectricityData}
-              setElectricityResults={setElectricityResults}
-            />
-          ) : null}
+        <div className="all-the-forms">
+          <div className="form-container">
+            <div>
+              <div className="airplane"></div>
+              <h2>Flights</h2>
+              <FlightForm
+                handleFormSubmit={handleFlightFormSubmit}
+                setFlightResults={setFlightResults}
+                flightResults={flightResults}
+              />
+            </div>
+          </div>
+          <div className="form-container">
+            <div>
+              <div className="road"></div>
+              <h2>Automobiles</h2>
+              <VehicleForm
+                handleVehicleFormSubmit={handleVehicleFormSubmit}
+                setVehicleResults={setVehicleResults}
+                vehicleResults={vehicleResults}
+              />
+            </div>
+          </div>
+          <div className="form-container">
+            <div>
+              <div className="shipping"></div>
+              <h2>Shipping</h2>
+              <ShippingForm
+                handleFormSubmit={handleShippingFormSubmit}
+                setShippingResults={setShippingResults}
+                shippingResults={shippingResults}
+              />
+            </div>
+          </div>
+          <div className="form-container">
+            <div>
+              <div className="electricity"></div>
+              <h2>Electricity</h2>
+              <ElectricityForm
+                handleFormSubmit={handleElectricityFormSubmit}
+                setElectricityResults={setElectricityResults}
+                electricityResults={electricityResults}
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="all-the-forms">
-        <div className="form-container">
-          <div>
-            <div className="airplane"></div>
-            <h2>Flights</h2>
-            <FlightForm
-              handleFormSubmit={handleFlightFormSubmit}
-              setFlightResults={setFlightResults}
-              flightResults={flightResults}
-            />
-          </div>
-        </div>
-        <div className="form-container">
-          <div>
-            <div className="road"></div>
-            <h2>Automobiles</h2>
-            <VehicleForm
-              handleVehicleFormSubmit={handleVehicleFormSubmit}
-              setVehicleResults={setVehicleResults}
-              vehicleResults={vehicleResults}
-            />
-          </div>
-        </div>
-        <div className="form-container">
-          <div>
-            <div className="shipping"></div>
-            <h2>Shipping</h2>
-            <ShippingForm
-              handleFormSubmit={handleShippingFormSubmit}
-              setShippingResults={setShippingResults}
-              shippingResults={shippingResults}
-            />
-          </div>
-        </div>
-        <div className="form-container">
-          <div>
-            <div className="electricity"></div>
-            <h2>Electricity</h2>
-            <ElectricityForm
-              handleFormSubmit={handleElectricityFormSubmit}
-              setElectricityResults={setElectricityResults}
-              electricityResults={electricityResults}
-            />
-          </div>
-        </div>
-      </div>
+
       <div className="results-new-section">
         <h1 style={{ marginBottom: "10px" }}>Carbon Estimate History</h1>
         <div className="results-container">

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { autocomplete } from 'air-port-codes-node';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-
+import { autocomplete } from "air-port-codes-node";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 
 function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
   const [formData, setFormData] = useState({
@@ -14,23 +13,23 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
   const [airportData, setAirportData] = useState([]);
 
   const apca = autocomplete({
-    key : '36048abe21', 
-    secret : '11f38cab1b305ca', // Your API Secret Key: use this if you are not connecting from a web server
-    limit : 15
-});
+    key: "36048abe21",
+    secret: "11f38cab1b305ca", // Your API Secret Key: use this if you are not connecting from a web server
+    limit: 15,
+  });
 
   function handleFormChange(e) {
     let term = e.target.value;
     apca.request(term);
 
     apca.onSuccess = (data) => {
-      console.log('data', data);
+      console.log("data", data);
       setAirportData(data.airports);
-  };
+    };
 
-  apca.onError = (data) => {
-    console.log('onError', data.message);
-};
+    apca.onError = (data) => {
+      console.log("onError", data.message);
+    };
     // setFormData({
     //   ...formData,
     //   [e.target.name]: e.target.value,
@@ -65,8 +64,7 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
           ></input>
         </div>
         <div>
-          
-            {/* <Autocomplete
+          {/* <Autocomplete
               disablePortal
               filterOptions={(x) => x}
               id="combo-box-demo"
@@ -76,7 +74,7 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
           />
    */}
         </div>
-        
+
         <div>
           <label>Number of Passengers:</label>
           <input
