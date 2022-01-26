@@ -97,7 +97,7 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
         <div className="flight-search">
           Origin Airport:{" "}
           <Autocomplete
-          isOptionEqualToValue={(option, value) => option.id === value.id}
+            isOptionEqualToValue={(option, value) => option.id === value.id}
             sx={{
               display: "inline-block",
               "& input": {
@@ -129,7 +129,7 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
         <div className="flight-search">
           Destination Airport:{" "}
           <Autocomplete
-          isOptionEqualToValue={(option, value) => option.id === value.id}
+            isOptionEqualToValue={(option, value) => option.id === value.id}
             sx={{
               display: "inline-block",
               "& input": {
@@ -158,7 +158,7 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
             )}
           />
         </div>
-        <div>
+        <div className="form-input">
           <label>Number of Passengers: </label>
           <input
             type="text"

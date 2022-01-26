@@ -64,8 +64,12 @@
   margin-top: 160px;
 }
 
-.emission-form-container div {
-  margin: 5px;
+.emission-form-container .form-input {
+  margin-bottom: 10px;
+}
+
+.flight-search {
+  margin: 5px !important;
 }
 
 .airplane {
@@ -170,8 +174,4 @@
   left: -50%;
   margin-top: 50%;
   z-index: 2;
-}
-
-.flight-search {
-  margin: 0 !important;
 }

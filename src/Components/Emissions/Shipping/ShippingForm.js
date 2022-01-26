@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-function ShippingForm({ handleFormSubmit, setShippingResults, shippingResults }) {
+function ShippingForm({
+  handleFormSubmit,
+  setShippingResults,
+  shippingResults,
+}) {
   const [shippingData, setShippingData] = useState({
     weight: 0,
     distance: 0,
@@ -17,13 +21,13 @@ function ShippingForm({ handleFormSubmit, setShippingResults, shippingResults })
   function onFormSubmit(e) {
     e.preventDefault();
     handleFormSubmit(shippingData);
-    setShippingResults({...shippingResults, id: ""});
+    setShippingResults({ ...shippingResults, id: "" });
   }
 
   return (
     <div className="emission-form-container">
       <form onSubmit={onFormSubmit}>
-        <div>
+        <div className="form-input">
           <label>Weight (lbs):</label>
           <input
             type="text"
@@ -32,7 +36,7 @@ function ShippingForm({ handleFormSubmit, setShippingResults, shippingResults })
             onChange={handleShippingDataChange}
           ></input>
         </div>
-        <div>
+        <div className="form-input">
           <label>Distance (mi):</label>
           <input
             type="text"
@@ -41,7 +45,7 @@ function ShippingForm({ handleFormSubmit, setShippingResults, shippingResults })
             onChange={handleShippingDataChange}
           ></input>
         </div>
-        <div>
+        <div className="form-input">
           <label>Shipping method:</label>
           <select
             name="method"

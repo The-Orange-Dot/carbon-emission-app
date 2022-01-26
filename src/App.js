@@ -183,6 +183,7 @@ function App() {
           component={() => (
             <UserInfo
               user={user}
+              setUser={setUser}
               onDeleteData={handleDeleteData}
               flightHistory={flightHistory}
               shippingHistory={shippingHistory}

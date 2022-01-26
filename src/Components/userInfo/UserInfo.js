@@ -1,12 +1,18 @@
+import { useState } from "react";
+import GrayColor from "../Login/GrayColor";
+import EditUserPopup from "./EditUserPopup";
 import "./UserInfo.css";
 
 function UserInfo({
   user,
+  setUser,
   flightHistory,
   electricityHistory,
   shippingHistory,
   vehicleHistory,
 }) {
+  const [hideNewForm, setHideNewForm] = useState(true);
+
   const totalFlightCarbon = flightHistory.reduce(
     (count, flight) => (count += flight.carbon_lb / flight.passengers),
     0
@@ -54,7 +60,19 @@ function UserInfo({
             <strong>Username:</strong> {user.username}
           </p>
           <br />
-          <button>Edit Info</button>
+          <button onClick={() => setHideNewForm(!hideNewForm)}>
+            Edit Info
+          </button>
+          <EditUserPopup
+            hideNewForm={hideNewForm}
+            user={user}
+            setUser={setUser}
+            setHideNewForm={setHideNewForm}
+          />
+          <GrayColor
+            setHideNewForm={setHideNewForm}
+            hideNewForm={hideNewForm}
+          />
         </div>
         <div className="carbon-emission-container">
           <div className="carbon-total">

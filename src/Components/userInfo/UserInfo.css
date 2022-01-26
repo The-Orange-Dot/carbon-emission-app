@@ -160,3 +160,35 @@
   width: 300px;
   padding: 5px 0px;
 }
+
+.edit-user-form-container {
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  z-index: 1;
+  width: 40%;
+  height: 50%;
+  display: flex;
+  background-color: #98d3aa;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  padding: 3%;
+}
+
+.edit-user-info-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.submit-button {
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 2em;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

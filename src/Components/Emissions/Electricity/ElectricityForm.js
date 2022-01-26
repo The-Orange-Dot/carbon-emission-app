@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { states } from "./ElectricityFormState";
 
-function ElectricityForm({ handleFormSubmit, setElectricityResults, electricityResults }) {
+function ElectricityForm({
+  handleFormSubmit,
+  setElectricityResults,
+  electricityResults,
+}) {
   const [electricityData, setElectricityData] = useState({
     state: "",
     electricity_value: "",
@@ -10,7 +14,7 @@ function ElectricityForm({ handleFormSubmit, setElectricityResults, electricityR
   function onFormSubmit(e) {
     e.preventDefault();
     handleFormSubmit(electricityData);
-    setElectricityResults({ ...electricityResults, id: "" })
+    setElectricityResults({ ...electricityResults, id: "" });
   }
 
   function handleElectricityDataChange(e) {
@@ -23,7 +27,7 @@ function ElectricityForm({ handleFormSubmit, setElectricityResults, electricityR
   return (
     <div className="emission-form-container">
       <form onSubmit={onFormSubmit}>
-        <div>
+        <div className="form-input">
           <label>Electricity used (kWh):</label>
           <input
             type="text"
@@ -33,7 +37,7 @@ function ElectricityForm({ handleFormSubmit, setElectricityResults, electricityR
           ></input>
         </div>
 
-        <div>
+        <div className="form-input">
           <label>State:</label>
           <select
             name="state"
