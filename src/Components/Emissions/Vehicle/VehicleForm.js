@@ -162,7 +162,7 @@ function VehicleForm({
   return (
     <div className="emission-form-container">
       <form onSubmit={onVehicleFormSubmit}>
-        <div>
+        <div className="form-input">
           <label>Distance (mi):</label>
           <input
             type="text"
@@ -171,7 +171,7 @@ function VehicleForm({
             onChange={handleVehicleFormChange}
           ></input>
         </div>
-        <div>
+        <div className="form-input">
           <label>Vehicle Make:</label>
           <select name="vehicle_make" onChange={handleModels}>
             <option value="Select a Make">Select a Make</option>
@@ -184,17 +184,10 @@ function VehicleForm({
             })}
           </select>
         </div>
-        <div>
+        <div className="form-input">
           <label>Vehicle Model:</label>
           <select name="vehicle_model_id" onChange={handleVehicleFormChange}>
             <option value="Select a Model">Select a Model</option>
-            {/* {models.map((model) => {
-              return (
-                <option key={model.id} id={model.id} value={model.name}>
-                  {model.name} {model.year}
-                </option>
-              );
-            })} */}
             {models}
           </select>
         </div>
