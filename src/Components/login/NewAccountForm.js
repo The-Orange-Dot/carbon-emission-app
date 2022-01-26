@@ -10,10 +10,11 @@ const NewAccountForm = ({ hideNewForm }) => {
       </div>
       <div className="register-form-container">
         <form action="" className="register-form">
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Password" />
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
+          <input type="text" name="username" placeholder="Username" />
+          <input type="password" name="password" placeholder="Password" />
+          <input type="text" name="email" placeholder="Email" />
+          <input type="text" name="first_name" placeholder="First Name" />
+          <input type="text" name="last_name" placeholder="Last Name" />
           <input
             type="email"
             name="email"
