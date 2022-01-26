@@ -94,10 +94,11 @@ function Estimate({
           id: flightData.data.id,
         })
       )
-      .catch(error => alert(`Please enter valid form data`));
+      .catch((error) => alert(`Please enter valid form data`));
   }
 
   function handleVehicleFormSubmit(vehicleFormData) {
+    console.log(vehicleFormData);
     fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
 
@@ -114,7 +115,9 @@ function Estimate({
       }),
     })
       .then((resp) => resp.json())
-      .then((vehicleData) =>
+      .then((vehicleData) => {
+        console.log(vehicleData);
+
         setVehicleResults({
           date: vehicleData.data.attributes.estimated_at,
           distance_value: vehicleData.data.attributes.distance_value,
@@ -124,9 +127,9 @@ function Estimate({
           vehicle_year: vehicleData.data.attributes.vehicle_year,
           carbon_lb: vehicleData.data.attributes.carbon_lb,
           id: vehicleData.data.id,
-        })
-      )
-      .catch(error => alert(`Please enter valid form data`));
+        });
+      })
+      .catch((error) => alert(`Please enter valid form data`));
   }
 
   function handleShippingFormSubmit(shippingData) {
@@ -157,7 +160,7 @@ function Estimate({
           id: shippingData.data.id,
         });
       })
-      .catch(error => alert(`Please enter valid form data`));
+      .catch((error) => alert(`Please enter valid form data`));
   }
 
   function handleElectricityFormSubmit(elecrticityData) {
@@ -188,7 +191,7 @@ function Estimate({
           id: results.data.id,
         });
       })
-      .catch(error => alert(`Please enter valid form data`));
+      .catch((error) => alert(`Please enter valid form data`));
   }
 
   return (

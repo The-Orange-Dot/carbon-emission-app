@@ -71,8 +71,6 @@ function FlightForm({ handleFormSubmit, setFlightResults, flightResults }) {
     setFlightResults({ ...flightResults, id: "" });
   }
 
-  console.log(formData);
-
   return (
     <div className="emission-form-container">
       <form onSubmit={onFormSubmit} className="flight-search-container">
