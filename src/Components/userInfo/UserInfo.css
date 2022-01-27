@@ -154,11 +154,12 @@
 }
 
 .results-column h3 {
-  background-color: #4e944a;
+  /* background-color: #4e944a; */
   border-radius: 1rem;
-  border: 3px solid #b9e344;
+  /* border: 3px solid #b9e344; */
   width: 300px;
   padding: 5px 0px;
+  color: white;
 }
 
 .edit-user-form-container {
