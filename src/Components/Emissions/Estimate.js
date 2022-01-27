@@ -284,7 +284,9 @@ function Estimate({
       </div>
 
       <div className="results-new-section">
-        <h1 style={{ marginBottom: "10px" }}>Carbon Estimate History</h1>
+        <h1 style={{ marginBottom: "10px", color: "white", marginTop: "20px" }}>
+          Carbon Estimate History
+        </h1>
         <div className="results-container">
           <div className="results-column ">
             <h3>
