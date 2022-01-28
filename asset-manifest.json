@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/carbon-emission-app/static/css/main.061db8b5.css",
-    "main.js": "/carbon-emission-app/static/js/main.ea3170b4.js",
+    "main.js": "/carbon-emission-app/static/js/main.64160ef3.js",
     "static/media/background.png": "/carbon-emission-app/static/media/background.aa9ce2d5d9dfe27e5a12.png",
     "static/media/kat.jpg": "/carbon-emission-app/static/media/kat.7bc3bd6b01be10d26eb5.jpg",
     "static/media/eleni.jpg": "/carbon-emission-app/static/media/eleni.2c51c594828c7b5ba2a6.jpg",
@@ -13,10 +13,10 @@
     "static/media/airplane.jpeg": "/carbon-emission-app/static/media/airplane.9af7ed1a590afd5575bd.jpeg",
     "index.html": "/carbon-emission-app/index.html",
     "main.061db8b5.css.map": "/carbon-emission-app/static/css/main.061db8b5.css.map",
-    "main.ea3170b4.js.map": "/carbon-emission-app/static/js/main.ea3170b4.js.map"
+    "main.64160ef3.js.map": "/carbon-emission-app/static/js/main.64160ef3.js.map"
   },
   "entrypoints": [
     "static/css/main.061db8b5.css",
-    "static/js/main.ea3170b4.js"
+    "static/js/main.64160ef3.js"
   ]
 }
