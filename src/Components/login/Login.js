@@ -11,7 +11,7 @@ function Login({ setUser, setLoggedIn }) {
 
   const loginHandler = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3001/users")
+    fetch("https://vast-bastion-53494.herokuapp.com/users")
       .then((r) => r.json())
       .then((userData) => {
         const loginUser = userData.find(

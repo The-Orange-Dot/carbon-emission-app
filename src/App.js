@@ -27,7 +27,7 @@ function App() {
   const [electricityHistory, setElectricityHistory] = useState([]);
 
   //Fetches User Data
-  const userAPI = "http://localhost:3001/users";
+  const userAPI = "https://vast-bastion-53494.herokuapp.com/users";
   useEffect(() => {
     let isAPISubscribed = true;
     fetch(userAPI)
@@ -44,25 +44,25 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/shipping_histories")
+    fetch("https://vast-bastion-53494.herokuapp.com/shipping_histories")
       .then((resp) => resp.json())
       .then((data) => setShippingHistory(data));
 
-    fetch("http://localhost:3001/flight_histories")
+    fetch("https://vast-bastion-53494.herokuapp.com/flight_histories")
       .then((resp) => resp.json())
       .then((data) => setFlightHistory(data));
 
-    fetch("http://localhost:3001/vehicle_histories")
+    fetch("https://vast-bastion-53494.herokuapp.com/vehicle_histories")
       .then((resp) => resp.json())
       .then((data) => setVehicleHistory(data));
 
-    fetch("http://localhost:3001/electricity_histories")
+    fetch("https://vast-bastion-53494.herokuapp.com/electricity_histories")
       .then((resp) => resp.json())
       .then((data) => setElectricityHistory(data));
   }, []);
 
   function handleDeleteData(location, item) {
-    fetch(`http://localhost:3001/${location}/${item.id}`, {
+    fetch(`https://vast-bastion-53494.herokuapp.com/${location}/${item.id}`, {
       method: "DELETE",
     });
 
@@ -92,7 +92,7 @@ function App() {
   }
 
   function handleShippingSaveData(shipment) {
-    fetch(`http://localhost:3001/shipping_histories`, {
+    fetch(`https://vast-bastion-53494.herokuapp.com/shipping_histories`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -109,7 +109,7 @@ function App() {
   }
 
   function handleFlightSaveData(flight) {
-    fetch(`http://localhost:3001/flight_histories`, {
+    fetch(`https://vast-bastion-53494.herokuapp.com/flight_histories`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -126,7 +126,7 @@ function App() {
   }
 
   function handleVehicleSaveData(vehicle) {
-    fetch(`http://localhost:3001/vehicle_histories`, {
+    fetch(`https://vast-bastion-53494.herokuapp.com/vehicle_histories`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -145,7 +145,7 @@ function App() {
   }
 
   function handleElectricitySaveData(electricity) {
-    fetch(`http://localhost:3001/electricity_histories`, {
+    fetch(`https://vast-bastion-53494.herokuapp.com/electricity_histories`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -15,11 +15,14 @@ const EditUserPopup = ({ hideNewForm, user, setUser, setHideNewForm }) => {
 
   const editSubmitHandler = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3001/users/update_info/${user.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userInfo),
-    })
+    fetch(
+      `https://vast-bastion-53494.herokuapp.com/users/update_info/${user.id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userInfo),
+      }
+    )
       .then((r) => r.json())
       .then((userData) => {
         setUser(userData);

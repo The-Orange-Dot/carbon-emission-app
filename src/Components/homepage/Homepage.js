@@ -43,7 +43,7 @@ function Homepage({
 
   //Logs out of account
   const logoutHandler = () => {
-    fetch("http://localhost:3001/users")
+    fetch("https://vast-bastion-53494.herokuapp.com/users")
       .then((r) => r.json())
       .then((userData) => {
         setUser(userData[0]);
@@ -52,7 +52,7 @@ function Homepage({
   };
 
   useEffect(() => {
-    fetch("http://localhost:3001/countryAverageCapita")
+    fetch("https://vast-bastion-53494.herokuapp.com/countryAverageCapita")
       .then((r) => r.json())
       .then((data) => {
         setWorldData(data.sort((a, b) => (a.average < b.average ? 1 : -1)));
