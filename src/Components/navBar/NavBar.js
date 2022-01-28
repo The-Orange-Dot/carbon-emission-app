@@ -15,7 +15,7 @@ function NavBar({ loggedIn }) {
   return (
     <div className="navbar-container">
       <div className="user-info-container">
-        <NavLink to="/">
+        <NavLink to="/carbon-emission-app/">
           <img src={logo} alt="logo" className="logo" />
         </NavLink>
         <h1 id="name-of-app" style={{ color: "white" }}>
@@ -26,13 +26,17 @@ function NavBar({ loggedIn }) {
       <div className="nav-buttons">
         <ul>
           <li>
-            <NavLink style={linkStyle} activestyle={{ color: "blue" }} to="/">
+            <NavLink
+              style={linkStyle}
+              activestyle={{ color: "blue" }}
+              to="/carbon-emission-app/"
+            >
               Home
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/about"
+              to="/carbon-emission-app/about"
               style={linkStyle}
               activestyle={{ color: "blue" }}
             >
@@ -41,7 +45,7 @@ function NavBar({ loggedIn }) {
           </li>
           <li>
             <NavLink
-              to="/estimate"
+              to="/carbon-emission-app/estimate"
               style={linkStyle}
               activestyle={{ color: "blue" }}
             >
@@ -50,7 +54,11 @@ function NavBar({ loggedIn }) {
           </li>
           <li>
             <NavLink
-              to={loggedIn ? "/user" : "/login"}
+              to={
+                loggedIn
+                  ? "/carbon-emission-app/user"
+                  : "/carbon-emission-app/login"
+              }
               style={linkStyle}
               activestyle={{ color: "blue" }}
             >

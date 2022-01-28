@@ -172,14 +172,14 @@ function App() {
       />
       <Switch>
         <Route
-          path="/login"
+          path="/carbon-emission-app/login"
           component={() => (
             <Login setUser={setUser} setLoggedIn={setLoggedIn} />
           )}
         />
-        <Route path="/about" component={About} />
+        <Route path="/carbon-emission-app/about" component={About} />
         <Route
-          path="/user"
+          path="/carbon-emission-app/user"
           component={() => (
             <UserInfo
               user={user}
@@ -198,7 +198,7 @@ function App() {
         />
 
         <Route
-          path="/estimate"
+          path="/carbon-emission-app/estimate"
           component={() => (
             <Estimate
               onSaveVehicleData={handleVehicleSaveData}
@@ -214,7 +214,7 @@ function App() {
           )}
         />
         <Route
-          path="/"
+          path="/carbon-emission-app/"
           component={() => (
             <Homepage
               user={user}
