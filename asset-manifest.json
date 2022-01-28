@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/carbon-emission-app/static/css/main.061db8b5.css",
+    "main.js": "/carbon-emission-app/static/js/main.ea3170b4.js",
+    "static/media/background.png": "/carbon-emission-app/static/media/background.aa9ce2d5d9dfe27e5a12.png",
+    "static/media/kat.jpg": "/carbon-emission-app/static/media/kat.7bc3bd6b01be10d26eb5.jpg",
+    "static/media/eleni.jpg": "/carbon-emission-app/static/media/eleni.2c51c594828c7b5ba2a6.jpg",
+    "static/media/electricity.png": "/carbon-emission-app/static/media/electricity.e19ccf620e2d71a9d1be.png",
+    "static/media/hung.jpg": "/carbon-emission-app/static/media/hung.a46e127ff0140a619759.jpg",
+    "static/media/treeLogo.png": "/carbon-emission-app/static/media/treeLogo.4fd56c25e6233d065bd0.png",
+    "static/media/shipping.jpeg": "/carbon-emission-app/static/media/shipping.1876a483dd5a189dccd2.jpeg",
+    "static/media/road.jpeg": "/carbon-emission-app/static/media/road.1f1af2f5292f7772d5a4.jpeg",
+    "static/media/airplane.jpeg": "/carbon-emission-app/static/media/airplane.9af7ed1a590afd5575bd.jpeg",
+    "index.html": "/carbon-emission-app/index.html",
+    "main.061db8b5.css.map": "/carbon-emission-app/static/css/main.061db8b5.css.map",
+    "main.ea3170b4.js.map": "/carbon-emission-app/static/js/main.ea3170b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.061db8b5.css",
+    "static/js/main.ea3170b4.js"
+  ]
+}
